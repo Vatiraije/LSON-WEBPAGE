@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .background-container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            min-width: 0;
+        }
+
+        .white-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 35%;
+            background: white;
+            z-index: 1;
+        }
+
+        .second-white-overlay {
+            position: fixed;
+            top: 39%;
+            left: 0;
+            width: 100%;
+            height: 4%;
+            background: white;
+            z-index: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .second-white-overlay a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="white-overlay"></div>
+    <div class="second-white-overlay">
+        <a href="https://nfa.org.na/">Soccer</a>
+        <a href="#rugby">Rugby</a>
+        <a href="#tennis">Tennis</a>
+        <a href="#swimming">Swimming</a>
+        <a href="#boxing">Boxing</a>
+        <a href="#golf">Golf</a>
+        <a href="#cricket">Cricket</a>
+    </div>
+
+    <div class="background-container">
+        <div class="column" id="col1"></div>
+        <div class="column" id="col2"></div>
+        <div class="column" id="col3"></div>
+        <div class="column" id="col4"></div>
+        <div class="column" id="col5"></div>
+        <div class="column" id="col6"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = [
+                "images/Tennis.jpg",
+                "images/rugby3.jpg",
+                "images/soccer.jpg",
+                "images/swimming2.jpg",
+                "images/boxing54.jpg",
+                "images/golf2547.jpg",
+                "images/cricket25.jpg"
+            ];
+            
+            const columns = document.querySelectorAll('.column');
+        
+            function setColumnBackgrounds() {
+                const usedImages = new Set();
+                columns.forEach((column) => {
+                    let newImage;
+                    do {
+                        newImage = images[Math.floor(Math.random() * images.length)];
+                    } while (usedImages.has(newImage));
+                    usedImages.add(newImage);
+                    column.style.backgroundImage = `url(${newImage})`;
+                });
+            }
+
+            setColumnBackgrounds();
+        
+            // Optional: if you want the columns to change images periodically
+            setInterval(setColumnBackgrounds, 3000);
+        });
+    </script>
+</body>
+</html>

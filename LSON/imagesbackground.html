@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Transition Example</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* Six columns of equal width */
+            z-index: -1;
+        }
+
+        .column {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .initial-image, .background-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+        }
+
+        .initial-image {
+            opacity: 1;
+            /* No transition for the initial image */
+        }
+
+        .background-image {
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .white-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 35%;
+            background: white;
+            z-index: 1;
+        }
+
+        .second-white-overlay {
+            position: fixed;
+            top: 39%; /* 35% + 4% for spacing */
+            left: 0;
+            width: 100%;
+            height: 4%;
+            background: white;
+            z-index: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .second-white-overlay a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .ads-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 150px;
+            height: 150px;
+            z-index: 2;
+        }
+
+        .ads-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- White overlay section -->
+    <div class="white-overlay"></div>
+    <div class="second-white-overlay">
+        <a href="#">Soccer</a>
+        <a href="#">Basketball</a>
+        <a href="#">Tennis</a>
+        <a href="#">Rugby</a>
+        <a href="#">Netball</a>
+        <a href="#">Swimming</a>
+    </div>
+
+    <!-- Ads container -->
+    <div class="ads-container">
+        <img src="images/ad1.jpg" alt="Ad Image">
+    </div>
+
+    <!-- Background container -->
+    <div class="background-container">
+        <div class="column">
+            <div class="initial-image" style="background-image: url('images/Tennis.jpg');"></div>
+            <div class="background-image" style="background-image: url('images/rugby3.jpg');"></div>
+        </div>
+        <div class="column">
+            <div class="initial-image" style="background-image: url('images/rugby3.jpg');"></div>
+            <div class="background-image" style="background-image: url('images/Tennis.jpg');"></div>
+        </div>
+        <div class="column">
+            <div class="initial-image" style="background-image: url('images/soccer.jpg');"></div>
+            <div class="background-image" style="background-image: url('images/swimming2.jpg');"></div>
+        </div>
+        <div class="column">
+            <div class="initial-image" style="background-image: url('images/swimming2.jpg');"></div>
+            <div class="background-image" style="background-image: url('images/soccer.jpg');"></div>
+        </div>
+        <div class="column">
+            <div class="initial-image" style="background-image: url('images/cycling solo.jpg');"></div>
+            <div class="background-image" style="background-image: url('images/boxing54.jpg');"></div>
+        </div>
+        <div class="column">
+            <div class="initial-image" style="background-image: url('images/boxing54.jpg');"></div>
+            <div class="background-image" style="background-image: url('images/cycling solo.jpg');"></div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            'images/Tennis.jpg',
+            'images/rugby3.jpg',
+            'images/soccer.jpg',
+            'images/swimming2.jpg',
+            'images/cycling solo.jpg',
+            'images/boxing54.jpg',
+        ];
+
+        function shuffle(source) {
+            let copy = [...source];
+            let result = [];
+            while (copy.length > 0) {
+                let index = Math.floor(Math.random() * copy.length);
+                result.push(copy.splice(index, 1)[0]);
+            }
+            return result;
+        }
+
+        function updateTransitionImages(columns) {
+            const shuffledImages = shuffle(images);
+
+            columns.forEach((column, index) => {
+                const initialImage = column.querySelector('.initial-image');
+                const currentImage = column.querySelector('.background-image');
+
+                const nextImageURL = shuffledImages[index % shuffledImages.length];
+                currentImage.style.backgroundImage = `url(${nextImageURL})`;
+
+                requestAnimationFrame(() => {
+                    currentImage.style.opacity = 1;
+                    setTimeout(() => {
+                        currentImage.style.opacity = 0;
+                    }, 4500); // Hide after 4.5 seconds to start the transition again
+                });
+
+                setTimeout(() => {
+                    initialImage.style.opacity = 1;
+                    setTimeout(() => updateTransitionImages(columns), 5000);
+                }, 1500);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const columns = document.querySelectorAll('.column');
+            setTimeout(() => updateTransitionImages(columns), 5000);
+        });
+    </script>
+</body>
+</html>

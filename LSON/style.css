@@ -109,3 +109,29 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+.eventtitle {
+margin-right: 500px; 
+}
+.slide {
+    
+    display: block; /* Ensure the images are block elements */
+    max-width: 100%; /* Ensure the images are responsive */
+    margin: 10px; /* Add some margin around each image */
+    object-fit: cover; /* Ensure the images cover the allocated space */
+  }
+  .fade {
+    animation: fade 1.5s;
+  }
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  img {
+    vertical-align: middle;
+  }  
+  .slideshow-container{
+    margin: auto;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
