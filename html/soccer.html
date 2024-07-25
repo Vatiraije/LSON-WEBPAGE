@@ -4,85 +4,305 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LSON - Namibian Soccer</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #009688;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .navigation {
+            background-color: #00695c;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .navigation a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: #004d40;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        #soccer, #news, #teams, #fixtures, #results, #standings, #gallery, #videos {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .soccer-header, .news-header, .teams-header, .fixtures-header, .results-header, .standings-header, .gallery-header, .videos-header {
+            margin-bottom: 10px;
+        }
+
+        .soccer-header h2, .news-header h2, .teams-header h2, .fixtures-header h2, .results-header h2, .standings-header h2, .gallery-header h2, .videos-header h2 {
+            font-size: 2.5em;
+            color: #009688;
+            margin-bottom: 10px;
+        }
+
+        .soccer-header p, .news-header p, .teams-header p, .fixtures-header p, .results-header p, .standings-header p, .gallery-header p, .videos-header p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .content article,
+        .content img,
+        .content video {
+            flex: 1 1 30%;
+            max-width: 30%;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .content article:hover,
+        .content img:hover,
+        .content video:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-container {
+            margin-top: 20px;
+        }
+
+        form {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s;
+        }
+
+        form input[type="text"]:focus {
+            border-color: #009688;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0, 150, 136, 0.2);
+        }
+
+        form input[type="text"]::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .footer {
+            background-color: #00695c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content article,
+            .content img,
+            .content video {
+                max-width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">LSON</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#teams">Teams</a></li>
-                <li><a href="#fixtures">Fixtures</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#standings">Standings</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-        </div>
-    </header>
+    <div class="header">
+        <h1>LSON - Namibian Soccer</h1>
+        <p>Your source for all things Namibian soccer</p>
+    </div>
 
-    <main>
-        <section class="main-banner">
-            <img src="banner.jpg" alt="Main Banner">
-            <div class="banner-content">
-                <h1>Latest Namibian Soccer News</h1>
-                <p>Stay updated with the latest happenings in Namibian soccer.</p>
+    <div class="navigation">
+        <a href="#soccer">Soccer</a>
+        <a href="#rugby">Rugby</a>
+        <a href="#tennis">Tennis</a>
+        <a href="#swimming">Swimming</a>
+        <a href="#boxing">Boxing</a>
+        <a href="#golf">Golf</a>
+        <a href="#cricket">Cricket</a>
+    </div>
+
+    <div class="main-content">
+        <section id="soccer">
+            <div class="soccer-header">
+                <h2>Soccer</h2>
+                <p>Explore the latest updates, news, and scores from Namibian soccer.</p>
+            </div>
+
+            <div class="content">
+                <!-- Example content -->
+                <article>
+                    <h3>Latest Match Results</h3>
+                    <p>Namibia vs. South Africa: 2-1</p>
+                </article>
+                <article>
+                    <h3>Upcoming Fixtures</h3>
+                    <p>Namibia vs. Angola on 30th July</p>
+                </article>
+                <img src="images/soccer.jpg" alt="Namibian Soccer Team">
+                <video src="videos/highlights.mp4" controls></video>
             </div>
         </section>
 
         <section id="news">
-            <h2>Latest News</h2>
-            <!-- News articles go here -->
+            <div class="news-header">
+                <h2>Latest News</h2>
+                <p>Stay updated with the latest news and stories in Namibian soccer.</p>
+            </div>
+            <div class="content">
+                <!-- News articles go here -->
+                <article>
+                    <h3>News Article Title</h3>
+                    <p>Brief description of the news article...</p>
+                </article>
+            </div>
         </section>
 
         <section id="teams">
-            <h2>Top Teams and Players</h2>
-            <!-- Team and player profiles go here -->
+            <div class="teams-header">
+                <h2>Top Teams and Players</h2>
+                <p>Profiles of the top teams and players in Namibian soccer.</p>
+            </div>
+            <div class="content">
+                <!-- Team and player profiles go here -->
+                <article>
+                    <h3>Team/Player Name</h3>
+                    <p>Profile description...</p>
+                </article>
+            </div>
         </section>
 
         <section id="fixtures">
-            <h2>Fixtures</h2>
-            <!-- Fixtures and schedule go here -->
+            <div class="fixtures-header">
+                <h2>Fixtures</h2>
+                <p>Upcoming matches and schedules.</p>
+            </div>
+            <div class="content">
+                <!-- Fixtures and schedule go here -->
+                <article>
+                    <h3>Match Fixture</h3>
+                    <p>Details about the fixture...</p>
+                </article>
+            </div>
         </section>
 
         <section id="results">
-            <h2>Results</h2>
-            <!-- Match results go here -->
+            <div class="results-header">
+                <h2>Results</h2>
+                <p>Recent match results and scores.</p>
+            </div>
+            <div class="content">
+                <!-- Match results go here -->
+                <article>
+                    <h3>Match Result</h3>
+                    <p>Details about the match result...</p>
+                </article>
+            </div>
         </section>
 
         <section id="standings">
-            <h2>Standings</h2>
-            <!-- League standings table goes here -->
+            <div class="standings-header">
+                <h2>Standings</h2>
+                <p>Current league standings and rankings.</p>
+            </div>
+            <div class="content">
+                <!-- League standings table goes here -->
+                <article>
+                    <h3>League Standings</h3>
+                    <p>Details about the league standings...</p>
+                </article>
+            </div>
         </section>
 
         <section id="gallery">
-            <h2>Photo Gallery</h2>
-            <!-- Photo gallery goes here -->
+            <div class="gallery-header">
+                <h2>Photo Gallery</h2>
+                <p>Collection of photos from recent matches and events.</p>
+            </div>
+            <div class="content">
+                <!-- Photo gallery goes here -->
+                <img src="images/gallery1.jpg" alt="Gallery Image">
+                <img src="images/gallery2.jpg" alt="Gallery Image">
+            </div>
         </section>
 
         <section id="videos">
-            <h2>Video Highlights</h2>
-            <!-- Video highlights go here -->
+            <div class="videos-header">
+                <h2>Video Highlights</h2>
+                <p>Watch highlights from recent matches and events.</p>
+            </div>
+            <div class="content">
+                <!-- Video highlights go here -->
+                <video src="videos/highlight1.mp4" controls></video>
+                <video src="videos/highlight2.mp4" controls></video>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
+        <div class="form-container">
+            <form>
+                <input type="text" placeholder="Search for players, teams, or news...">
+            </form>
         </div>
-        <div class="contact-info">
-            <p>Contact us: info@lson.com</p>
-        </div>
-        <div class="subscription-form">
-            <input type="email" placeholder="Subscribe for updates">
-            <button>Subscribe</button>
-        </div>
-    </footer>
+    </div>
+
+    <div class="footer">
+        © 2024 by G Mobility Investment. All rights reserved.
+    </div>
 </body>
 </html>
