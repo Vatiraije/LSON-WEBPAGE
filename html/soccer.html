@@ -13,9 +13,9 @@
         }
 
         .header {
-            background-color: #003580; /* Blue */
+            background: linear-gradient(to right, #d21034, #ffcb05); /* Red to Yellow gradient */
             padding: 20px;
-            color: #ffcb05; /* Yellow */
+            color: white;
             text-align: center;
             position: sticky;
             top: 0;
@@ -47,7 +47,7 @@
         }
 
         .navigation a:hover {
-            background-color: #0057a7; /* Darker Blue */
+            background-color: #b50e2b; /* Darker Red */
         }
 
         .main-content {
@@ -56,27 +56,27 @@
             padding: 0 20px;
         }
 
-        #soccer, #news, #teams, #fixtures, #results, #standings, #gallery, #videos {
-            background-color: #ffffff; /* White */
+        .section {
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
         }
 
-        .soccer-header, .news-header, .teams-header, .fixtures-header, .results-header, .standings-header, .gallery-header, .videos-header {
+        .section-header {
             margin-bottom: 10px;
         }
 
-        .soccer-header h2, .news-header h2, .teams-header h2, .fixtures-header h2, .results-header h2, .standings-header h2, .gallery-header h2, .videos-header h2 {
+        .section-header h2 {
             font-size: 2.5em;
             color: #d21034; /* Red */
             margin-bottom: 10px;
         }
 
-        .soccer-header p, .news-header p, .teams-header p, .fixtures-header p, .results-header p, .standings-header p, .gallery-header p, .videos-header p {
+        .section-header p {
             font-size: 1.2em;
-            color: #003580; /* Blue */
+            color: #333; /* Dark text */
         }
 
         .content {
@@ -138,7 +138,7 @@
         }
 
         .footer {
-            background-color: #007f00; /* Green */
+            background: linear-gradient(to right, #ffcb05, #d21034); /* Yellow to Red gradient */
             color: white;
             text-align: center;
             padding: 10px;
@@ -179,8 +179,8 @@
     </div>
 
     <div class="main-content">
-        <section id="soccer">
-            <div class="soccer-header">
+        <section id="soccer" class="section">
+            <div class="section-header">
                 <h2>Soccer</h2>
                 <p>Explore the latest updates, news, and scores from Namibian soccer.</p>
             </div>
@@ -200,8 +200,8 @@
             </div>
         </section>
 
-        <section id="news">
-            <div class="news-header">
+        <section id="news" class="section">
+            <div class="section-header">
                 <h2>Latest News</h2>
                 <p>Stay updated with the latest news and stories in Namibian soccer.</p>
             </div>
@@ -214,8 +214,8 @@
             </div>
         </section>
 
-        <section id="teams">
-            <div class="teams-header">
+        <section id="teams" class="section">
+            <div class="section-header">
                 <h2>Top Teams and Players</h2>
                 <p>Profiles of the top teams and players in Namibian soccer.</p>
             </div>
@@ -228,8 +228,8 @@
             </div>
         </section>
 
-        <section id="fixtures">
-            <div class="fixtures-header">
+        <section id="fixtures" class="section">
+            <div class="section-header">
                 <h2>Fixtures</h2>
                 <p>Upcoming matches and schedules.</p>
             </div>
@@ -242,8 +242,8 @@
             </div>
         </section>
 
-        <section id="results">
-            <div class="results-header">
+        <section id="results" class="section">
+            <div class="section-header">
                 <h2>Results</h2>
                 <p>Recent match results and scores.</p>
             </div>
@@ -256,8 +256,8 @@
             </div>
         </section>
 
-        <section id="standings">
-            <div class="standings-header">
+        <section id="standings" class="section">
+            <div class="section-header">
                 <h2>Standings</h2>
                 <p>Current league standings and rankings.</p>
             </div>
@@ -270,8 +270,8 @@
             </div>
         </section>
 
-        <section id="gallery">
-            <div class="gallery-header">
+        <section id="gallery" class="section">
+            <div class="section-header">
                 <h2>Photo Gallery</h2>
                 <p>Collection of photos from recent matches and events.</p>
             </div>
@@ -282,8 +282,8 @@
             </div>
         </section>
 
-        <section id="videos">
-            <div class="videos-header">
+        <section id="videos" class="section">
+            <div class="section-header">
                 <h2>Video Highlights</h2>
                 <p>Watch highlights from recent matches and events.</p>
             </div>
