@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Sports in Namibia</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-image: url('https://www.10wallpaper.com/wallpaper/medium/1302/donald_washington_Football-sports_HD_widescreen_wallpaper_medium.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            background-color: #333;
+            padding: 5px 10px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 999;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .background-wallpaper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://scontent.fers2-1.fna.fbcdn.net/v/t39.30808-6/396014856_741143631385239_2259431103839587810_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=b-zdEV2XUlAQ7kNvgED1uEX&_nc_ht=scontent.fers2-1.fna&oh=00_AYAh6O3jQXn94q_KSM32RtP07Ly7rH9_ASr47YYKiQoTrQ&oe=66882B75);
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        .navbar a {
+            color: white;
+            padding: 8px 10px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 14px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            margin-top: 80px; /* Adjusted for the navbar height */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .event-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .event-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .event-header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .event-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .event-details .detail {
+            flex: 1 1 calc(33% - 20px);
+            margin: 10px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .event-details .detail h3 {
+            margin-top: 0;
+        }
+        footer {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhjXxfz-GHe1C43tOidhSljq06CjXMv4hvKop4lGGbL18wnxE4');
+            background-color: #888; /* Grey background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            
+            
+           
+        
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1em 0;
+}
+        
+        @media (max-width: 768px) {
+            .event-details .detail {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="event.html">Events</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="event-header">
+            <h1>Sports Event Name</h1>
+            <p>Date: June 30, 2024 | Location: Windhoek, Namibia</p>
+        </div>
+        <div class="event-details">
+            <div class="detail">
+                <h3>Event Description</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis. Curabitur venenatis lorem et risus ultricies, a bibendum magna vehicula. Donec accumsan felis odio, nec sollicitudin metus elementum id.</p>
+            </div>
+            <div class="detail">
+                <h3>Schedule</h3>
+                <p><strong>10:00 AM:</strong> Opening Ceremony</p>
+                <p><strong>11:00 AM:</strong> Soccer Match</p>
+                <p><strong>1:00 PM:</strong> Lunch Break</p>
+                <p><strong>2:00 PM:</strong> Rugby Match</p>
+                <p><strong>4:00 PM:</strong> Closing Ceremony</p>
+            </div>
+            <div class="detail">
+                <h3>Venue</h3>
+                <p>National Stadium, Windhoek</p>
+                <p>Address: 123 Main Street, Windhoek, Namibia</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.814784728089!2d15.980169315379175!3d-22.559724638426027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c0c39a0cf88fbbb%3A0x8f1d0d7f8df1a59a!2sIndependence%20Stadium!5e0!3m2!1sen!2sna!4v1625396588071!5m2!1sen!2sna" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+     <div class="background-wallpaper"></div>
+
+     <footer>
+        <p>&copy; 2024 Sports in Namibia. All Rights Reserved.</p>
+     </footer>
+</body>
+</html>
