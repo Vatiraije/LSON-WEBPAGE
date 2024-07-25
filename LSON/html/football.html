@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSON - Namibian Soccer</title>
+    <title>LSON - Football Association</title>
     <style>
         body, html {
             margin: 0;
@@ -13,9 +13,9 @@
         }
 
         .header {
-            background: linear-gradient(to right, #d21034, #ffcb05); /* Red to Yellow gradient */
+            background-color: #ffcb05; /* Yellow */
+            color: black;
             padding: 20px;
-            color: white;
             text-align: center;
             position: sticky;
             top: 0;
@@ -33,13 +33,13 @@
         }
 
         .navigation {
-            background-color: #d21034; /* Red */
+            background-color: #000000; /* Black */
             padding: 10px 0;
             text-align: center;
         }
 
         .navigation a {
-            color: white;
+            color: #ffcb05; /* Yellow */
             padding: 10px 20px;
             text-decoration: none;
             display: inline-block;
@@ -47,7 +47,7 @@
         }
 
         .navigation a:hover {
-            background-color: #b50e2b; /* Darker Red */
+            background-color: #333333; /* Darker Black */
         }
 
         .main-content {
@@ -70,7 +70,7 @@
 
         .section-header h2 {
             font-size: 2.5em;
-            color: #d21034; /* Red */
+            color: #ffcb05; /* Yellow */
             margin-bottom: 10px;
         }
 
@@ -127,9 +127,9 @@
         }
 
         form input[type="text"]:focus {
-            border-color: #d21034; /* Red */
+            border-color: #ffcb05; /* Yellow */
             outline: none;
-            box-shadow: 0 2px 8px rgba(210, 16, 52, 0.2);
+            box-shadow: 0 2px 8px rgba(255, 203, 5, 0.2);
         }
 
         form input[type="text"]::placeholder {
@@ -138,8 +138,8 @@
         }
 
         .footer {
-            background: linear-gradient(to right, #ffcb05, #d21034); /* Yellow to Red gradient */
-            color: white;
+            background-color: #000000; /* Black */
+            color: #ffcb05; /* Yellow */
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -164,12 +164,12 @@
 </head>
 <body>
     <div class="header">
-        <h1>LSON - Namibian Soccer</h1>
+        <h1>LSON - Football Association</h1>
         <p>Your source for all things Namibian soccer</p>
     </div>
 
     <div class="navigation">
-        <a href="soccer.html">Soccer</a>
+        <a href="football.html">football</a>
         <a href="rugby.html">Rugby</a>
         <a href="tennis.html">Tennis</a>
         <a href="swimming.html">Swimming</a>
@@ -182,7 +182,7 @@
         <section id="soccer" class="section">
             <div class="section-header">
                 <h2>Soccer</h2>
-                <p>Explore the latest updates, news, and scores from Namibian soccer.</p>
+                <p>Explore the latest updates, news, and scores from Namibia's Football Association.</p>
             </div>
 
             <div class="content">
@@ -190,9 +190,9 @@
                 <article>
                     <h3>Latest Match Results</h3>
                     <p>Namibia vs. Angola: 0:5</p>
-                    <img src="images/NAMANGO.png"alt="NamibiavsANGOLA">
+                    <img src="images/NAMANGO.png" alt="NamibiavsANGOLA">
                     <p>Namibia vs. Mozambique: 5:4(penalties)</p>
-                    <img src="images/mozabique.png"alt="NamibiavsMozambique">
+                    <img src="images/mozabique.png" alt="NamibiavsMozambique">
                 </article>
                 <article>
                     <h3>Upcoming Fixtures</h3>
@@ -200,7 +200,7 @@
                         Namibia vs. Zimbabwe - 7 October (AFCON Qualifiers)<br>
                         Namibia vs. Cameroon - 14 October (AFCON Qualifiers)<br>
                         Namibia vs. Tunisia - 21 October (World Cup Qualifiers)
-                    </p>          
+                    </p>
                 </article>
                 <img src="https://d4f7y6nbupj5z.cloudfront.net/wp-content/uploads/2024/01/Brave-Warriors-1.jpg" alt="Namibian Soccer Team">
                 <video src="videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
@@ -277,39 +277,60 @@
             </div>
         </section>
 
-        <section id="gallery" class="section">
-            <div class="section-header">
-                <h2>Photo Gallery</h2>
-                <p>Collection of photos from recent matches and events.</p>
-            </div>
-            <div class="content">
-                <!-- Photo gallery goes here -->
-                <img src="images/gallery1.jpg" alt="Gallery Image">
-                <img src="images/gallery2.jpg" alt="Gallery Image">
-            </div>
-        </section>
-
         <section id="videos" class="section">
             <div class="section-header">
-                <h2>Video Highlights</h2>
-                <p>Watch highlights from recent matches and events.</p>
+                <h2>Videos</h2>
+                <p>Highlights and other video content related to Namibian soccer.</p>
             </div>
             <div class="content">
-                <!-- Video highlights go here -->
-                <video src="videos/highlight1.mp4" controls></video>
-                <video src="videos/highlight2.mp4" controls></video>
+                <!-- Videos go here -->
+                <video src="videos/sample-video.mp4" controls></video>
             </div>
         </section>
 
-        <div class="form-container">
-            <form>
-                <input type="text" placeholder="Search for players, teams, or news...">
-            </form>
-        </div>
+        <section id="about" class="section">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Learn more about LSON and our mission.</p>
+            </div>
+            <div class="content">
+                <article>
+                    <h3>About LSON</h3>
+                    <p>LSON (Local Sports Organization of Namibia) is dedicated to promoting soccer and other sports in Namibia. We provide the latest news, updates, and information about Namibian sports, focusing on soccer.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with LSON for inquiries or more information.</p>
+            </div>
+            <div class="content">
+                <article>
+                    <h3>Contact Information</h3>
+                    <p>Email: contact@lson.com</p>
+                    <p>Phone: +264 81 234 5678</p>
+                    <p>Address: LSON Headquarters, Windhoek, Namibia</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="search" class="section">
+            <div class="section-header">
+                <h2>Search</h2>
+                <p>Find information on LSON's website.</p>
+            </div>
+            <div class="form-container">
+                <form action="#" method="GET">
+                    <input type="text" name="search" placeholder="Search LSON...">
+                </form>
+            </div>
+        </section>
     </div>
 
     <div class="footer">
-        © 2024 by G Mobility Investment. All rights reserved.
+        <p>&copy; 2024 LSON - All rights reserved.</p>
     </div>
 </body>
 </html>
