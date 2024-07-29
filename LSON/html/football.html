@@ -114,6 +114,13 @@
             justify-content: center;
             align-items: center;
         }
+        #live-scores {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
 
         form input[type="text"] {
             width: 100%;
@@ -221,6 +228,20 @@
             </div>
         </section>
 
+        <section id="live-scores" class="section">
+            <div class="section-header">
+                <h2>Live Scores</h2>
+                <p>Follow real-time scores for ongoing matches.</p>
+            </div>
+            <div class="content">
+                <!-- Live scores content goes here -->
+                <article>
+                    <h3>Match</h3>
+                    <p>Team A vs Team B: 1-0 (45')</p>
+                </article>
+            </div>
+        </section>
+
         <section id="teams" class="section">
             <div class="section-header">
                 <h2>Top Teams and Players</h2>
@@ -319,11 +340,11 @@
         <section id="search" class="section">
             <div class="section-header">
                 <h2>Search</h2>
-                <p>Find information on LSON's website.</p>
+                <p>Find information on teams,players etc</p>
             </div>
             <div class="form-container">
                 <form action="#" method="GET">
-                    <input type="text" name="search" placeholder="Search LSON...">
+                    <input type="text" name="search" placeholder="Search for players, teams, or news... ...">
                 </form>
             </div>
         </section>
@@ -332,5 +353,39 @@
     <div class="footer">
         <p>&copy; 2024 LSON - All rights reserved.</p>
     </div>
+
+    <script>
+        async function fetchLiveScores() {
+            try {
+                const response = await fetch('https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all', {
+                    method: 'GET',
+                    headers: {
+                        'X-Auth-Token': 'b10e8600bc214e5e9859e99650fc04c3'
+                    }
+                });
+                const data = await response.json();
+                displayScores(data.response);
+            } catch (error) {
+                console.error('Error fetching live scores:', error);
+            }
+        }
+
+        function displayScores(scores) {
+            const scoresContainer = document.getElementById('scores-content');
+            scoresContainer.innerHTML = '';
+            scores.forEach(match => {
+                const matchElement = document.createElement('article');
+                matchElement.innerHTML = `
+                    <h3>${match.teams.home.name} vs ${match.teams.away.name}</h3>
+                    <p>${match.goals.home} - ${match.goals.away} (${match.fixture.status.short})</p>
+                `;
+                scoresContainer.appendChild(matchElement);
+            });
+        }
+
+        fetchLiveScores();
+    </script>
+
+
 </body>
 </html>
