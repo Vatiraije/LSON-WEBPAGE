@@ -18,6 +18,7 @@
             height: 100vh;
             width: 100%;
             margin-top: 260px;
+            background-attachment: auto;
         }
 
         .column {
@@ -32,6 +33,20 @@
         .column.fade-out {
             opacity: 0;
         }
+        
+
+.full-white-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    z-index: 2; 
+    display: none; 
+    pointer-events: none; 
+}
+
 
         .white-overlay {
             position: fixed;
@@ -227,6 +242,53 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
         }
+        .news-section {
+  display: none; /* Initially hidden */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-top: 1px solid #ddd;
+}
+
+.news-card {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-category {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.news-title {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.news-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
     </style>
 </head>
 <body>
@@ -291,6 +353,43 @@
             </div>
         </div>
     </div>
+    <div class="full-white-overlay"></div>
+
+    <div class="news-section" id="newsSection">
+        <div class="news-card">
+          <img src="path_to_image1.jpg" alt="News Image" class="news-image">
+          <div class="news-content">
+            <p class="news-category">Football</p>
+            <h3 class="news-title">Yoro to miss three months as Man Utd dealt Hojlund blow</h3>
+            <a href="#" class="news-link">Read more ></a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="path_to_image2.jpg" alt="News Image" class="news-image">
+          <div class="news-content">
+            <p class="news-category">Olympics</p>
+            <h3 class="news-title">Olympics 2024 LIVE! Team GB take silver and two bronze in rowing</h3>
+            <a href="#" class="news-link">Read more ></a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="path_to_image3.jpg" alt="News Image" class="news-image">
+          <div class="news-content">
+            <p class="news-category">Football</p>
+            <h3 class="news-title">Transfer Centre LIVE! Gallagher latest as Forest sign 'Portuguese Grealish'</h3>
+            <a href="#" class="news-link">Read more ></a>
+          </div>
+        </div>
+        <div class="news-card">
+          <img src="path_to_image4.jpg" alt="News Image" class="news-image">
+          <div class="news-content">
+            <p class="news-category">Cricket</p>
+            <h3 class="news-title">The Hundred 2024: Free live stream of London Spirit vs Welsh Fire</h3>
+            <a href="#" class="news-link">Read more ></a>
+          </div>
+        </div>
+      </div>
+      
 
     <div class="hamburger-menu">
         <div></div>
@@ -328,6 +427,36 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const newsSection = document.getElementById('newsSection');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Adjust the scroll position as needed
+      newsSection.style.display = 'block';
+    } else {
+      newsSection.style.display = 'none';
+    }
+  });
+});
+
+        document.addEventListener("DOMContentLoaded", () => {
+    // Existing JavaScript code remains unchanged
+
+    // Show/Hide level sports text on scroll and toggle full white overlay
+    const fullWhiteOverlay = document.querySelector('.full-white-overlay');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            whiteOverlay.classList.add('hidden');
+            levelSportsText.classList.add('visible');
+            fullWhiteOverlay.style.display = 'block'; // Show the full white overlay
+        } else {
+            whiteOverlay.classList.remove('hidden');
+            levelSportsText.classList.remove('visible');
+            fullWhiteOverlay.style.display = 'none'; // Hide the full white overlay
+        }
+    });
+});
+
         document.addEventListener("DOMContentLoaded", () => {
             const images = [
                 "images/tennis.jpg",
