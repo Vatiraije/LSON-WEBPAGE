@@ -222,6 +222,72 @@
             background-color: #f0f0f0;
         }
 
+        .breaking-news {
+            position: relative;
+            top: 35%;
+            width: 100%;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            font-size: 1.5em;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+        }
+
+        .breaking-news.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .videos-section {
+            position: relative;
+            top: 38%;
+            width: 100%;
+            background: #ecf0f1;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease;
+        }
+
+        .videos-section.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .video-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+            background: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            position: relative;
+        }
+
+        .video-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .video-item .video-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
         @keyframes ticker {
             0% { transform: translateX(0); }
             100% { transform: translateX(-100%); }
@@ -242,51 +308,29 @@
         LEVEL SPORTS OF NAMIBIA
     </div>
 
+    <div class="breaking-news">
+        Breaking News: New developments in Namibian football!
+    </div>
+
+    <div class="videos-section">
+        <div class="video-item">
+            <img src="images/video1.jpg" alt="Video 1">
+            <div class="video-description">Highlights from the latest match</div>
+        </div>
+        <div class="video-item">
+            <img src="images/video2.jpg" alt="Video 2">
+            <div class="video-description">Exclusive interview with the coach</div>
+        </div>
+        <!-- Add more video items as needed -->
+    </div>
+
     <div class="second-white-overlay">
         <div class="ticker-wrapper">
             <div class="ticker-content">
-                <a href="football.html">Football</a>
-                <a href="rugby.html">Rugby</a>
-                <a href="tennis.html">Tennis</a>
-                <a href="swimming.html">Swimming</a>
-                <a href="boxing.html">Boxing</a>
-                <a href="golf.html">Golf</a>
-                <a href="cricket.html">Cricket</a>
-                <a href="hockey.html">Hockey</a>
-                <a href="chess.html">Chess</a>
-                <a href="horseridding.html">Horse Riding</a>
-                <a href="mma.html">MMA</a>
-                <a href="cycling.html">Cycling</a>
-                <a href="volleyball.html">Volleyball</a>
-                <a href="netball.html">Netball</a>
-                <a href="racing.html">Racing</a>
-                <a href="esports.html">E-sports</a>
-                <a href="bowling.html">Bowling</a>
-                <a href="polo.html">Polo</a>
-                <a href="basketball.html">Basketball</a>
-                <a href="futsal.html">Futsal</a>
-            </div>
-            <div class="ticker-content">
-                <a href="football.html">Football</a>
-                <a href="rugby.html">Rugby</a>
-                <a href="tennis.html">Tennis</a>
-                <a href="swimming.html">Swimming</a>
-                <a href="boxing.html">Boxing</a>
-                <a href="golf.html">Golf</a>
-                <a href="cricket.html">Cricket</a>
-                <a href="hockey.html">Hockey</a>
-                <a href="chess.html">Chess</a>
-                <a href="horseridding.html">Horse Riding</a>
-                <a href="mma.html">MMA</a>
-                <a href="cycling.html">Cycling</a>
-                <a href="volleyball.html">Volleyball</a>
-                <a href="netball.html">Netball</a>
-                <a href="racing.html">Racing</a>
-                <a href="esports.html">E-sports</a>
-                <a href="bowling.html">Bowling</a>
-                <a href="polo.html">Polo</a>
-                <a href="basketball.html">Basketball</a>
-                <a href="futsal.html">Futsal</a>
+                <a href="#">Breaking News: New developments in Namibian football!</a>
+                <a href="#">Player transfers update: Latest moves in the league</a>
+                <a href="#">Upcoming matches: What to watch this weekend</a>
+                <a href="#">Exclusive interview: Star player shares his journey</a>
             </div>
         </div>
     </div>
@@ -341,6 +385,8 @@
             const columns = document.querySelectorAll('.column');
             const whiteOverlay = document.querySelector('.white-overlay');
             const levelSportsText = document.querySelector('.level-sports-text');
+            const breakingNews = document.querySelector('.breaking-news');
+            const videosSection = document.querySelector('.videos-section');
 
             function setColumnBackgrounds() {
                 const usedImages = new Set();
@@ -359,7 +405,6 @@
             }
 
             setColumnBackgrounds();
-
             setInterval(setColumnBackgrounds, 3000);
 
             // Pause ticker on hover
@@ -382,7 +427,7 @@
                 navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
             });
 
-            // Show/Hide level sports text on scroll
+            // Show/Hide level sports text, breaking news, and videos on scroll
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 100) {
                     whiteOverlay.classList.add('hidden');
@@ -390,6 +435,18 @@
                 } else {
                     whiteOverlay.classList.remove('hidden');
                     levelSportsText.classList.remove('visible');
+                }
+
+                if (window.scrollY > 200) {
+                    breakingNews.classList.add('visible');
+                } else {
+                    breakingNews.classList.remove('visible');
+                }
+
+                if (window.scrollY > 400) {
+                    videosSection.classList.add('visible');
+                } else {
+                    videosSection.classList.remove('visible');
                 }
             });
         });
