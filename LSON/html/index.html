@@ -321,16 +321,55 @@
             <img src="images/video2.jpg" alt="Video 2">
             <div class="video-description">Exclusive interview with the coach</div>
         </div>
-        <!-- Add more video items as needed -->
+    
     </div>
+
 
     <div class="second-white-overlay">
         <div class="ticker-wrapper">
             <div class="ticker-content">
-                <a href="#">Breaking News: New developments in Namibian football!</a>
-                <a href="#">Player transfers update: Latest moves in the league</a>
-                <a href="#">Upcoming matches: What to watch this weekend</a>
-                <a href="#">Exclusive interview: Star player shares his journey</a>
+                <a href="football.html">Football</a>
+                <a href="rugby.html">Rugby</a>
+                <a href="tennis.html">Tennis</a>
+                <a href="swimming.html">Swimming</a>
+                <a href="boxing.html">Boxing</a>
+                <a href="golf.html">Golf</a>
+                <a href="cricket.html">Cricket</a>
+                <a href="hockey.html">Hockey</a>
+                <a href="chess.html">Chess</a>
+                <a href="horseridding.html">Horse Riding</a>
+                <a href="mma.html">MMA</a>
+                <a href="cycling.html">Cycling</a>
+                <a href="volleyball.html">Volleyball</a>
+                <a href="netball.html">Netball</a>
+                <a href="racing.html">Racing</a>
+                <a href="esports.html">E-sports</a>
+                <a href="bowling.html">Bowling</a>
+                <a href="polo.html">Polo</a>
+                <a href="basketball.html">Basketball</a>
+                <a href="futsal.html">Futsal</a>
+            </div>
+            <div class="ticker-content">
+                <a href="football.html">Football</a>
+                <a href="rugby.html">Rugby</a>
+                <a href="tennis.html">Tennis</a>
+                <a href="swimming.html">Swimming</a>
+                <a href="boxing.html">Boxing</a>
+                <a href="golf.html">Golf</a>
+                <a href="cricket.html">Cricket</a>
+                <a href="hockey.html">Hockey</a>
+                <a href="chess.html">Chess</a>
+                <a href="horseridding.html">Horse Riding</a>
+                <a href="mma.html">MMA</a>
+                <a href="cycling.html">Cycling</a>
+                <a href="volleyball.html">Volleyball</a>
+                <a href="netball.html">Netball</a>
+                <a href="racing.html">Racing</a>
+                <a href="esports.html">E-sports</a>
+                <a href="bowling.html">Bowling</a>
+                <a href="polo.html">Polo</a>
+                <a href="basketball.html">Basketball</a>
+                <a href="futsal.html">Futsal</a>
             </div>
         </div>
     </div>
@@ -398,7 +437,7 @@
                             newImage = images[Math.floor(Math.random() * images.length)];
                         } while (usedImages.has(newImage));
                         usedImages.add(newImage);
-                        column.style.backgroundImage = `url(${newImage})`;
+                        column.style.backgroundImage = url(${newImage});
                         column.classList.remove('fade-out');
                     }, 1000);
                 });
