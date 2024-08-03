@@ -216,7 +216,7 @@
                 <a href="rugby.php">Rugby</a>
                 <a href="tennis.php">Tennis</a>
                 <a href="swimming.php">Swimming</a>
-                <a href="boxing.php">Boxing</a>
+                <a href="All sports/boxing.php">Boxing</a>
                 <a href="golf.php">Golf</a>
                 <a href="cricket.php">Cricket</a>
                 <a href="hockey.php">Hockey</a>
@@ -238,7 +238,7 @@
                 <a href="rugby.php">Rugby</a>
                 <a href="tennis.php">Tennis</a>
                 <a href="swimming.php">Swimming</a>
-                <a href="boxing.php">Boxing</a>
+                <a href="All sports/boxing.php">Boxing</a>
                 <a href="golf.php">Golf</a>
                 <a href="cricket.php">Cricket</a>
                 <a href="hockey.php">Hockey</a>
