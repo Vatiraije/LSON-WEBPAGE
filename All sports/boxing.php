@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: url('./images/Boxing images/sketch.jpg') no-repeat center center fixed;
+            background: url('../images/Boxing images/Boxing_clipart-HD.png') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
         }
@@ -215,7 +215,7 @@
                     <img src="../images/Boxing images/upcming f3.jpg" alt="Upcoming Fights">
                     <img src="../images/Boxing images/upcoming f5.jpg" alt="Upcoming Fights">
                 </article>
-                <img src="../images/Namibian boxing T.jpg" alt="Namibian Boxing Team">
+                <img src="../images/Boxing images/nam boxing.jpg" alt="Namibian Boxing Team">
                 <video src="../videos/NAM VS MALAWI BOXING.mp4" controls></video>
             </div>
         </section>
@@ -346,7 +346,7 @@
             </div>
             <div class="content">
                 <!-- Video highlights go here -->
-                <video src="../videos/Namibian boxer Jeremiah “Lowkey” Nakathila beats Zoltan Kovacs.mp4" controls></video>
+                <video src="../videos/3 Harry Simon Greatest Knockouts.mp4" controls></video>
                 <video src="../videos/Charles Shinima.mp4" controls></video>
             </div>
         </section>
