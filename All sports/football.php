@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSON - Namibian Soccer</title>
+    <title>LSON - Namibian Football</title>
     <style>
         body, html {
             margin: 0;
@@ -15,9 +15,9 @@
         }
 
         .header {
-            background: linear-gradient(to right, #000000, #ffd700); /* Black to Yellow gradient */
+            background: #ffd700; /* Yellow */
             padding: 20px;
-            color: white;
+            color: black; /* Black text */
             text-align: center;
             position: sticky;
             top: 0;
@@ -53,11 +53,42 @@
             background-color: #ffd700; /* Yellow */
         }
 
+        .vertical-nav {
+            width: 220px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: black; /* Black background */
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .vertical-nav a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            transition: all 0.3s;
+            border-radius: 4px;
+            margin: 5px 10px;
+        }
+
+        .vertical-nav a:hover {
+            background: #ffd700; /* Yellow */
+            transform: translateX(10px);
+        }
+
+        .vertical-nav a.active {
+            background: #ffd700; /* Yellow */
+        }
+
         .main-content {
+            margin-left: 240px; /* Same width as the vertical navbar + some margin */
+            padding: 20px;
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
-            border-radius: 10px;
         }
 
         .section {
@@ -142,8 +173,8 @@
         }
 
         .footer {
-            background: linear-gradient(to right, #000000, #ffd700); /* Black to Yellow gradient */
-            color: white;
+            background: black; /* Black background */
+            color: #ffd700; /* Yellow text */
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -164,30 +195,68 @@
             .content video {
                 max-width: 90%;
             }
+
+            .vertical-nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .vertical-nav a {
+                float: left;
+                padding: 10px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>LSON - Namibian football</h1>
-        <p>Your source for all things Namibian football</p>
+        <h1>LSON - Namibian Football</h1>
+        <p>Your source for all things Namibian Football</p>
     </div>
 
     <div class="navigation">
-        <a href="football.php">Soccer</a>
-        <a href="rugby.php">Rugby</a>
-        <a href="tennis.php">Tennis</a>
-        <a href="swimming.php">Swimming</a>
+        <a href="football.php">All</a>
+        <a href="rugby.php">Teams</a>
+        <a href="football.php">Leagues</a>
+        <a href="tennis.php">Player Profiles</a>
+        <a href="swimming.php">Training and Development</a>
+        <a href="boxing.php">Supporters Club</a>
+        <a href="golf.php">Events</a>
+    </div>
+
+    <div class="vertical-nav">
+        <a href="basketball.php">Basketball</a>
+        <a href="bowling.php">Bowling</a>
         <a href="boxing.php">Boxing</a>
-        <a href="golf.php">Golf</a>
+        <a href="chess.php">Chess</a>
         <a href="cricket.php">Cricket</a>
+        <a href="cycling.php">Cycling</a>
+        <a href="esports.php">E-Sports</a>
+        <a href="football.php" class="active">Football</a>
+        <a href="futsal.php">Futsal</a>
+        <a href="golf.php">Golf</a>
+        <a href="hockey.php">Hockey</a>
+        <a href="horseriding.php">Horse Riding</a>
+        <a href="mma.php">MMA</a>
+        <a href="netball.php">Netball</a>
+        <a href="polo.php">Polo</a>
+        <a href="racing.php">Racing</a>
+        <a href="rugby.php">Rugby</a>
+        <a href="swimming.php">Swimming</a>
+        <a href="tennis.php">Tennis</a>
+        <a href="volleyball.php">Volleyball</a>
     </div>
 
     <div class="main-content">
         <section id="leagues" class="section">
             <div class="section-header">
-                <h2>Soccer Leagues</h2>
-                <p>Explore the latest updates, news, and standings from Namibian football.</p>
+                <h2>Football Leagues</h2>
+                <p>Explore the latest updates, news, and standings from Namibian Football.</p>
             </div>
 
             <div class="content">
@@ -195,88 +264,71 @@
                 <article>
                     <h3>Premier League</h3>
                     <p>Latest updates and standings from the Namibian Premier League.</p>
-                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Premier League">
+                    <img src="images/football.jpg" alt="FOOTBALL PREMIER LEAGUE">
                 </article>
                 <article>
                     <h3>First to new updates</h3>
                     <p>Latest updates and standings from the Namibian Football.</p>
-                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="First Division">
+                    <img src="images/football2.jpeg" alt="FOOTBALL PREMIER LEAGUE">
                 </article>
-                <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Namibian Soccer Team">
+                <img src="images/football3.jpeg" alt="FOOTBALL PREMIER LEAGUE">
                 <video src="videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
             </div>
         </section>
 
         <section id="standings" class="section">
             <div class="section-header">
-                <h2>Current Standings</h2>
-                <p>Check out the current standings in Namibian soccer leagues.</p>
+                <h2>Standings</h2>
+                <p>Check out the current standings of your favorite teams.</p>
             </div>
-            <div class="content">
-                <!-- Standings table goes here -->
-                <article>
-                    <h3>Premier League Standings</h3>
-                    <p>1. Team A - 50 points<br>2. Team B - 48 points<br>3. Team C - 45 points</p>
-                </article>
 
+            <div class="content">
+                <!-- Example standings content -->
                 <article>
-                    <h3>First Division Standings</h3>
-                    <p>1. Team D - 55 points<br>2. Team E - 52 points<br>3. Team F - 50 points</p>
+                    <h3>Premier League</h3>
+                    <p>1. Team A - 45 points</p>
+                    <p>2. Team B - 42 points</p>
+                    <p>3. Team C - 39 points</p>
+                </article>
+                <article>
+                    <h3>First Division</h3>
+                    <p>1. Team X - 40 points</p>
+                    <p>2. Team Y - 38 points</p>
+                    <p>3. Team Z - 35 points</p>
                 </article>
             </div>
         </section>
 
         <section id="players" class="section">
             <div class="section-header">
-                <h2>Top Players</h2>
-                <p>Profiles of the top players in Namibian soccer.</p>
+                <h2>Player Profiles</h2>
+                <p>Get to know the top players in Namibian Football.</p>
             </div>
+
             <div class="content">
-                <!-- Player profiles go here -->
+                <!-- Example player profiles -->
                 <article>
-                    <h3>Player 1</h3>
-                    <p>Aliquam imperdiet sem at dolor lobortis, ac pharetra nisi porta. Fusce tincidunt erat commodo magna viverra feugiat.</p>
+                    <h3>Player A</h3>
+                    <p>Position: Forward</p>
+                    <p>Goals: 20</p>
                 </article>
-
                 <article>
-                    <h3>Player 2</h3>
-                    <p>Aliquam imperdiet sem at dolor lobortis, ac pharetra nisi porta. Fusce tincidunt erat commodo magna viverra feugiat.</p>
-                </article>
-
-                <article>
-                    <h3>Player 3</h3>
-                    <p>Aliquam imperdiet sem at dolor lobortis, ac pharetra nisi porta. Fusce tincidunt erat commodo magna viverra feugiat.</p>
+                    <h3>Player B</h3>
+                    <p>Position: Midfielder</p>
+                    <p>Assists: 15</p>
                 </article>
             </div>
         </section>
 
-        <section id="teams" class="section">
-            <div class="section-header">
-                <h2>Top Teams</h2>
-                <p>Profiles of the top teams in Namibian soccer.</p>
-            </div>
-            <div class="content">
-                <!-- Team profiles go here -->
-                <article>
-                    <h3>Team 1</h3>
-                    <p>Quisque sit amet elit gravida, ultricies odio nec, aliquam orci. Ut vitae sem a dolor eleifend dapibus id ac est.</p>
-                </article>
-
-                <article>
-                    <h3>Team 2</h3>
-                    <p>Quisque sit amet elit gravida, ultricies odio nec, aliquam orci. Ut vitae sem a dolor eleifend dapibus id ac est.</p>
-                </article>
-
-                <article>
-                    <h3>Team 3</h3>
-                    <p>Quisque sit amet elit gravida, ultricies odio nec, aliquam orci. Ut vitae sem a dolor eleifend dapibus id ac est.</p>
-                </article>
-            </div>
-        </section>
+        <div class="form-container">
+            <form action="" method="GET">
+                <input type="text" name="search" placeholder="Search players, teams, leagues...">
+            </form>
+        </div>
     </div>
 
     <div class="footer">
-        &copy; 2024 LSON. All rights reserved.
+        <p>&copy; 2024 LSON - Level Sports of Namibia. All rights reserved.</p>
     </div>
 </body>
 </html>
