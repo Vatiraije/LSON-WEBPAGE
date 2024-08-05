@@ -195,15 +195,15 @@
                 <article>
                     <h3>Premier League</h3>
                     <p>Latest updates and standings from the Namibian Premier League.</p>
-                    <img src="../images/soccer/premier-league.jpg" alt="Premier League">
+                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Premier League">
                 </article>
                 <article>
-                    <h3>First Division</h3>
-                    <p>Latest updates and standings from the Namibian First Division.</p>
-                    <img src="../images/soccer/first-division.jpg" alt="First Division">
+                    <h3>First to new updates</h3>
+                    <p>Latest updates and standings from the Namibian Football.</p>
+                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="First Division">
                 </article>
-                <img src="../images/soccer/team.jpg" alt="Namibian Soccer Team">
-                <video src="../videos/soccer-match.mp4" controls></video>
+                <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Namibian Soccer Team">
+                <video src="videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
             </div>
         </section>
 
