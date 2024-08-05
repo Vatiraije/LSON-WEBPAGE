@@ -22,33 +22,53 @@
     <div class="second-white-overlay">
         <div class="ticker-wrapper">
             <div class="ticker-content">
-                <a href="football.php">Football</a>
-                <a href="rugby.php">Rugby</a>
-                <a href="tennis.php">Tennis</a>
-                <a href="swimming.php">Swimming</a>
-                <a href="boxing.php">Boxing</a>
-                <a href="golf.php">Golf</a>
-                <a href="cricket.php">Cricket</a>
-                <a href="hockey.php">Hockey</a>
-                <a href="chess.php">Chess</a>
-                <a href="horseridding.php">Horse Riding</a>
-                <a href="mma.php">MMA</a>
-                <a href="cycling.php">Cycling</a>
-                <a href="volleyball.php">Volleyball</a>
-                <a href="netball.php">Netball</a>
-                <a href="racing.php">Racing</a>
-                <a href="esports.php">E-sports</a>
-                <a href="bowling.php">Bowling</a>
-                <a href="polo.php">Polo</a>
-                <a href="basketball.php">Basketball</a>
-                <a href="netball.php">Netball</a>
-                <a href="fishing.php">Fishing</a>
+                <a href="All sports/football.php">Football</a>
+                <a href="All sports/rugby.php">Rugby</a>
+                <a href="All sports/tennis.php">Tennis</a>
+                <a href="All sports/swimming.php">Swimming</a>
+                <a href="All sports/boxing.php">Boxing</a>
+                <a href="All sports/golf.php">Golf</a>
+                <a href="All sports/cricket.php">Cricket</a>
+                <a href="All sports/hockey.php">Hockey</a>
+                <a href="All sports/chess.php">Chess</a>
+                <a href="All sports/horseridding.php">Horse Riding</a>
+                <a href="All sports/mma.php">MMA</a>
+                <a href="All sports/cycling.php">Cycling</a>
+                <a href="All sports/volleyball.php">Volleyball</a>
+                <a href="All sports/netball.php">Netball</a>
+                <a href="All sports/racing.php">Racing</a>
+                <a href="All sports/esports.php">E-sports</a>
+                <a href="All sports/bowling.php">Bowling</a>
+                <a href="All sports/polo.php">Polo</a>
+                <a href="All sports/basketball.php">Basketball</a>
+                <a href="All sports/futsal.php">Futsal</a>
+            </div>
+            <div class="ticker-content">
+            <a href="All sports/football.php">Football</a>
+                <a href="All sports/rugby.php">Rugby</a>
+                <a href="All sports/tennis.php">Tennis</a>
+                <a href="All sports/swimming.php">Swimming</a>
+                <a href="All sports/boxing.php">Boxing</a>
+                <a href="All sports/golf.php">Golf</a>
+                <a href="All sports/cricket.php">Cricket</a>
+                <a href="All sports/hockey.php">Hockey</a>
+                <a href="All sports/chess.php">Chess</a>
+                <a href="All sports/horseridding.php">Horse Riding</a>
+                <a href="All sports/mma.php">MMA</a>
+                <a href="All sports/cycling.php">Cycling</a>
+                <a href="All sports/volleyball.php">Volleyball</a>
+                <a href="All sports/netball.php">Netball</a>
+                <a href="All sports/racing.php">Racing</a>
+                <a href="All sports/esports.php">E-sports</a>
+                <a href="All sports/bowling.php">Bowling</a>
+                <a href="All sports/polo.php">Polo</a>
+                <a href="All sports/basketball.php">Basketball</a>
+                <a href="All sports/futsal.php">Futsal</a>  
             </div>
         </div>
     </div>
-
-     <div class="full-white-overlay"></div>
-
+    <div class="full-white-overlay"></div>
+    
     <div class="news-section" id="newsSection">
         <div class="news-card">
           <img src="path_to_image1.jpg" alt="News Image" class="news-image">
