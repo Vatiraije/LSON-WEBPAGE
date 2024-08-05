@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEVEL SPORTS OF NAMIBIA</title>
     <style>
-    html, body {
+        html, body {
             height: 100%;
             margin: 0;
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -108,7 +108,8 @@
             align-items: center;
             justify-content: center;
             font-size: 2em;
-            font-weight: bold;
+            font-weight: Italic;
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* Sans-serif font style */
             opacity: 0;
             visibility: hidden;
             transition: all 0.5s ease-in-out; /* Updated for smooth resizing */
@@ -348,6 +349,8 @@
     <div class="level-sports-text">
         LEVEL SPORTS OF NAMIBIA
     </div>
+
+    <!-- Add your other HTML content here -->
 
     <div class="second-white-overlay">
         <div class="ticker-wrapper">
