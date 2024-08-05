@@ -333,6 +333,36 @@
         .show-more-button:hover {
             background-color: #2c3e50;
         }
+        .player-of-the-match-card {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 250px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .player-of-the-match-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .player-of-the-match-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .player-of-the-match-content h4 {
+            margin: 10px 0 5px;
+        }
+
+        .player-of-the-match-content p {
+            margin: 0;
+        }
 
     </style>
 </head>
@@ -468,6 +498,12 @@
         <div class="column" id="col5"></div>
         <div class="column" id="col6"></div>
     </div>
+    <div class="player-of-the-match-card">
+        <img src="images/simon-jr.jpg" alt="Player of the Match">
+        <div class="player-of-the-match-content">
+            <h4>Harry Simon Jr</h4>
+            <p>Outstanding performance in his recent Boxing match.</p>
+        </div>
 
     <div class="footer">
         © 2024 by G Mobility Investment
