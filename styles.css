@@ -1,0 +1,347 @@
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background: #f0f0f0;
+        color: #333;
+    }
+
+    .background-container {
+        display: flex;
+        height: calc(100vh - 35vh);
+        width: 100%;
+        margin-top: 35vh;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .background-container.scrolled {
+        margin-top: 15vh;
+        height: calc(100vh - 15vh);
+    }
+
+    .column {
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        min-width: 0;
+        transition: opacity 5s ease-in-out;
+        opacity: 1;
+    }
+
+    .column.fade-out {
+        opacity: 0;
+    }
+
+                .search-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 20px;
+                }
+        
+                #searchInput {
+                    width: 300px;
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                }
+        
+                #searchButton {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: #34495e;
+                    color: #fff;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+        
+                #searchButton:hover {
+                    background-color: #2c3e50;
+                }
+
+                .full-white-overlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255, 255, 255, 1);
+                    z-index: 2;
+                    display: none;
+                    pointer-events: none;
+                }
+
+    .white-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 35%;
+        background: rgba(255, 255, 255, 1);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .white-overlay.scrolled {
+        height: 10%;
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .logo-container img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .white-overlay.scrolled .logo-container img {
+        display: none;
+    }
+
+   .level-sports-text {
+       opacity: 0;
+       font-size: 2em;
+       font-weight: bold;
+       transition: opacity 0.2s ease-in-out, font-size 0.2s ease-in-out;
+   }
+
+   .level-sports-text.expanded {
+       opacity: 1;
+       font-size: 5em;
+   }
+
+   .white-overlay.scrolled .level-sports-text {
+       opacity: 1;
+   }
+
+    .second-white-overlay {
+        position: fixed;
+        top: 35%;
+        left: 0;
+        width: 100%;
+        height: 4%;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 1;
+        overflow: hidden;
+        white-space: nowrap;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .second-white-overlay.scrolled {
+        top: 10%;
+    }
+
+    .ticker-wrapper {
+        display: flex;
+        white-space: nowrap;
+        animation: ticker 40s linear infinite;
+    }
+
+    .ticker-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .second-white-overlay a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        margin: 0 20px;
+        font-size: 1.5em;
+        white-space: nowrap;
+        transition: color 0.3s;
+    }
+
+    .second-white-overlay a:hover {
+        color: #c0392b;
+    }
+
+    .image-boxes-container {
+        position: fixed;
+        top: 39%;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        z-index: 2;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .image-boxes-container.scrolled {
+        top: 14%;
+    }
+
+    .image-box {
+        width: 200px;
+        height: 170px;
+        background-size: cover;
+        background-position: center;
+        border: 2px solid #333;
+        border-radius: 10px;
+        transition: transform 0.3s;
+        opacity: 1;
+        /* Ensure images are fully opaque */
+    }
+
+    .image-box:hover {
+        transform: scale(1.1);
+    }
+
+    .video-box {
+        width: 200px;
+        height: 170px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .video-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #34495e;
+        color: #ecf0f1;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .hamburger-menu {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .hamburger-menu div {
+        width: 100%;
+        height: 4px;
+        background-color: #333;
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        padding-top: 60px;
+        z-index: 2;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .nav-menu a:hover {
+        background-color: #f0f0f0;
+    }
+
+    @keyframes ticker {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+          .news-section {
+              display: none;
+              /* Initially hidden */
+              padding: 20px;
+              background-color: #f4f4f4;
+              border-top: 1px solid #ddd;
+          }
+    
+          .news-card {
+              display: flex;
+              margin-bottom: 20px;
+              background-color: white;
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              overflow: hidden;
+              transition: transform 0.3s;
+          }
+    
+          .news-card:hover {
+              transform: scale(1.02);
+          }
+    
+          .news-image {
+              flex: 1;
+              min-width: 150px;
+              height: auto;
+          }
+    
+          .news-content {
+              flex: 2;
+              padding: 20px;
+          }
+    
+          .news-content h3 {
+              margin-top: 0;
+              color: #333;
+          }
+    
+          .news-content p {
+              margin: 10px 0;
+          }
+    
+          .show-more-button {
+              display: block;
+              width: 200px;
+              margin: 20px auto;
+              padding: 10px 20px;
+              background-color: #34495e;
+              color: white;
+              text-align: center;
+              text-decoration: none;
+              border-radius: 5px;
+              transition: background-color 0.3s;
+          }
+    
+          .show-more-button:hover {
+              background-color: #2c3e50;
+          }
