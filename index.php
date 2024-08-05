@@ -41,14 +41,34 @@
                 <a href="bowling.php">Bowling</a>
                 <a href="polo.php">Polo</a>
                 <a href="basketball.php">Basketball</a>
+                <a href="futsal.php">Futsal</a>
+            </div>
+            <div class="ticker-content">
+            <a href="football.php">Football</a>
+                <a href="rugby.php">Rugby</a>
+                <a href="tennis.php">Tennis</a>
+                <a href="swimming.php">Swimming</a>
+                <a href="boxing.php">Boxing</a>
+                <a href="golf.php">Golf</a>
+                <a href="cricket.php">Cricket</a>
+                <a href="hockey.php">Hockey</a>
+                <a href="chess.php">Chess</a>
+                <a href="horseridding.php">Horse Riding</a>
+                <a href="mma.php">MMA</a>
+                <a href="cycling.php">Cycling</a>
+                <a href="volleyball.php">Volleyball</a>
                 <a href="netball.php">Netball</a>
-                <a href="fishing.php">Fishing</a>
+                <a href="racing.php">Racing</a>
+                <a href="esports.php">E-sports</a>
+                <a href="bowling.php">Bowling</a>
+                <a href="polo.php">Polo</a>
+                <a href="basketball.php">Basketball</a>
+                <a href="futsal.php">Futsal</a>  
             </div>
         </div>
     </div>
-
-     <div class="full-white-overlay"></div>
-
+    <div class="full-white-overlay"></div>
+    
     <div class="news-section" id="newsSection">
         <div class="news-card">
           <img src="path_to_image1.jpg" alt="News Image" class="news-image">
