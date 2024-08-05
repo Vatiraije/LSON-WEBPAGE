@@ -54,7 +54,7 @@
         }
 
         .vertical-nav {
-            width: 220px;
+            width: 180px;
             position: fixed;
             top: 0;
             left: 0;
@@ -63,12 +63,13 @@
             padding-top: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            overflow-y: auto;
         }
 
         .vertical-nav a {
-            padding: 15px 25px;
+            padding: 10px 15px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             color: #fff;
             display: block;
             transition: all 0.3s;
@@ -86,7 +87,7 @@
         }
 
         .main-content {
-            margin-left: 240px; /* Same width as the vertical navbar + some margin */
+            margin-left: 200px; /* Same width as the vertical navbar + some margin */
             padding: 20px;
             max-width: 1200px;
         }
@@ -226,7 +227,8 @@
         <a href="tennis.php">Player Profiles</a>
         <a href="swimming.php">Training and Development</a>
         <a href="boxing.php">Supporters Club</a>
-        <a href="golf.php">Events</a>
+        <a href="golf.php">News &amp;Updates</a>
+        <a href="golf.php">History</a>
     </div>
 
     <div class="vertical-nav">
@@ -264,14 +266,14 @@
                 <article>
                     <h3>Premier League</h3>
                     <p>Latest updates and standings from the Namibian Premier League.</p>
-                    <img src="images/netball.jpg" alt="NETBALL PREMIER LEAGUE">
+                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Premier League">
                 </article>
                 <article>
                     <h3>First to new updates</h3>
                     <p>Latest updates and standings from the Namibian Football.</p>
-                    <img src="images/netball2.jpeg" alt="NETBALL PREMIER LEAGUE">
+                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="First Division">
                 </article>
-                <img src="images/netball.jpeg" alt="NETBALL PREMIER LEAGUE">
+                <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Namibian Soccer Team">
                 <video src="videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
             </div>
         </section>
