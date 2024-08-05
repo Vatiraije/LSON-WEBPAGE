@@ -50,7 +50,7 @@
         }
 
         .navigation a:hover {
-            background-color: #d04ac6; /* Yellow */
+            background-color: #d04ac6;
         }
 
         .vertical-nav {
@@ -78,7 +78,7 @@
         }
 
         .vertical-nav a:hover {
-            background: #d04ac6; /* Highlight */
+            background: #d04ac6;
             transform: translateX(10px);
         }
 
@@ -87,7 +87,7 @@
         }
 
         .main-content {
-            margin-left: 200px; /* Same width as the vertical navbar + some margin */
+            margin-left: 200px;
             padding: 20px;
             max-width: 1200px;
         }
@@ -106,13 +106,13 @@
 
         .section-header h2 {
             font-size: 2.5em;
-            color: #d04ac6; /* Yellow */
+            color: #d04ac6;
             margin-bottom: 10px;
         }
 
         .section-header p {
             font-size: 1.2em;
-            color: #fff; /* Light text */
+            color: #fff;
         }
 
         .content {
@@ -140,6 +140,12 @@
             transform: translateY(-5px);
         }
 
+        .content img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
         .form-container {
             margin-top: 20px;
         }
@@ -163,7 +169,7 @@
         }
 
         form input[type="text"]:focus {
-            border-color: #d04ac6; /* Yellow */
+            border-color: #d04ac6;
             outline: none;
             box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
         }
@@ -174,7 +180,7 @@
         }
 
         .footer {
-            background: linear-gradient(to right, #000000, #ffd700); /* Black to Yellow gradient */
+            background: linear-gradient(to right, #000000, #ffd700);
             color: white;
             text-align: center;
             padding: 10px;
@@ -184,7 +190,6 @@
             opacity: 0.9;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .content {
                 flex-direction: column;
@@ -227,7 +232,7 @@
         <a href="tennis.php">Player Profiles</a>
         <a href="swimming.php">Training and Development</a>
         <a href="boxing.php">Supporters Club</a>
-        <a href="golf.php">News &amp;Updates</a>
+        <a href="golf.php">News & Updates</a>
         <a href="golf.php">History</a>
     </div>
 
@@ -262,19 +267,17 @@
             </div>
 
             <div class="content">
-                <!-- Example content -->
                 <article>
                     <h3>Premier League</h3>
-                    <p>Latest updates and standings from the Namibian Premier League.</p>
-                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Premier League">
+                    <p>Latest updates and standings from the Namibian Premier Netball.</p>
+                    <img src="images/netball2.jpeg" alt="NETBALL">
                 </article>
                 <article>
                     <h3>First to new updates</h3>
-                    <p>Latest updates and standings from the Namibian Football.</p>
-                    <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="First Division">
+                    <p>Latest updates and standings from the Namibian Netball.</p>
+                    <img src="images/netball2.jpeg" alt="NETBALL">
                 </article>
-                <img src="https://cdn.24.co.za/files/Cms/General/d/9963/c16bf81450a84432af29f24cf83714a3.jpg" alt="Namibian Soccer Team">
-                <video src="videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
+                <img src="images/netball2.jpeg" alt="NETBALL">
             </div>
         </section>
 
@@ -284,7 +287,6 @@
                 <p>Check out the current standings in Namibian Netball leagues.</p>
             </div>
             <div class="content">
-                <!-- Standings table goes here -->
                 <article>
                     <h3>Premier League Standings</h3>
                     <p>1. Team A - 50 points<br>2. Team B - 48 points<br>3. Team C - 45 points</p>
@@ -303,7 +305,6 @@
                 <p>Profiles of the top players in Namibian Netball.</p>
             </div>
             <div class="content">
-                <!-- Player profiles go here -->
                 <article>
                     <h3>Player 1</h3>
                     <p>Aliquam imperdiet sem at dolor lobortis, ac pharetra nisi porta. Fusce tincidunt erat commodo magna viverra feugiat.</p>
@@ -327,7 +328,6 @@
                 <p>Profiles of the top teams in Namibian Netball.</p>
             </div>
             <div class="content">
-                <!-- Team profiles go here -->
                 <article>
                     <h3>Team 1</h3>
                     <p>Quisque sit amet elit gravida, ultricies odio nec, aliquam orci. Ut vitae sem a dolor eleifend dapibus id ac est.</p>
