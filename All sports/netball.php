@@ -227,7 +227,7 @@
         <a href="tennis.php">Player Profiles</a>
         <a href="swimming.php">Training and Development</a>
         <a href="boxing.php">Supporters Club</a>
-        <a href="golf.php">News &amp; Updates</a>
+        <a href="golf.php">News &amp;Updates</a>
         <a href="golf.php">History</a>
     </div>
 
