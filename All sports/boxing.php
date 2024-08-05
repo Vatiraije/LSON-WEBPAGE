@@ -175,13 +175,13 @@
     </div>
 
     <div class="navigation">
-        <a href="football.html">Soccer</a>
-        <a href="rugby.html">Rugby</a>
-        <a href="tennis.html">Tennis</a>
-        <a href="swimming.html">Swimming</a>
-        <a href="boxing.html">Boxing</a>
-        <a href="golf.html">Golf</a>
-        <a href="cricket.html">Cricket</a>
+        <a href="football.php">Soccer</a>
+        <a href="rugby.php">Rugby</a>
+        <a href="tennis.php">Tennis</a>
+        <a href="swimming.php">Swimming</a>
+        <a href="boxing.php">Boxing</a>
+        <a href="golf.php">Golf</a>
+        <a href="cricket.php">Cricket</a>
     </div>
 
     <div class="main-content">
