@@ -6,6 +6,67 @@
     <title>LEVEL SPORTS OF NAMIBIA</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/159bedbb65.js" crossorigin="anonymous"></script>
+    <style>
+        @media (max-width: 1200px) {
+    .news-card {
+        width: 45%;
+    }
+    .column, .image-box, .video-box {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    #header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #header nav i {
+        display: block;
+    }
+
+    #sidemenu {
+        position: fixed;
+        right: -300px;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background: #fff;
+        transition: right 0.3s;
+    }
+
+    .news-card {
+        width: 100%;
+    }
+
+    .column, .image-box, .video-box {
+        width: 100%;
+    }
+
+    .ticker-content {
+        display: block;
+    }
+
+    .level-sports-text {
+        font-size: 18px;
+    }
+
+    .logo-letter {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .level-sports-text {
+        font-size: 16px;
+    }
+
+    .logo-letter {
+        font-size: 24px;
+    }
+}
+    </style>
 </head>
 <body>
 <div id="header">
@@ -41,7 +102,7 @@
             <span class="logo-letter yellow">N</span>
         </div>
         </strong>
-        <div class="level-sports-text">Level Sports Of Namibia</div>
+        <div class="level-sports-text">LEVEL SPORTS OF NAMIBIA</div>
    
     </div>
 
