@@ -8,14 +8,16 @@
 </head>
 <body>
 <div class="white-overlay">
+    <strong>
         <div class="logo-container">
             <span class="logo-letter blue">L</span>
             <span class="logo-letter red">S</span>
             <span class="logo-letter green">O</span>
             <span class="logo-letter yellow">N</span>
         </div>
+        </strong>
         <div class="level-sports-text">LEVEL SPORTS OF NAMIBIA</div>
-        <div class="new-text">Welcome to the best sports site!</div>
+   
     </div>
 
     <div class="second-white-overlay">

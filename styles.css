@@ -89,12 +89,12 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease-in-out;
+    transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
 }
-
 
 .white-overlay.scrolled {
     height: 10%;
+    top: 0;
 }
 
 .logo-container {
@@ -104,7 +104,7 @@ body {
     gap: 20px;
     transition: all 0.5s ease-in-out;
     transform: scale(1.7); 
-    
+    animation: bounce 2s infinite;
 }
 
 .logo-letter {
@@ -112,21 +112,42 @@ body {
     font-weight: bold;
     color: #34495e;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s; /* Ensure smooth scaling */
+    transition: transform 0.3s, text-shadow 0.3s;
 }
 
 .logo-letter.blue { color: #0033a0; }
-.logo-letter.red { color: #d21034; }
+logo-letter.red { color: #d21034; }
 .logo-letter.green { color: #007a33; }
 .logo-letter.yellow { color: #ffc72c; }
+
+.logo-letter:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.logo-container .logo-letter {
+    animation: glow 2s infinite alternate;
+}
 
 .level-sports-text {
     opacity: 0;
     font-size: 2em;
     font-weight: bold;
     transition: opacity 0.2s ease-in-out, font-size 0.2s ease-in-out;
-    color: #34495e; /* Ensure text color contrasts with background */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+    color: #34495e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .level-sports-text.expanded {
     opacity: 1;
@@ -136,6 +157,7 @@ body {
 .white-overlay.scrolled .level-sports-text {
     opacity: 1;
 }
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -147,11 +169,6 @@ body {
         transform: translateY(-10px);
     }
 }
-
-.logo-container {
-    animation: bounce 2s infinite; /* Apply bounce animation */
-}
-
 
 @keyframes colorFade {
     0%, 100% { opacity: 1; }
@@ -370,11 +387,8 @@ body {
 .show-more-button:hover {
     background-color: #2c3e50;
 }
+
 .fade-out {
     opacity: 0;
     transition: opacity 1s;
 }
-
-
-
-
