@@ -12,7 +12,7 @@ body {
     height: calc(100vh - 35vh);
     width: 100%;
     margin-top: 35vh;
-    transition: all 0.5s ease-in-out;
+    transition: all 6s ease-in-out;
 }
 
 .background-container.scrolled {
@@ -25,7 +25,7 @@ body {
     background-size: cover;
     background-position: center;
     min-width: 0;
-    transition: opacity 5s ease-in-out;
+    transition: opacity 1s ease-in-out;
     opacity: 1;
 }
 
@@ -228,11 +228,13 @@ logo-letter.red { color: #d21034; }
     gap: 10px;
     padding: 10px;
     z-index: 2;
-    transition: all 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    opacity: 1;
 }
 
 .image-boxes-container.scrolled {
     top: 14%;
+    opacity: 1;
 }
 
 .image-box {
@@ -242,9 +244,11 @@ logo-letter.red { color: #d21034; }
     background-position: center;
     border: 2px solid #333;
     border-radius: 10px;
-    transition: transform 0.3s;
-    opacity: 0.5;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 1;
 }
+
+
 
 .image-box:hover {
     transform: scale(1.1);
