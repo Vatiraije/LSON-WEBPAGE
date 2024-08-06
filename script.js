@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const whiteOverlay = document.querySelector('.white-overlay');
+    const secondWhiteOverlay = document.querySelector('.second-white-overlay');
+    const backgroundContainer = document.querySelector('.background-container');
+    const imageBoxesContainer = document.querySelector('.image-boxes-container');
+    const levelSportsText = document.querySelector('.level-sports-text');
+    const newsSection = document.getElementById('newsSection');
     const images = [
         "images/tennis.jpg",
         "images/rugby3.jpg",
@@ -8,13 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/golf2547.jpg",
         "images/cricket25.jpg"
     ];
-
     const columns = document.querySelectorAll('.column');
-    const whiteOverlay = document.querySelector('.white-overlay');
-    const secondWhiteOverlay = document.querySelector('.second-white-overlay');
-    const backgroundContainer = document.querySelector('.background-container');
-    const imageBoxesContainer = document.querySelector('.image-boxes-container');
-    const levelSportsText = document.querySelector('.level-sports-text');  // Added this line
 
     function setColumnBackgrounds() {
         const usedImages = new Set();
@@ -35,25 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setColumnBackgrounds();
     setInterval(setColumnBackgrounds, 3000);
 
-    // Pause ticker on hover
-    const tickerWrapper = document.querySelector('.ticker-wrapper');
-    secondWhiteOverlay.addEventListener('mouseenter', () => {
-        tickerWrapper.style.animationPlayState = 'paused';
-    });
-    secondWhiteOverlay.addEventListener('mouseleave', () => {
-        tickerWrapper.style.animationPlayState = 'running';
-    });
-
-    // Hamburger menu toggle
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.nav-menu');
+
     hamburgerMenu.addEventListener('click', () => {
         navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    
-
-    // Scroll event handler
     window.addEventListener('scroll', () => {
         requestAnimationFrame(() => {
             if (window.scrollY > 100) {
@@ -72,8 +60,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //filter
-     const searchInput = document.getElementById('searchInput');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+            whiteOverlay.classList.add('scrolled');
+            imageBoxesContainer.classList.add('scrolled');
+            levelSportsText.classList.add('expanded');
+        } else {
+            whiteOverlay.classList.remove('scrolled');
+            imageBoxesContainer.classList.remove('scrolled');
+            levelSportsText.classList.remove('expanded');
+        }
+    });
+
+    const tickerWrapper = document.querySelector('.ticker-wrapper');
+    secondWhiteOverlay.addEventListener('mouseenter', () => {
+        tickerWrapper.style.animationPlayState = 'paused';
+    });
+    secondWhiteOverlay.addEventListener('mouseleave', () => {
+        tickerWrapper.style.animationPlayState = 'running';
+    });
+
+    const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
     const newsCards = document.querySelectorAll('.news-card');
 
@@ -94,7 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === 'Enter') filterArticles();
     });
 
+    // Enhancements for the "LSON" logo
+    const logoContainer = document.querySelector('.logo-container');
+    logoContainer.classList.add('animated'); // Add a class to initiate animation
 
-    
-
+    // Adding hover effect for logo letters
+    const logoLetters = document.querySelectorAll('.logo-letter');
+    logoLetters.forEach(letter => {
+        letter.addEventListener('mouseenter', () => {
+            letter.style.transform = 'scale(1.2)';
+            letter.style.transition = 'transform 0.3s';
+        });
+        letter.addEventListener('mouseleave', () => {
+            letter.style.transform = 'scale(1)';
+            letter.style.transition = 'transform 0.3s';
+        });
+    });
 });
