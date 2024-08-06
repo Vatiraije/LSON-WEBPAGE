@@ -72,7 +72,7 @@
 <div id="header">
   <nav>
     <ul id="sidemenu">
-      <li><a href="#header">Home</a></li>
+      <li><a href="index.php">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Our Shop</a></li>
       <li><a href="#portfolio">News Updates</a></li>

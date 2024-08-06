@@ -50,7 +50,7 @@
         }
 
         .navigation a:hover {
-            background-color: #b50e2b;
+            background-color: #3572EF;
         }
 
         .main-content {
@@ -74,7 +74,7 @@
 
         .section-header h2 {
             font-size: 2.5em;
-            color: #d21034;
+            color: #77E4C8;
             margin-bottom: 10px;
         }
 
