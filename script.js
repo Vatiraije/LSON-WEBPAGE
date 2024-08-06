@@ -17,23 +17,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const columns = document.querySelectorAll('.column');
 
     function setColumnBackgrounds() {
-        const usedImages = new Set();
-        columns.forEach((column) => {
-            column.classList.add('fade-out');
-            setTimeout(() => {
-                let newImage;
-                do {
-                    newImage = images[Math.floor(Math.random() * images.length)];
-                } while (usedImages.has(newImage));
-                usedImages.add(newImage);
-                column.style.backgroundImage = `url(${newImage})`;
-                column.classList.remove('fade-out');
-            }, 1000);
-        });
-    }
+    const usedImages = new Set();
+    columns.forEach((column) => {
+        // Start fading out
+        column.classList.add('fade-out');
+        
+        // After the fade-out transition completes, update the background image
+        setTimeout(() => {
+            let newImage;
+            do {
+                newImage = images[Math.floor(Math.random() * images.length)];
+            } while (usedImages.has(newImage));
+            usedImages.add(newImage);
+            column.style.backgroundImage = `url(${newImage})`;
+            
+            // Start fading in
+            column.classList.remove('fade-out');
+        }, 1000);  // This should match the transition duration in CSS
+    });
+}
 
-    setColumnBackgrounds();
-    setInterval(setColumnBackgrounds, 3000);
+// Initial call
+setColumnBackgrounds();
+
+// Call periodically
+setInterval(setColumnBackgrounds, 5000);
+
+
+    
 
 
     window.addEventListener('scroll', () => {
