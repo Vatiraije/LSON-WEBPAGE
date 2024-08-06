@@ -102,7 +102,7 @@
             <span class="logo-letter yellow">N</span>
         </div>
         </strong>
-        <div class="level-sports-text">LEVEL SPORTS OF NAMIBIA</div>
+        <div class="level-sports-text">Level Sports Of Namibia</div>
    
     </div>
 
