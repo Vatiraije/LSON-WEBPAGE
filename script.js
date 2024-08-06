@@ -35,12 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setColumnBackgrounds();
     setInterval(setColumnBackgrounds, 3000);
 
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburgerMenu.addEventListener('click', () => {
-        navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
-    });
 
     window.addEventListener('scroll', () => {
         requestAnimationFrame(() => {

@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEVEL SPORTS OF NAMIBIA</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/159bedbb65.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="header">
+  <nav>
+    <ul id="sidemenu">
+      <li><a href="#header">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Our Shop</a></li>
+      <li><a href="#portfolio">News Updates</a></li>
+      <li><a href="#contact">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+    </ul>
+      <i class="fa-solid fa-bars"
+             style="color: #262626;
+             position: fixed;
+             top: 5%;
+             right: 5%;
+             transform: translateY(-50%);
+             font-size: 25px; "
+            onclick="openmenu()"></i>
+  </nav>
+</div>
+  </header>
+
+
 <div class="white-overlay">
     <strong>
         <div class="logo-container">
@@ -106,12 +131,6 @@
         </div>
     </div>
 
-    <div class="image-boxes-container">
-        <div class="image-box" style="background-image: url('images/avdert 1.gif');"></div>
-        <div class="video-box">
-            <img src="images/hozie.gif" alt="Hozie Gif">
-        </div>
-    </div>
 
     <div class="background-container">
         <div class="column" style="background-image: url('images/tennis.jpg');"></div>
@@ -121,27 +140,31 @@
         <div class="column" style="background-image: url('images/boxing54.jpg');"></div>
         <div class="column" style="background-image: url('images/golf2547.jpg');"></div>
         <div class="column" style="background-image: url('images/cricket25.jpg');"></div>
+        
+        <div class="image-boxes-container">
+        <div class="image-box" style="background-image: url('images/avdert 1.gif');"></div>
+        <div class="video-box">
+            <img src="images/hozie.gif" alt="Hozie Gif">
+        </div>
+    </div>
     </div>
 
-    <div class="hamburger-menu">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-
-    <div class="nav-menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="shop.html">Our Shop</a>
-        <a href="#newsupdates">News updates</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </div>
+   
 
     <div class="footer">
         © 2024 by G Mobility Investment
     </div>
 
     <script src="script.js"></script>
+    <script>
+        var sidemenu= document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right="0";
+        }
+        function closemenu(){
+            sidemenu.style.right="-300px";
+        }
+    </script>
 </body>
 </html>
