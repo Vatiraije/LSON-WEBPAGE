@@ -206,13 +206,12 @@
     </div>
 
     <div class="navigation">
-        <a href="football.php">Soccer</a>
-        <a href="rugby.php">Rugby</a>
-        <a href="tennis.php">Tennis</a>
-        <a href="swimming.php">Swimming</a>
-        <a href="boxing.php">Boxing</a>
-        <a href="golf.php">Golf</a>
-        <a href="cricket.php">Cricket</a>
+        <a href="">History</a>
+        <a href="">Support club</a>
+        <a href="">News</a>
+        <a href="">Leagues</a>
+        <a href="">Teams</a>
+        <a href="">Player profile</a>
     </div>
 
     <div class="main-content">
