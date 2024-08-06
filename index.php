@@ -5,19 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEVEL SPORTS OF NAMIBIA</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .white-overlay, .second-white-overlay, .full-white-overlay, .news-section, .image-boxes-container, .background-container, .hamburger-menu, .nav-menu, .footer {
+            /* Existing styles for your elements */
+        }
+    </style>
 </head>
 <body>
-<div class="white-overlay">
-    <strong>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="shop.html">Our Shop</a>
+        <a href="#newsupdates">News updates</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="white-overlay">
         <div class="logo-container">
             <span class="logo-letter blue">L</span>
             <span class="logo-letter red">S</span>
             <span class="logo-letter green">O</span>
             <span class="logo-letter yellow">N</span>
         </div>
-        </strong>
         <div class="level-sports-text">LEVEL SPORTS OF NAMIBIA</div>
-   
+        <div class="new-text">Welcome to Namibian sports online!</div>
     </div>
 
     <div class="second-white-overlay">
@@ -70,7 +108,7 @@
     </div>
 
     <div class="full-white-overlay"></div>
-    
+
     <div class="news-section" id="newsSection">
         <div class="news-card">
             <img src="path_to_image1.jpg" alt="News Image" class="news-image">
