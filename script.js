@@ -115,3 +115,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Function to handle header minimization and logo change on scroll
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    const mainLogo = document.getElementById('main-logo');
+
+    if (window.scrollY > 50) {
+        header.classList.add('minimized');
+        mainLogo.innerHTML = '<div class="full-logo">Level Sports Of Namibia</div>';
+    } else {
+        header.classList.remove('minimized');
+        mainLogo.innerHTML = `
+            <div class="logo-container">
+            <span class="logo-letter blue">L</span>
+            <span class="logo-letter red">S</span>
+            <span class="logo-letter green">O</span>
+            <span class="logo-letter yellow">N</span>
+        </div>
+        `;
+    }
+});
