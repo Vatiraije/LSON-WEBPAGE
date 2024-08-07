@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LSON - Volleyball</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body, html {
             margin: 0;
@@ -209,6 +211,7 @@
     </div>
 
     <div class="vertical-nav">
+        <a href="index.php"><i class="fas fa-home"></i> Home</a>
         <a href="basketball.php">Basketball</a>
         <a href="bowling.php">Bowling</a>
         <a href="boxing.php">Boxing</a>
@@ -268,7 +271,7 @@
                     <h3>Premier League</h3>
                     <p>1. Team A - 30 Points</p>
                     <p>2. Team B - 28 Points</p>
-                    <p>3. Team C - 26 Points</p>
+                    <p>3. Team C - 27 Points</p>
                 </div>
                 <div class="card">
                     <h3>First Division</h3>
@@ -306,7 +309,7 @@
                 </div>
                 <div class="card">
                     <img src="./images/player-3.jpg" alt="Player 3">
-                    <h3>Player C</h3>
+                    <h3>Player C</p>
                     <p>Position: Centre</p>
                     <p>Team: Team C</p>
                 </div>
