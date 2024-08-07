@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LSON - VolleybalL</title>
+    <title>LSON - Volleyball</title>
     <style>
         body, html {
             margin: 0;
@@ -15,7 +15,7 @@
         }
 
         .header {
-            background: #d04ac6;
+            background: #8e54dd;
             padding: 20px;
             color: white;
             text-align: center;
@@ -50,7 +50,7 @@
         }
 
         .navigation a:hover {
-            background-color: #d04ac6;
+            background-color: #8e54dd;
         }
 
         .vertical-nav {
@@ -78,12 +78,12 @@
         }
 
         .vertical-nav a:hover {
-            background: #d04ac6;
+            background: #8e54dd;
             transform: translateX(10px);
         }
 
         .vertical-nav a.active {
-            background: #d04ac6;
+            background: #8e54dd;
         }
 
         .main-content {
@@ -106,7 +106,7 @@
 
         .section-header h2 {
             font-size: 2.5em;
-            color: #d04ac6;
+            color: #8e54dd;
             margin-bottom: 10px;
         }
 
@@ -193,8 +193,8 @@
 </head>
 <body>
     <div class="header">
-        <h1>LSON - Volleybal</h1>
-        <p>Your source for all things Namibian Volleybal</p>
+        <h1>LSON - Volleyball</h1>
+        <p>Your source for all things Namibian Volleyball</p>
     </div>
 
     <div class="navigation">
@@ -222,17 +222,17 @@
         <a href="hockey.php">Hockey</a>
         <a href="horseriding.php">Horse Riding</a>
         <a href="mma.php">MMA</a>
-        <a href="netball.php" class="active">Netball</a>
+        <a href="netball.php">Netball</a>
         <a href="polo.php">Polo</a>
         <a href="racing.php">Racing</a>
         <a href="rugby.php">Rugby</a>
         <a href="swimming.php">Swimming</a>
         <a href="tennis.php">Tennis</a>
-        <a href="volleyball.php">Volleyball</a>
+        <a href="volleyball.php" class="active">Volleyball</a>
     </div>
 
     <div class="main-content">
-        <!-- Volleybal Leagues Section -->
+        <!-- Volleyball Leagues Section -->
         <div class="section">
             <div class="section-header">
                 <h2>Volleyball Leagues</h2>
@@ -240,17 +240,17 @@
             </div>
             <div class="content">
                 <div class="card">
-                    <img src="./images/netball2.jpeg" alt="Volleybal League 1">
+                    <img src="./images/netball2.jpeg" alt="Volleyball League 1">
                     <h3>Premier League</h3>
-                    <p>The top tier of VolleybalL  featuring the best teams in the country.</p>
+                    <p>The top tier of Volleyball featuring the best teams in the country.</p>
                 </div>
                 <div class="card">
-                    <img src="./images/netball-league-2.jpg" alt="VolleybalLeague 2">
+                    <img src="./images/netball-league-2.jpg" alt="Volleyball League 2">
                     <h3>First Division</h3>
                     <p>Competitive league with teams vying for promotion to the Premier League.</p>
                 </div>
                 <div class="card">
-                    <img src="./images/Volleybal-league-3.jpg" alt="Volleybal League 3">
+                    <img src="./images/Volleyball-league-3.jpg" alt="Volleyball League 3">
                     <h3>Second Division</h3>
                     <p>Emerging teams showcasing talent and aiming for higher leagues.</p>
                 </div>
@@ -289,7 +289,7 @@
         <div class="section">
             <div class="section-header">
                 <h2>Top Players</h2>
-                <p>Meet the top-performing players in Namibian Volleybal</p>
+                <p>Meet the top-performing players in Namibian Volleyball</p>
             </div>
             <div class="content">
                 <div class="card">
