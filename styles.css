@@ -12,9 +12,8 @@ body {
     height: calc(100vh - 35vh);
     width: 100%;
     margin-top: 35vh;
-    animation: animate 16s ease-in-out;
+    transition: all 6s ease-in-out;
 }
-
 
 .background-container.scrolled {
     height: 100vh; 
@@ -27,301 +26,13 @@ body {
     background-size: cover;
     background-position: center;
     min-width: 0;
-    animation-duration: 70s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
 }
 
-@keyframes animate1 {
-
-    0%,
-    100% {
-        background-image: url('images/tennis.jpg');
-    }
-
-    14.28% {
-        background-image: url('images/rugby3.jpg');
-    }
-
-    28.57% {
-        background-image: url('images/soccer.jpg');
-    }
-
-    42.85% {
-        background-image: url('images/swimming2.jpg');
-    }
-
-    57.14% {
-        background-image: url('images/boxing54.jpg');
-    }
-
-    71.42% {
-        background-image: url('images/golf2547.jpg');
-    }
-
-    85.71% {
-        background-image: url('images/cricket25.jpg');
-    }
+.column.fade-out {
+    opacity: 0;
 }
-
-@keyframes animate2 {
-
-    0%,
-    100% {
-        background-image: url('images/rugby3.jpg');
-    }
-
-    14.28% {
-        background-image: url('images/soccer.jpg');
-    }
-
-    28.57% {
-        background-image: url('images/swimming2.jpg');
-    }
-
-    42.85% {
-        background-image: url('images/boxing54.jpg');
-    }
-
-    57.14% {
-        background-image: url('images/golf2547.jpg');
-    }
-
-    71.42% {
-        background-image: url('images/cricket25.jpg');
-    }
-
-    85.71% {
-        background-image: url('images/tennis.jpg');
-    }
-}
-
-@keyframes animate3 {
-
-    0%,
-    100% {
-        background-image: url('images/swimming2.jpg');
-        
-    }
-
-    14.28% {
-        background-image: url('images/soccer.jpg');
-    }
-
-    28.57% {
-    background-image: url('images/boxing54.jpg');
-    }
-
-    42.85% {
-        background-image: url('images/golf2547.jpg');
-    }
-
-    57.14% {
-        background-image: url('images/cricket25.jpg');
-    }
-
-    71.42% {
-        background-image: url('images/tennis.jpg');
-    }
-
-    85.71% {
-      
-        background-image: url('images/rugby3.jpg');
-    }
-}
-
-@keyframes animate4 {
-0%,
-    100% {
-        
-background-image: url('images/soccer.jpg');
-    }
-
-    14.28% {
-    background-image: url('images/boxing54.jpg');
-    }
-
-    28.57% {
-        background-image: url('images/golf2547.jpg');
-    }
-
-    42.85% {
-        background-image: url('images/cricket25.jpg');
-    }
-
-    57.14% {
-        background-image: url('images/tennis.jpg');
-    }
-
-    71.42% {
-        background-image: url('images/rugby3.jpg');
-    }
-
-    85.71% {    
-        background-image: url('images/swimming2.jpg');
-    }
-  
-}
-
-@keyframes animate5 {
-0%,
-    100% {
-        background-image: url('images/boxing54.jpg');
-    }
-
-    14.28% {
-        background-image: url('images/golf2547.jpg');
-    }
-
-    28.57% {
-        background-image: url('images/cricket25.jpg');
-    }
-
-    42.85% {
-        background-image: url('images/tennis.jpg');
-    }
-
-    57.14% {
-        background-image: url('images/rugby3.jpg');
-    }
-
-    71.42% {
-        background-image: url('images/swimming2.jpg');
-    }
-
-    85.71% {
-        
-        background-image: url('images/soccer.jpg');
-    }
-  
-}
-
-@keyframes animate6 {
-
-    0%,
-        100% {
-            background-image: url('images/golf2547.jpg');
-        }
-    
-        14.28% {
-            background-image: url('images/cricket25.jpg');
-        }
-    
-        28.57% {
-            background-image: url('images/tennis.jpg');
-        }
-    
-        42.85% {
-            background-image: url('images/rugby3.jpg');
-        }
-    
-        57.14% {
-            background-image: url('images/swimming2.jpg');
-        }
-    
-        71.42% {
-            background-image: url('images/soccer.jpg');
-        }
-    
-        85.71% {
-            background-image: url('images/boxing54.jpg');
-        }
-  
-}
-
-@keyframes animate7 {
-
-    0%,
-        100% {
-            background-image: url('images/cricket25.jpg');
-        }
-    
-        14.28% {
-            background-image: url('images/tennis.jpg');
-        }
-    
-        28.57% {
-            background-image: url('images/rugby3.jpg');
-        }
-    
-        42.85% {
-            background-image: url('images/swimming2.jpg');
-        }
-    
-        57.14% {
-            background-image: url('images/soccer.jpg');
-        }
-    
-        71.42% {
-        background-image: url('images/boxing54.jpg');
-        }
-    
-        85.71% {
-            background-image: url('images/golf2547.jpg');
-        }
-  
-}
-
-
-#column1 {
-    animation-name: animate1;
-}
-
-#column2 {
-    animation-name: animate2;
-}
-
-#column3 {
-    animation-name: animate3;
-}
-
-#column4 {
-    animation-name: animate4;
-}
-
-#column5 {
-    animation-name: animate5;
-}
-
-#column6 {
-    animation-name: animate6;
-}
-
-#column7 {
-    animation-name: animate7;
-}
-
-.outer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    /* background: rgba(0, 0, 0, 0.4); */
-    pointer-events: none;
-    /* Add this */
-}
-/* @keyframes animate {
-
-    0%,
-    100% {
-        background-image: url(images/tennis.jpg);
-    }
-
-    25% {
-        background-image: url(images/rugby3.jpg);
-    }
-
-    50% {
-        background-image: url(images/soccer.jpg);
-    }
-
-    75% {
-        background-image: url(images/swimming2.jpg);
-    }
-} */
-
 
 .search-container {
     display: flex;
@@ -366,7 +77,7 @@ background-image: url('images/soccer.jpg');
     pointer-events: none;
 }
 
-.white-overlay {
+.logo-area {
     position: fixed;
     top: 0;
     left: 0;
@@ -381,6 +92,7 @@ background-image: url('images/soccer.jpg');
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
     padding-top: 50px;
+    background: linear-gradient(to top right, #66ffff 24%, #0066ff 100%);
 }
 
 .white-overlay.scrolled {
@@ -408,7 +120,7 @@ background-image: url('images/soccer.jpg');
 }
 
 .logo-letter.blue { color: #0033a0; }
-logo-letter.red { color: #d21034; }
+.logo-letter.red { color: #d21034; }
 .logo-letter.green { color: #007a33; }
 .logo-letter.yellow { color: #ffc72c; }
 
@@ -738,255 +450,12 @@ nav .fa-solid{
 
     }
 }
+
   
 
 
-/* .container1 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate 16s ease-in-out;
-    background-size: cover;
-} 
 
-.column1    {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate1 16s ease-in-out infinite;
-    background-size: cover;
-    color: #d21034;
-}
 
- .column2  {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate2 16s ease-in-out infinite;
-    background-size: cover;
-}
 
-.column3{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate3 16s ease-in-out infinite;
-    background-size: cover;
-}
 
-.column4 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate4 16s ease-in-out infinite;
-    background-size: cover;
-}
 
-.column5 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate5 16s ease-in-out infinite;
-    background-size: cover;
-}
-
-.column6 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate6 16s ease-in-out infinite;
-    background-size: cover;
-}
-
-.column7  {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    animation: animate7 16s ease-in-out infinite;
-    background-size: cover;
-} 
-
-.outer {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-@keyframes animate {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-}
-
-@keyframes animate1 {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-}
-
-@keyframes animate2 {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-}
-
-@keyframes animate3 {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-}
-
-@keyframes animate4 {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-}
-
-@keyframes animate5 {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-}
-
-@keyframes animate6 {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-}
-
-@keyframes animate7 {
-
-    0%,
-    100% {
-        background-image: url(images/baseball.jpg);
-    }
-
-    25% {
-        background-image: url(images/boxing22.jpg);
-    }
-
-    50% {
-        background-image: url(images/chess.jpg);
-    }
-
-    75% {
-        background-image: url(images/cricket.jpg);
-    }
-} */
