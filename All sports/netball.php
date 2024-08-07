@@ -122,61 +122,35 @@
             justify-content: space-around;
         }
 
-        .content article,
-        .content img,
-        .content video {
-            flex: 1 1 30%;
-            max-width: 30%;
-            background: black;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .card {
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
             transition: transform 0.3s;
         }
 
-        .content article:hover,
-        .content img:hover,
-        .content video:hover {
+        .card:hover {
             transform: translateY(-5px);
         }
 
-        .content img {
+        .card img {
             max-width: 100%;
-            height: auto;
-            object-fit: cover;
+            border-radius: 10px 10px 0 0;
         }
 
-        .form-container {
-            margin-top: 20px;
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
         }
 
-        form {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        form input[type="text"] {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .card p {
             font-size: 1em;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s;
-        }
-
-        form input[type="text"]:focus {
-            border-color: #d04ac6;
-            outline: none;
-            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
-        }
-
-        form input[type="text"]::placeholder {
-            color: #aaa;
-            font-style: italic;
         }
 
         .footer {
@@ -196,10 +170,8 @@
                 align-items: center;
             }
 
-            .content article,
-            .content img,
-            .content video {
-                max-width: 90%;
+            .card {
+                flex: 1 1 90%;
             }
 
             .vertical-nav {
@@ -221,7 +193,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>LSON - Namibian Netball</h1>
+        <h1>LSON - Netball</h1>
         <p>Your source for all things Namibian Netball</p>
     </div>
 
@@ -237,7 +209,7 @@
     </div>
 
     <div class="vertical-nav">
-        <a href="basketball.php" class="active">Basketball</a>
+        <a href="basketball.php">Basketball</a>
         <a href="bowling.php">Bowling</a>
         <a href="boxing.php">Boxing</a>
         <a href="chess.php">Chess</a>
@@ -250,7 +222,7 @@
         <a href="hockey.php">Hockey</a>
         <a href="horseriding.php">Horse Riding</a>
         <a href="mma.php">MMA</a>
-        <a href="netball.php">Netball</a>
+        <a href="netball.php" class="active">Netball</a>
         <a href="polo.php">Polo</a>
         <a href="racing.php">Racing</a>
         <a href="rugby.php">Rugby</a>
@@ -260,90 +232,111 @@
     </div>
 
     <div class="main-content">
-        <section id="leagues" class="section">
+        <!-- Netball Leagues Section -->
+        <div class="section">
             <div class="section-header">
                 <h2>Netball Leagues</h2>
-                <p>Explore the latest updates, news, and standings from Namibian Netball.</p>
+                <p>Explore the various netball leagues in Namibia</p>
             </div>
-
             <div class="content">
-                <article>
+                <div class="card">
+                    <img src="./images/netball2.jpeg" alt="Netball League 1">
                     <h3>Premier League</h3>
-                    <p>Latest updates and standings from the Namibian Premier Netball.</p>
-                    <img src="images/netball2.jpeg" alt="NETBALL">
-                </article>
-                <article>
-                    <h3>First to new updates</h3>
-                    <p>Latest updates and standings from the Namibian Netball.</p>
-                    <img src="images/netball2.jpeg" alt="NETBALL">
-                </article>
-                <img src="images/netball2.jpeg" alt="NETBALL">
+                    <p>The top tier of Namibian netball featuring the best teams in the country.</p>
+                </div>
+                <div class="card">
+                    <img src="./images/netball-league-2.jpg" alt="Netball League 2">
+                    <h3>First Division</h3>
+                    <p>Competitive league with teams vying for promotion to the Premier League.</p>
+                </div>
+                <div class="card">
+                    <img src="./images/netball-league-3.jpg" alt="Netball League 3">
+                    <h3>Second Division</h3>
+                    <p>Emerging teams showcasing talent and aiming for higher leagues.</p>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section id="standings" class="section">
+        <!-- Current Standings Section -->
+        <div class="section">
             <div class="section-header">
                 <h2>Current Standings</h2>
-                <p>Check out the current standings in Namibian Netball leagues.</p>
+                <p>Check out the latest standings of the teams</p>
             </div>
             <div class="content">
-                <article>
-                    <h3>Premier League Standings</h3>
-                    <p>1. Team A - 50 points<br>2. Team B - 48 points<br>3. Team C - 45 points</p>
-                </article>
-
-                <article>
-                    <h3>First Division Standings</h3>
-                    <p>1. Team D - 55 points<br>2. Team E - 52 points<br>3. Team F - 50 points</p>
-                </article>
+                <div class="card">
+                    <h3>Premier League</h3>
+                    <p>1. Team A - 30 Points</p>
+                    <p>2. Team B - 28 Points</p>
+                    <p>3. Team C - 26 Points</p>
+                </div>
+                <div class="card">
+                    <h3>First Division</h3>
+                    <p>1. Team D - 25 Points</p>
+                    <p>2. Team E - 23 Points</p>
+                    <p>3. Team F - 22 Points</p>
+                </div>
+                <div class="card">
+                    <h3>Second Division</h3>
+                    <p>1. Team G - 20 Points</p>
+                    <p>2. Team H - 18 Points</p>
+                    <p>3. Team I - 17 Points</p>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section id="players" class="section">
+        <!-- Top Players Section -->
+        <div class="section">
             <div class="section-header">
                 <h2>Top Players</h2>
-                <p>Profiles of the top players in Namibian Netball.</p>
+                <p>Meet the top-performing players in Namibian netball</p>
             </div>
             <div class="content">
-                <article>
-                    <h3>Player 1</h3>
-                    <p>Aliquam imperdiet sem at dolor lobortis, ac pharetra nisi porta. Fusce tincidunt erat commodo magna viverra feugiat.</p>
-                </article>
-
-                <article>
-                    <h3>Player 2</h3>
-                    <p>Aliquam imperdiet sem at dolor lobortis, ac pharetra nisi porta. Fusce tincidunt erat commodo magna viverra feugiat.</p>
-                </article>
-
-                <article>
-                    <h3>Player 3</h3>
-                    <p>Aliquam imperdiet sem at dolor lobortis, ac pharetra nisi porta. Fusce tincidunt erat commodo magna viverra feugiat.</p>
-                </article>
+                <div class="card">
+                    <img src="./images/player-1.jpg" alt="Player 1">
+                    <h3>Player A</h3>
+                    <p>Position: Goal Shooter</p>
+                    <p>Team: Team A</p>
+                </div>
+                <div class="card">
+                    <img src="./images/player-2.jpg" alt="Player 2">
+                    <h3>Player B</h3>
+                    <p>Position: Wing Attack</p>
+                    <p>Team: Team B</p>
+                </div>
+                <div class="card">
+                    <img src="./images/player-3.jpg" alt="Player 3">
+                    <h3>Player C</h3>
+                    <p>Position: Centre</p>
+                    <p>Team: Team C</p>
+                </div>
             </div>
-        </section>
+        </div>
 
-        <section id="teams" class="section">
+        <!-- Top Teams Section -->
+        <div class="section">
             <div class="section-header">
                 <h2>Top Teams</h2>
-                <p>Profiles of the top teams in Namibian Netball.</p>
+                <p>Discover the top teams leading the netball leagues</p>
             </div>
             <div class="content">
-                <article>
-                    <h3>Team 1</h3>
-                    <p>Quisque sit amet elit gravida, ultricies odio nec, aliquam orci. Ut vitae sem a dolor eleifend dapibus id ac est.</p>
-                </article>
-
-                <article>
-                    <h3>Team 2</h3>
-                    <p>Quisque sit amet elit gravida, ultricies odio nec, aliquam orci. Ut vitae sem a dolor eleifend dapibus id ac est.</p>
-                </article>
-
-                <article>
-                    <h3>Team 3</h3>
-                    <p>Quisque sit amet elit gravida, ultricies odio nec, aliquam orci. Ut vitae sem a dolor eleifend dapibus id ac est.</p>
-                </article>
+                <div class="card">
+                    <img src="./images/team-1.jpg" alt="Team 1">
+                    <h3>Team A</h3>
+                    <p>Leading the Premier League with outstanding performances.</p>
+                </div>
+                <div class="card">
+                    <img src="./images/team-2.jpg" alt="Team 2">
+                    <h3>Team B</h3>
+                    <p>Strong contenders in the Premier League, consistently in top positions.</p>
+                </div>
+                <div class="card">
+                    <img src="./images/team-3.jpg" alt="Team 3">
+                    <h3>Team C</h3>
+                    <p>Known for their teamwork and strategic plays in the Premier League.</p>
+                </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <div class="footer">
