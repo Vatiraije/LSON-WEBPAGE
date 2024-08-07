@@ -92,6 +92,11 @@
 </div>
   </header>
 
+  <div class = "container1">
+    <div class = "outer">
+
+    </div>
+  </div>
 
 <div class="white-overlay">
     <strong>
@@ -194,19 +199,22 @@
 
 
     <div class="background-container">
-        <div class="column" style="background-image: url('images/tennis.jpg');"></div>
-        <div class="column" style="background-image: url('images/rugby3.jpg');"></div>
-        <div class="column" style="background-image: url('images/soccer.jpg');"></div>
-        <div class="column" style="background-image: url('images/swimming2.jpg');"></div>
-        <div class="column" style="background-image: url('images/boxing54.jpg');"></div>
-        <div class="column" style="background-image: url('images/golf2547.jpg');"></div>
-        <div class="column" style="background-image: url('images/cricket25.jpg');"></div>
+        
+       <div class="column" id="column1"></div>
+    <div class="column" id="column2"></div>
+    <div class="column" id="column3"></div>
+    <div class="column" id="column4"></div>
+    <div class="column" id="column5"></div>
+    <div class="column" id="column6"></div>
+    <div class="column" id="column7"></div>
+     <div class="outer"></div>
         
         <div class="image-boxes-container">
         <div class="image-box" style="background-image: url('images/avdert 1.gif');"></div>
         <div class="video-box">
             <img src="images/hozie.gif" alt="Hozie Gif">
         </div>
+        
     </div>
     </div>
 

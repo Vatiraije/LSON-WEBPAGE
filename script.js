@@ -5,46 +5,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageBoxesContainer = document.querySelector('.image-boxes-container');
     const levelSportsText = document.querySelector('.level-sports-text');
     const newsSection = document.getElementById('newsSection');
-    const images = [
-        "images/tennis.jpg",
-        "images/rugby3.jpg",
-        "images/soccer.jpg",
-        "images/swimming2.jpg",
-        "images/boxing54.jpg",
-        "images/golf2547.jpg",
-        "images/cricket25.jpg"
-    ];
-    const columns = document.querySelectorAll('.column');
+// const images = [
+//     'images/tennis.jpg',
+//     'images/rugby3.jpg',
+//     'images/soccer.jpg',
+//     'images/swimming2.jpg',
+//     'images/boxing54.jpg',
+//     'images/golf2547.jpg',
+//     'images/cricket25.jpg'
+// ];
 
-    function setColumnBackgrounds() {
-    const usedImages = new Set();
-    columns.forEach((column) => {
-        // Start fading out
-        column.classList.add('fade-out');
-        
-        // After the fade-out transition completes, update the background image
-        setTimeout(() => {
-            let newImage;
-            do {
-                newImage = images[Math.floor(Math.random() * images.length)];
-            } while (usedImages.has(newImage));
-            usedImages.add(newImage);
-            column.style.backgroundImage = `url(${newImage})`;
-            
-            // Start fading in
-            column.classList.remove('fade-out');
-        }, 1000);  // This should match the transition duration in CSS
-    });
-}
+// const columns = document.querySelectorAll('.column');
 
-// Initial call
-setColumnBackgrounds();
+// function rotateImages() {
+//     columns.forEach((column, index) => {
+//         const imageIndex = (index + Math.floor(Date.now() / 4000)) % images.length;
+//         column.style.backgroundImage = `url('${images[imageIndex]}')`;
+//     });
+// }
 
-// Call periodically
-setInterval(setColumnBackgrounds, 5000);
+// // Initial call to set images
+// rotateImages();
 
+// // Set interval to rotate images every 4 seconds
+// setInterval(rotateImages, 4000);
 
     
+    document.addEventListener('DOMContentLoaded', function() {
+    const columns = document.querySelectorAll('.column');
+    columns.forEach((column, index) => {
+        column.style.animationDelay = `${index * -10}s`;
+    });
+});
 
 
     window.addEventListener('scroll', () => {
