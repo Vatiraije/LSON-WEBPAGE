@@ -73,11 +73,20 @@
         }
     }
 
-
     .large-text {
         font-size: 3em;
         font-weight: bold;
         color: #14e1e3;
+    }
+
+    .background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Keeps the background behind other content */
+        overflow: hidden;
     }
     </style>
 </head>
@@ -203,7 +212,6 @@
         </div>
     </div>
 
-
     <div class="background-container">
         <div class="column" id="column1"></div>
         <div class="column" id="column2"></div>
@@ -222,31 +230,14 @@
         </div>
     </div>
 
-    <div class="footer">
-        © 2024 by G Mobility Investment
-    </div>
-
-    <script src="script.js"></script>
     <script>
-    var sidemenu = document.getElementById("sidemenu");
-    var logoContainer = document.getElementById("logoContainer");
-
-    function openmenu() {
-        sidemenu.style.right = "0";
-    }
-
-    function closemenu() {
-        sidemenu.style.right = "-300px";
-    }
-
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 50) {
-            logoContainer.innerHTML = "<span class='large-text'>Level Sports Of Namibia</span>";
-        } else {
-            logoContainer.innerHTML =
-                '<span class="logo-letter blue">L</span><span class="logo-letter red">S</span><span class="logo-letter gren">O</span><span class="logo-letter yellow">N</span>';
+        function openmenu() {
+            document.getElementById("sidemenu").style.right = "0";
         }
-    });
+
+        function closemenu() {
+            document.getElementById("sidemenu").style.right = "-300px";
+        }
     </script>
 </body>
 
