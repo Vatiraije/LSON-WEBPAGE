@@ -366,7 +366,7 @@ background-image: url('images/soccer.jpg');
     pointer-events: none;
 }
 
-.white-overlay {
+.logo-area {
     position: fixed;
     top: 0;
     left: 0;
@@ -380,10 +380,17 @@ background-image: url('images/soccer.jpg');
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
-    background: linear-gradient(to top right, #66ffff 24%, #0066ff 100%);
     padding-top: 50px;
 }
-
+.logo-area video {
+    position : absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 .white-overlay.scrolled {
     height: 0;
     top: 0;
@@ -403,15 +410,15 @@ background-image: url('images/soccer.jpg');
 .logo-letter {
     font-size: 5em;
     font-weight: bold;
-    color: #34495e;
+    
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, text-shadow 0.3s;
 }
 
-.logo-letter.blue { color: #0033a0; }
-logo-letter.red { color: #d21034; }
-.logo-letter.green { color: #007a33; }
-.logo-letter.yellow { color: #ffc72c; }
+.logo-letter.blue { color: #001489; }
+.logo-letter.red { color: #DA291C; }
+.logo-letter.yellow { color: #FFC72C; }
+.logo-letter.green { color: #009A44; }
 
 .logo-letter:hover {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
