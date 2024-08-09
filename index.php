@@ -8,77 +8,91 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/159bedbb65.js" crossorigin="anonymous"></script>
     <style>
-    @media (max-width: 1200px) {
-        .news-card {
-            width: 45%;
+        @media (max-width: 1200px) {
+            .news-card {
+                width: 45%;
+            }
+
+            .column,
+            .image-box,
+            .video-box {
+                width: 45%;
+            }
         }
 
-        .column,
-        .image-box,
-        .video-box {
-            width: 45%;
-        }
-    }
+        @media (max-width: 768px) {
+            #header nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
 
-    @media (max-width: 768px) {
-        #header nav ul li {
-            display: block;
-            margin: 10px 0;
+            #header nav i {
+                display: block;
+            }
+
+            #sidemenu {
+                position: fixed;
+                right: -300px;
+                top: 0;
+                width: 250px;
+                height: 100%;
+                background: #fff;
+                transition: right 0.3s;
+            }
+
+            .news-card {
+                width: 100%;
+            }
+
+            .column,
+            .image-box,
+            .video-box {
+                width: 100%;
+            }
+
+            .ticker-content {
+                display: block;
+            }
+
+            .level-sports-text {
+                font-size: 18px;
+            }
+
+            .logo-letter {
+                font-size: 30px;
+            }
         }
 
-        #header nav i {
-            display: block;
+        @media (max-width: 480px) {
+            .level-sports-text {
+                font-size: 16px;
+            }
+
+            .logo-letter {
+                font-size: 24px;
+            }
         }
 
-        #sidemenu {
-            position: fixed;
-            right: -300px;
+        .large-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: #14e1e3;
+        }
+
+        .logo-area {
+            position: sticky;
             top: 0;
-            width: 250px;
-            height: 100%;
-            background: #fff;
-            transition: right 0.3s;
+            z-index: 100;
+            background-color: white;
+            padding: 10px;
         }
 
-        .news-card {
-            width: 100%;
+        .background-container {
+            margin-top: 20px; /* Adjust to ensure space below the news ticker */
+            padding: 20px;
+            background-color: #f4f4f4;
         }
-
-        .column,
-        .image-box,
-        .video-box {
-            width: 100%;
-        }
-
-        .ticker-content {
-            display: block;
-        }
-
-        .level-sports-text {
-            font-size: 18px;
-        }
-
-        .logo-letter {
-            font-size: 30px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .level-sports-text {
-            font-size: 16px;
-        }
-
-        .logo-letter {
-            font-size: 24px;
-        }
-    }
-
-
-    .large-text {
-        font-size: 3em;
-        font-weight: bold;
-        color: #14e1e3;
-    }
+        
     </style>
 </head>
 
@@ -203,7 +217,6 @@
         </div>
     </div>
 
-
     <div class="background-container">
         <div class="column" id="column1"></div>
         <div class="column" id="column2"></div>
@@ -228,28 +241,39 @@
 
     <script src="script.js"></script>
     <script>
-    var sidemenu = document.getElementById("sidemenu");
-    var logoContainer = document.getElementById("logoContainer");
+        var sidemenu = document.getElementById("sidemenu");
+var logoContainer = document.getElementById("logoContainer");
+var videoElement = document.querySelector('.logo-area video');
+var logoArea = document.querySelector('.logo-area');
 
-    function openmenu() {
-        sidemenu.style.right = "0";
-    }
+function openmenu() {
+    sidemenu.style.right = "0";
+}
 
-    function closemenu() {
-        sidemenu.style.right = "-300px";
-    }
-    window.addEventListener("scroll", function() {
-    var videoElement = document.querySelector('.logo-area video');
-    if (window.scrollY > 50) {
-        videoElement.style.display = "none";  // Hide the video
+function closemenu() {
+    sidemenu.style.right = "-300px";
+}
+
+window.addEventListener("scroll", function() {
+    var scrollPosition = window.scrollY;
+
+    if (scrollPosition > 50) {
+        // Slide the video element up
+        videoElement.style.transform = "translateY(-100%)";
+        videoElement.style.transition = "transform 0.5s ease-in-out";
+
+        // Change the logo container content
         logoContainer.innerHTML = "<span class='large-text' style='background-color: white; padding: 0 10px;'>Level Sports Of Namibia</span>";
     } else {
-        videoElement.style.display = "block";  // Show the video
+        // Slide the video element back to its original position
+        videoElement.style.transform = "translateY(0)";
+        videoElement.style.transition = "transform 0.5s ease-in-out";
+
+        // Reset the logo container content
         logoContainer.innerHTML =
             '<span class="logo-letter blue">L</span><span class="logo-letter red">S</span><span class="logo-letter yellow">O</span><span class="logo-letter green">N</span>';
     }
 });
-
     </script>
 </body>
 

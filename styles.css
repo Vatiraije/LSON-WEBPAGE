@@ -13,6 +13,7 @@ body {
     width: 100%;
     margin-top: 35vh;
     animation: animate 16s ease-in-out;
+    
 }
 
 
@@ -381,6 +382,7 @@ background-image: url('images/soccer.jpg');
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: height 0.5s ease-in-out, top 0.5s ease-in-out;
     padding-top: 50px;
+    overflow: hidden;
 }
 .logo-area video {
     position : absolute;
@@ -391,6 +393,7 @@ background-image: url('images/soccer.jpg');
     object-fit: cover;
     z-index: -1;
 }
+
 .white-overlay.scrolled {
     height: 0;
     top: 0;
@@ -405,7 +408,9 @@ background-image: url('images/soccer.jpg');
     transition: all 0.5s ease-in-out;
     transform: scale(1.7); 
     animation: bounce 4s ease-in-out;
+    
 }
+
 
 .logo-letter {
     font-size: 5em;
