@@ -5,38 +5,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageBoxesContainer = document.querySelector('.image-boxes-container');
     const levelSportsText = document.querySelector('.level-sports-text');
     const newsSection = document.getElementById('newsSection');
-// const images = [
-//     'images/tennis.jpg',
-//     'images/rugby3.jpg',
-//     'images/soccer.jpg',
-//     'images/swimming2.jpg',
-//     'images/boxing54.jpg',
-//     'images/golf2547.jpg',
-//     'images/cricket25.jpg'
-// ];
+    const images = [
+        "images/tennis.jpg",
+        "images/rugby3.jpg",
+        "images/soccer.jpg",
+        "images/swimming2.jpg",
+        "images/boxing54.jpg",
+        "images/golf2547.jpg",
+        "images/cricket25.jpg"
+    ];
+    const columns = document.querySelectorAll('.column');
 
-// const columns = document.querySelectorAll('.column');
+    function setColumnBackgrounds() {
+    const usedImages = new Set();
+    columns.forEach((column) => {
+        // Start fading out
+        column.classList.add('fade-out');
+        
+        // After the fade-out transition completes, update the background image
+        setTimeout(() => {
+            let newImage;
+            do {
+                newImage = images[Math.floor(Math.random() * images.length)];
+            } while (usedImages.has(newImage));
+            usedImages.add(newImage);
+            column.style.backgroundImage = `url(${newImage})`;
+            
+            // Start fading in
+            column.classList.remove('fade-out');
+        }, 1000);  // This should match the transition duration in CSS
+    });
+}
 
-// function rotateImages() {
-//     columns.forEach((column, index) => {
-//         const imageIndex = (index + Math.floor(Date.now() / 4000)) % images.length;
-//         column.style.backgroundImage = `url('${images[imageIndex]}')`;
-//     });
-// }
+// Initial call
+setColumnBackgrounds();
 
-// // Initial call to set images
-// rotateImages();
+// Call periodically
+setInterval(setColumnBackgrounds, 5000);
 
-// // Set interval to rotate images every 4 seconds
-// setInterval(rotateImages, 4000);
 
     
-    document.addEventListener('DOMContentLoaded', function() {
-    const columns = document.querySelectorAll('.column');
-    columns.forEach((column, index) => {
-        column.style.animationDelay = `${index * -10}s`;
-    });
-});
 
 
     window.addEventListener('scroll', () => {
@@ -57,17 +65,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-            whiteOverlay.classList.add('scrolled');
-            imageBoxesContainer.classList.add('scrolled');
-            levelSportsText.classList.add('expanded');
+    window.onscroll = function() {
+        adjustLogoAreaHeight();
+    };
+    
+    function adjustLogoAreaHeight() {
+        var logoArea = document.querySelector('.logo-area');
+        var imageAreaImages = document.querySelectorAll('.image-area img');
+    
+        if (window.pageYOffset > 50) {
+            logoArea.style.height = '119px'; // Reduced height
+            imageAreaImages.forEach(img => {
+                img.style.height = '150px'; // Adjust image height accordingly
+            });
         } else {
-            whiteOverlay.classList.remove('scrolled');
-            imageBoxesContainer.classList.remove('scrolled');
-            levelSportsText.classList.remove('expanded');
+            logoArea.style.height = '200px'; // Original height
+            imageAreaImages.forEach(img => {
+                img.style.height = '200px'; // Original image height
+            });
         }
-    });
+    }
+    
+    
 
     const tickerWrapper = document.querySelector('.ticker-wrapper');
     secondWhiteOverlay.addEventListener('mouseenter', () => {
@@ -114,25 +133,4 @@ document.addEventListener("DOMContentLoaded", () => {
             letter.style.transition = 'transform 0.3s';
         });
     });
-});
-
-// Function to handle header minimization and logo change on scroll
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    const mainLogo = document.getElementById('main-logo');
-
-    if (window.scrollY > 50) {
-        header.classList.add('minimized');
-        mainLogo.innerHTML = '<div class="full-logo">Level Sports Of Namibia</div>';
-    } else {
-        header.classList.remove('minimized');
-        mainLogo.innerHTML = `
-            <div class="logo-container">
-            <span class="logo-letter blue">L</span>
-            <span class="logo-letter red">S</span>
-            <span class="logo-letter green">O</span>
-            <span class="logo-letter yellow">N</span>
-        </div>
-        `;
-    }
 });

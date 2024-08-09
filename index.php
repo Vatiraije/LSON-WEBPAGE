@@ -8,91 +8,70 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/159bedbb65.js" crossorigin="anonymous"></script>
     <style>
-        @media (max-width: 1200px) {
-            .news-card {
-                width: 45%;
-            }
-
-            .column,
-            .image-box,
-            .video-box {
-                width: 45%;
-            }
+    @media (max-width: 1200px) {
+        .news-card {
+            width: 45%;
         }
 
-        @media (max-width: 768px) {
-            #header nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
+        .column,
+        .image-box,
+        .video-box {
+            width: 45%;
+        }
+    }
 
-            #header nav i {
-                display: block;
-            }
-
-            #sidemenu {
-                position: fixed;
-                right: -300px;
-                top: 0;
-                width: 250px;
-                height: 100%;
-                background: #fff;
-                transition: right 0.3s;
-            }
-
-            .news-card {
-                width: 100%;
-            }
-
-            .column,
-            .image-box,
-            .video-box {
-                width: 100%;
-            }
-
-            .ticker-content {
-                display: block;
-            }
-
-            .level-sports-text {
-                font-size: 18px;
-            }
-
-            .logo-letter {
-                font-size: 30px;
-            }
+    @media (max-width: 768px) {
+        #header nav ul li {
+            display: block;
+            margin: 10px 0;
         }
 
-        @media (max-width: 480px) {
-            .level-sports-text {
-                font-size: 16px;
-            }
-
-            .logo-letter {
-                font-size: 24px;
-            }
+        #header nav i {
+            display: block;
         }
 
-        .large-text {
-            font-size: 3em;
-            font-weight: bold;
-            color: #14e1e3;
-        }
-
-        .logo-area {
-            position: sticky;
+        #sidemenu {
+            position: fixed;
+            right: -300px;
             top: 0;
-            z-index: 100;
-            background-color: white;
-            padding: 10px;
+            width: 250px;
+            height: 100%;
+            background: #fff;
+            transition: right 0.3s;
         }
 
-        .background-container {
-            margin-top: 20px; /* Adjust to ensure space below the news ticker */
-            padding: 20px;
-            background-color: #f4f4f4;
+        .news-card {
+            width: 100%;
         }
-        
+
+        .column,
+        .image-box,
+        .video-box {
+            width: 100%;
+        }
+
+        .ticker-content {
+            display: block;
+        }
+
+        .level-sports-text {
+            font-size: 18px;
+        }
+
+        .logo-letter {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .level-sports-text {
+            font-size: 16px;
+        }
+
+        .logo-letter {
+            font-size: 24px;
+        }
+    }
     </style>
 </head>
 
@@ -103,8 +82,8 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Our Shop</a></li>
-                <li><a href="news-update.php">News Updates</a></li>
-                <li><a href="services.php">Services</a></li>
+                <li><a href="#portfolio">News Updates</a></li>
+                <li><a href="#contact">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
@@ -113,22 +92,28 @@
              top: 5%;
              right: 5%;
              transform: translateY(-50%);
-             font-size: 25px;" onclick="openmenu()"></i>
+             font-size: 25px; " onclick="openmenu()"></i>
         </nav>
     </div>
+    </header>
+
+
 
     <div class="logo-area">
-        <strong>
-            <div class="logo-container" id="logoContainer">
-                <span class="logo-letter blue">L</span>
-                <span class="logo-letter red">S</span>
-                <span class="logo-letter yellow">O</span>
-                <span class="logo-letter green">N</span>
-            </div>
-        </strong>
-        <video autoplay loop muted>
-            <source src="videos/SportTransition - Made with Clipchamp.mp4" type="video/mp4">
-        </video>
+        <div class="white-overlay">
+            <strong>
+                <div class="logo-container">
+                    <span class="logo-letter blue">L</span>
+                    <span class="logo-letter red">S</span>
+                    <span class="logo-letter green">O</span>
+                    <span class="logo-letter yellow">N</span>
+                </div>
+            </strong>
+            <video autoplay loop muted>
+                <source src="videos/SportTransition - Made with Clipchamp.mp4" type="video/mp4">
+            </video>
+            <div class="level-sports-text">Level Sports Of Namibia</div>
+        </div>
     </div>
 
     <div class="second-white-overlay">
@@ -203,7 +188,8 @@
             <img src="path_to_image3.jpg" alt="News Image" class="news-image">
             <div class="news-content">
                 <p class="news-category">Football</p>
-                <h3 class="news-title">Transfer Centre LIVE! Gallagher latest as Forest sign 'Portuguese Grealish'</h3>
+                <h3 class="news-title">Transfer Centre LIVE! Gallagher latest as Forest sign 'Portuguese Grealish'
+                </h3>
                 <a href="#" class="news-link">Read more ></a>
             </div>
         </div>
@@ -217,15 +203,15 @@
         </div>
     </div>
 
+
     <div class="background-container">
-        <div class="column" id="column1"></div>
-        <div class="column" id="column2"></div>
-        <div class="column" id="column3"></div>
-        <div class="column" id="column4"></div>
-        <div class="column" id="column5"></div>
-        <div class="column" id="column6"></div>
-        <div class="column" id="column7"></div>
-        <div class="outer"></div>
+        <div class="column" style="background-image: url('images/tennis.jpg');"></div>
+        <div class="column" style="background-image: url('images/rugby3.jpg');"></div>
+        <div class="column" style="background-image: url('images/soccer.jpg');"></div>
+        <div class="column" style="background-image: url('images/swimming2.jpg');"></div>
+        <div class="column" style="background-image: url('images/boxing54.jpg');"></div>
+        <div class="column" style="background-image: url('images/golf2547.jpg');"></div>
+        <div class="column" style="background-image: url('images/cricket25.jpg');"></div>
 
         <div class="image-boxes-container">
             <div class="image-box" style="background-image: url('images/avdert 1.gif');"></div>
@@ -235,45 +221,58 @@
         </div>
     </div>
 
+
+
     <div class="footer">
         © 2024 by GMIT CC
     </div>
 
     <script src="script.js"></script>
     <script>
-        var sidemenu = document.getElementById("sidemenu");
-var logoContainer = document.getElementById("logoContainer");
-var videoElement = document.querySelector('.logo-area video');
-var logoArea = document.querySelector('.logo-area');
+    var sidemenu = document.getElementById("sidemenu");
 
-function openmenu() {
-    sidemenu.style.right = "0";
-}
-
-function closemenu() {
-    sidemenu.style.right = "-300px";
-}
-
-window.addEventListener("scroll", function() {
-    var scrollPosition = window.scrollY;
-
-    if (scrollPosition > 50) {
-        // Slide the video element up
-        videoElement.style.transform = "translateY(-100%)";
-        videoElement.style.transition = "transform 0.5s ease-in-out";
-
-        // Change the logo container content
-        logoContainer.innerHTML = "<span class='large-text' style='background-color: white; padding: 0 10px;'>Level Sports Of Namibia</span>";
-    } else {
-        // Slide the video element back to its original position
-        videoElement.style.transform = "translateY(0)";
-        videoElement.style.transition = "transform 0.5s ease-in-out";
-
-        // Reset the logo container content
-        logoContainer.innerHTML =
-            '<span class="logo-letter blue">L</span><span class="logo-letter red">S</span><span class="logo-letter yellow">O</span><span class="logo-letter green">N</span>';
+    function openmenu() {
+        document.getElementById("sidemenu").style.right = "0";
     }
-});
+
+    function closemenu() {
+        document.getElementById("sidemenu").style.right = "-300px";
+    }
+    // Smooth scrolling function
+    function smoothScrollTo(element, target, duration) {
+        var start = element.scrollTop;
+        var change = target - start;
+        var currentTime = 0;
+        var increment = 20;
+
+        function animateScroll() {
+            currentTime += increment;
+            var val = Math.easeInOutQuad(currentTime, start, change, duration);
+            element.scrollTop = val;
+            if (currentTime < duration) {
+                requestAnimationFrame(animateScroll);
+            }
+        }
+        animateScroll();
+    }
+
+    Math.easeInOutQuad = function(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    // Use the function for scrolling, e.g., for button click events
+    document.getElementById('up-button').addEventListener('click', function() {
+        smoothScrollTo(document.documentElement, document.documentElement.scrollTop - window.innerHeight,
+        500); // Adjust duration as needed
+    });
+
+    document.getElementById('down-button').addEventListener('click', function() {
+        smoothScrollTo(document.documentElement, document.documentElement.scrollTop + window.innerHeight,
+        500); // Adjust duration as needed
+    });
     </script>
 </body>
 
