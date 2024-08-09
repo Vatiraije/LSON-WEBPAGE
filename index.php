@@ -73,20 +73,11 @@
         }
     }
 
+
     .large-text {
         font-size: 3em;
         font-weight: bold;
         color: #14e1e3;
-    }
-
-    .background-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* Keeps the background behind other content */
-        overflow: hidden;
     }
     </style>
 </head>
@@ -212,6 +203,7 @@
         </div>
     </div>
 
+
     <div class="background-container">
         <div class="column" id="column1"></div>
         <div class="column" id="column2"></div>
@@ -230,14 +222,34 @@
         </div>
     </div>
 
-    <script>
-        function openmenu() {
-            document.getElementById("sidemenu").style.right = "0";
-        }
+    <div class="footer">
+        © 2024 by GMIT CC
+    </div>
 
-        function closemenu() {
-            document.getElementById("sidemenu").style.right = "-300px";
-        }
+    <script src="script.js"></script>
+    <script>
+    var sidemenu = document.getElementById("sidemenu");
+    var logoContainer = document.getElementById("logoContainer");
+
+    function openmenu() {
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu() {
+        sidemenu.style.right = "-300px";
+    }
+    window.addEventListener("scroll", function() {
+    var videoElement = document.querySelector('.logo-area video');
+    if (window.scrollY > 50) {
+        videoElement.style.display = "none";  // Hide the video
+        logoContainer.innerHTML = "<span class='large-text' style='background-color: white; padding: 0 10px;'>Level Sports Of Namibia</span>";
+    } else {
+        videoElement.style.display = "block";  // Show the video
+        logoContainer.innerHTML =
+            '<span class="logo-letter blue">L</span><span class="logo-letter red">S</span><span class="logo-letter yellow">O</span><span class="logo-letter green">N</span>';
+    }
+});
+
     </script>
 </body>
 
