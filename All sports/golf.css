@@ -1,0 +1,605 @@
+body {
+    background-image: url('golf/pexels-kindelmedia-6572964.jpg');
+    background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-size: cover;
+    /* Ensures the image covers the entire viewport */
+    background-attachment: fixed;
+    /* Keeps the background fixed in place during scroll */
+    background-position: center center;
+    /* Centers the background image */
+}
+ body,
+ html {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+     /* background-size: cover; */
+     color: #fff;
+ }
+
+.header {
+    background: #004d00;
+    /* Dark Green */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    opacity: 0.9;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.navigation {
+    background-color: rgba(0, 77, 0, 0.7);
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    margin-right: 0;
+    right: 0;
+    width: 100%;
+
+
+
+}
+
+.navigation a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline;
+    transition: background 0.3s;
+    justify-content: center;
+    display: inline;
+}
+
+.navigation a:hover {
+    background-color: #004d00;
+    /* Dark Green */
+}
+
+.vertical-nav {
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #004d00;
+    /* Dark Green */
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    left: -300px;
+    transition: left 0.5s;
+}
+
+.vertical-nav a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: all 0.3s;
+    border-radius: 4px;
+    margin: 5px 10px;
+}
+
+.fa-solid.fa-xmark {
+    top: 2%;
+    left: 5%;
+    position: relative;
+    top: 1%;
+    left: 85%;
+    transform: translateY(-50%);
+    font-size: 25px;
+}
+
+
+
+
+.vertical-nav a:hover {
+    background: white;
+    /* White */
+    color: #004d00;
+    /* Dark Green text */
+    transform: translateX(10px);
+}
+
+.vertical-nav a.active {
+    background: white;
+    /* White */
+    color: #004d00;
+    /* Dark Green text */
+}
+
+.main-content {
+    margin-left: 240px;
+    /* Same width as the vertical navbar + some margin */
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.section {
+    background: linear-gradient (135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.section-header {
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 2.5em;
+    color: white;
+    /* White */
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    font-size: 1.2em;
+    color: #fff;
+    /* Light text */
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+
+
+
+}
+
+.content img {
+    object-position: center;
+
+}
+
+.section video {
+    margin-top: 50px;
+    display: block;
+
+   
+    height: 300px;
+    object-fit: cover;
+    
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-bottom: 10px;
+
+    width: 100%;
+    margin-left: 0%;
+    
+}
+
+
+.content article,
+.content img
+{
+    width: 100%;
+    height: 300px;
+    /* Fixed height for consistency */
+    object-fit: cover;
+    /* Maintains aspect ratio without stretching */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-bottom: 10px;
+
+}
+
+
+.content article:hover,
+.content img:hover,
+.content video:hover {
+    transform: translateY(-5px);
+}
+
+.form-container {
+    margin-top: 20px;
+}
+
+form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus {
+    border-color: #004d00;
+    /* Dark Green */
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 77, 0, 0.2);
+}
+
+form input[type="text"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* -----------Calendar------------------------ */
+.calendar-container {
+    max-width: 950px;
+    margin: 0 auto;
+    background: linear-gradient (135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.next-month,
+.prev-month {
+    color: #ffffff;
+}
+
+.calendar-header {
+    padding: 10px 20px;
+    background-color: #004d00;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-nav button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.calendar-nav h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.calendar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #15750f;
+    border-bottom: 1px solid #ddd;
+}
+
+.calendar-menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.calendar-menu li.active {
+    background-color: #17b705;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.calendar-menu li:hover {
+    background-color: #17b705;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 100px;
+    vertical-align: top;
+}
+
+.calendar td.active {
+    background: linear-gradient(to bottom, #17b705, rgba(255, 255, 255, 0));
+    /* Gradient for depth */
+    border: 2px solid #17b705;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+
+    /* Subtle shadow for depth */
+}
+
+.footer {
+    background: #004d00;
+    /* Dark Green */
+    color: white;
+    /* White text */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.9;
+}
+
+
+
+
+
+/* ----------------------------------Responsive Design  LAPTOP HALF SCREEN 768 PX------------------------------------------------------*/
+
+@media (max-width: 768px) {
+
+    /* Navigation */
+    .navigation {
+        padding: 5px 0;
+        font-size: 0.9em;
+    }
+
+    .navigation a {
+        padding: 5px 10px;
+    }
+
+    /* Vertical Navigation */
+    .vertical-nav {
+        width: 200px;
+        left: -250px;
+        transition: left 0.5s;
+    }
+
+    /* Main Content */
+    .main-content {
+        margin-left: 210px;
+        /* Adjusted for smaller vertical nav */
+        padding: 10px;
+    }
+
+    /* Sections */
+    .section {
+        display: flexbox;
+        padding: 30px;
+        margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 2em;
+    }
+
+    /* Content Layout */
+
+    .content img {
+        padding-bottom: 30px;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .content article,
+    .content img{
+        max-width: 90%;
+        margin-bottom: 10px;
+        margin-top: 30px;
+
+    }
+
+         .content video {
+             display: block;
+             /* Remove inline-block spacing issues */
+             width: 100%;
+             height: auto;
+             margin-bottom: 10px;
+             margin-top: 30px;
+         }
+
+    .content article {
+        margin-top: 40px;
+    }
+
+    /* Form */
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form input[type="text"] {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+}
+
+/* ----------------------------------Responsive Design  PHONE HALF SCREEN 468 PX------------------------------------------------------*/
+
+@media (max-width: 480px) {
+
+    /* Navigation */
+    .navigation {
+        padding: 3px 0;
+        font-size: 0.8em;
+    }
+
+    .navigation a {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+
+    /* Vertical Navigation */
+    .vertical-nav {
+        left: -300px;
+        position: fixed;
+        z-index: 9999;
+        box-shadow: none;
+    }
+
+    .vertical-nav a {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    /* Main Content */
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    /* Sections */
+    .section {
+        padding: 10px;
+        /* margin-bottom: 10px; */
+        top: 2%;
+    }
+
+    .section-header h2 {
+        font-size: 1.5em;
+    }
+
+    /* Content Layout */
+    .content {
+        flex-direction: column;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 15
+    }
+
+    .content article,
+    .content img {
+        max-width: 100%;
+        margin-bottom: 10px;
+        height: 250px;
+    }
+
+    .content video {
+        margin-top: 50px;
+    }
+
+    /* Form */
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form input[type="text"] {
+        max-width: 100%;
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 5px;
+        font-size: 0.8em;
+    }
+
+    /* Header */
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+}
+
+
+.side-image {
+    display: inline-block;
+    width: 900px;
+    height: auto;
+    vertical-align: top;
+    position: fixed;
+    top: 10%;
+    right: 0;
+    margin-left: 60px;
+    /* Adjusted margin-left for better alignment */
+    z-index: -1;
+    /* Scaling down and translating */
+    transform: scale(0.4) translateX(-80px);
+    /* Adjusted translateX value */
+    /* Adjust scale and translate values */
+}
+
+/* Optional: Use media queries to handle different viewport sizes */
+@media (max-width: 1200px) {
+    .side-image {
+        width: 600px;
+        /* Scaling down and translating */
+        transform: scale(0.5) translateX(50px);
+        /* Adjusted translateX value */
+        /* Adjust scale and translate values */
+    }
+}
+
+@media (max-width: 768px) {
+    .side-image {
+        width: 400px;
+        /* Scaling down and translating */
+        transform: scale(0.4) translateX(30px);
+        /* Adjusted translateX value */
+        /* Adjust scale and translate values */
+        margin-left: 60px;
+        /* Adjusted margin-left for smaller screens */
+    }
+}
+
+/* Ensure the section is positioned on the right side */
+#standings {
+    position: fixed;
+    /* Fixed position to keep it in place as you scroll */
+    top: 70px;
+    /* Adjust as needed */
+    right: 20px;
+    /* Adjust as needed */
+    width: 300px;
+    /* Set a fixed width for the standings section */
+    height: 80vh;
+    /* Set a fixed height for the standings section */
+    overflow-y: auto;
+    /* Enables vertical scrolling if content overflows */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

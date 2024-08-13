@@ -2,228 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/159bedbb65.js" crossorigin="anonymous"></script>
     <title>LSON - Namibian Golf</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('./images/golf-images/golf-bg.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
-
-        .header {
-            background: #004d00; /* Dark Green */
-            padding: 20px;
-            color: white;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            opacity: 0.9;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        .header p {
-            margin: 0;
-            font-size: 1.2em;
-        }
-
-        .navigation {
-            background-color: rgba(0, 77, 0, 0.7);
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        .navigation a {
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-
-        .navigation a:hover {
-            background-color: #004d00; /* Dark Green */
-        }
-
-        .vertical-nav {
-            width: 220px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background: #004d00; /* Dark Green */
-            padding-top: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-
-        .vertical-nav a {
-            padding: 15px 25px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #fff;
-            display: block;
-            transition: all 0.3s;
-            border-radius: 4px;
-            margin: 5px 10px;
-        }
-
-        .vertical-nav a:hover {
-            background: white; /* White */
-            color: #004d00; /* Dark Green text */
-            transform: translateX(10px);
-        }
-
-        .vertical-nav a.active {
-            background: white; /* White */
-            color: #004d00; /* Dark Green text */
-        }
-
-        .main-content {
-            margin-left: 240px; /* Same width as the vertical navbar + some margin */
-            padding: 20px;
-            max-width: 1200px;
-        }
-
-        .section {
-            background-color: rgba(0, 77, 0, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .section-header {
-            margin-bottom: 10px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5em;
-            color: white; /* White */
-            margin-bottom: 10px;
-        }
-
-        .section-header p {
-            font-size: 1.2em;
-            color: #fff; /* Light text */
-        }
-
-        .content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-around;
-        }
-
-        .content article,
-        .content img,
-        .content video {
-            flex: 1 1 30%;
-            max-width: 30%;
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .content article:hover,
-        .content img:hover,
-        .content video:hover {
-            transform: translateY(-5px);
-        }
-
-        .form-container {
-            margin-top: 20px;
-        }
-
-        form {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        form input[type="text"] {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s;
-        }
-
-        form input[type="text"]:focus {
-            border-color: #004d00; /* Dark Green */
-            outline: none;
-            box-shadow: 0 2px 8px rgba(0, 77, 0, 0.2);
-        }
-
-        form input[type="text"]::placeholder {
-            color: #aaa;
-            font-style: italic;
-        }
-
-        .footer {
-            background: #004d00; /* Dark Green */
-            color: white; /* White text */
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            opacity: 0.9;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .content article,
-            .content img,
-            .content video {
-                max-width: 90%;
-            }
-
-            .vertical-nav {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .vertical-nav a {
-                float: left;
-                padding: 10px;
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="golf.css">
 </head>
 <body>
     <div class="header">
-        <h1>LSON - Namibian Golf</h1>
+        <h1>LSON - Golf</h1>
         <p>Your source for all things Namibian Golf</p>
     </div>
 
     <div class="navigation">
         <a href="football.php">All</a>
-        <a href="rugby.php">Teams</a>
+         <a href="clubs.php">Clubs</a>
         <a href="football.php">Leagues</a>
         <a href="tennis.php">Player Profiles</a>
         <a href="swimming.php">Training and Development</a>
@@ -231,7 +24,10 @@
         <a href="golf.php">Events</a>
     </div>
 
-    <div class="vertical-nav">
+   
+
+    <div class="vertical-nav" id="sidemenu">
+    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
         <a href="basketball.php">Basketball</a>
         <a href="bowling.php">Bowling</a>
         <a href="boxing.php">Boxing</a>
@@ -252,31 +48,99 @@
         <a href="swimming.php">Swimming</a>
         <a href="tennis.php">Tennis</a>
         <a href="volleyball.php">Volleyball</a>
+
+        <i class="fa-solid fa-bars" style="color: #fff;
+             position: fixed;
+             top: 5%;
+             left: 5%;
+             transform: translateY(-50%);
+             font-size: 25px; " onclick="openmenu()"></i>
     </div>
 
     <div class="main-content">
-        <section id="leagues" class="section">
+
+    <!--Golf events-->
+        <section id="events" class="section">
             <div class="section-header">
-                <h2>Golf Leagues</h2>
+                <h2>Golf Events</h2>
+                <p>Check out the Golf events. You don't want to miss it!.</p>
+            </div>
+
+            <div class="content">
+                <!-- Example content -->
+                <article>
+                    <h3>NAGU/OTHER</h3>
+                    <p>Latest Events from the NAGU/OTHER</p>
+                    <img src="../images/golf.jpg" alt="GOLF PREMIER LEAGUE">
+                </article>
+                <article>
+                    <h3>NALGU (ladies)</h3>
+                    <p>Latest Events from the NALGU ladies.</p>
+                    <img src="../images/golf2547.jpg" alt="GOLF FIRST DIVISION">
+                </article>
+
+                <article>
+                <h3>SAGES</h3>
+                <p>Latest Events from the SAGES</p>
+                <img src="../images/golf3.jpg" alt="GOLF1">
+                </article>
+                <br>
+                <br>
+                <br><br>
+                <p></p>
+                <p></p>
+                <p></p>
+               
+                
+            </div>
+            <article>
+                <video src="../videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
+                </article>
+        </section>
+
+
+<!--Golf news-->
+        <section id="news" class="section">
+         <div class="section-header">
+                <h2>Golf News</h2>
                 <p>Explore the latest updates, news, and standings from Namibian Golf.</p>
             </div>
 
             <div class="content">
                 <!-- Example content -->
                 <article>
-                    <h3>Premier League</h3>
+                    <h3>PGA Tour</h3>
                     <p>Latest updates and standings from the Namibian Premier League.</p>
-                    <img src="images/golf.jpg" alt="GOLF PREMIER LEAGUE">
+                    <img src="../images/golf.jpg" alt="GOLF PREMIER LEAGUE">
                 </article>
                 <article>
-                    <h3>First Division</h3>
+                    <h3>Namibian Tour</h3>
                     <p>Latest updates and standings from the Namibian First Division.</p>
-                    <img src="images/golf2.jpg" alt="GOLF FIRST DIVISION">
+                    <img src="../images/golf2547.jpg" alt="GOLF FIRST DIVISION">
                 </article>
-                <img src="images/golf3.jpg" alt="GOLF">
-                <video src="videos/golf_highlights.mp4" controls></video>
+<article>
+                <h3>SAGES</h3>
+                <p>Latest Events from the SAGES</p>
+                <img src="../images/golf3.jpg" alt="GOLF1">
+                </article>
+                <br>
+                <br>
+                <br><br>
+                <p></p>
+                <p></p>
+                <p></p>
+                
+    
+
+
             </div>
-        </section>
+            <video 
+        src="../videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" 
+        controls 
+        >
+    </video>
+                </section>
+
 
         <section id="standings" class="section">
             <div class="section-header">
@@ -321,16 +185,67 @@
                 </article>
             </div>
         </section>
+<section id="calendar">
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="calendar-nav">
+                <button class="prev-month">&lt;</button>
+                <h2 id="month-year">August 2024</h2>
+                <button class="next-month">&gt;</button>
+            </div>
+        </div>
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+                <!-- Calendar dates will be injected here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</section>
 
-        <div class="form-container">
+
+
+        <!-- <div class="form-container">
             <form action="" method="GET">
                 <input type="text" name="search" placeholder="Search players, teams, leagues...">
             </form>
-        </div>
+        </div> -->
+
+
     </div>
+
+    
+<img src="golfer-removebg-preview.png" alt="Golf Animation" class="side-image">
 
     <div class="footer">
         <p>&copy; 2024 LSON - Level Sports of Namibia. All rights reserved.</p>
     </div>
+  <!------------ Calendar Script------------------ -->
+  <script src="golf.js"></script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+function openmenu() {
+    document.getElementById("sidemenu").style.left = "0";
+}
+
+function closemenu() {
+    document.getElementById("sidemenu").style.left = "-300px";
+}
+    </script>
+
+  
+
+
 </body>
 </html>
