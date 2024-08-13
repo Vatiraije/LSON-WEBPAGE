@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>LSON - Golf</h1>
+    <h1><a href="index.php" style="text-decoration: none; color: inherit;">LSON - Golf</a></h1>
         <p>Your source for all things Namibian Golf</p>
         
         <br>
