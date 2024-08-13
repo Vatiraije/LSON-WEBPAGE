@@ -12,9 +12,11 @@
     <div class="header">
         <h1>LSON - Golf</h1>
         <p>Your source for all things Namibian Golf</p>
-    </div>
+        
+        <br>
+        <br>
 
-    <div class="navigation">
+        <div class="navigation">
         <a href="football.php">All</a>
          <a href="clubs.php">Clubs</a>
         <a href="football.php">Leagues</a>
@@ -23,6 +25,17 @@
         <a href="boxing.php">Supporters Club</a>
         <a href="golf.php">Events</a>
     </div>
+    </div>
+
+    <!-- <div class="navigation">
+        <a href="football.php">All</a>
+         <a href="clubs.php">Clubs</a>
+        <a href="football.php">Leagues</a>
+        <a href="tennis.php">Player Profiles</a>
+        <a href="swimming.php">Training and Development</a>
+        <a href="boxing.php">Supporters Club</a>
+        <a href="golf.php">Events</a>
+    </div> -->
 
    
 
