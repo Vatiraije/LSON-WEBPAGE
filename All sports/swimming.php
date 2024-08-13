@@ -82,6 +82,52 @@
             font-size: 1.2em;
             color: #333;
         }
+        .carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 
         .content {
             display: flex;
@@ -215,6 +261,28 @@
     </div>
 
     <div class="main-content">
+    <div id="carousel" class="carousel">
+    <div class="carousel-slide">
+        <img src="../images/Swimming images/88999107_2749311435183438_6895476964736368640_n.jpg" alt="Namibian Swimming Team">
+    </div>
+    <div class="carousel-slide">
+        <img src="../images/Swimming images/NASFED-Swimming-Namibia_Bank-Windhoek_Long-Course_2 (1).jpg" alt="Swimming News">
+    </div>
+    <div class="carousel-slide">
+        <img src="../images/Swimming images/NASFED-Swimming-Namibia_Bank-Windhoek_Long-Course_2.jpg" alt="Upcoming Competitions">
+    </div>
+    <div class="carousel-slide">
+        <img src="../images/Swimming images/NASFED-Swimming-Namibia_Bank-Windhoek_Long-Course_4.jpg" alt="Upcoming Competitions">
+    </div>
+    <div class="carousel-slide">
+        <img src="../images/Swimming images/NASFED-Swimming-Namibia_Bank-Windhoek_Long-Course_5.jpg" alt="Upcoming Competitions">
+    </div>
+    <!-- Add more slides as needed -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+</div>
+
+
         <section id="swimming" class="section">
             <div class="section-header">
                 <h2>Swimming</h2>
@@ -226,11 +294,11 @@
                 <article>
                     <h3>Latest Competition Results</h3>
                     <p>Namibia vs South Africa</p>
-                    <img src="../images/nam s1.jpg" alt="Namibia vs South Africa">
+                    <img src="../images/Swimming images/VS.jpg" alt="Namibia vs South Africa">
                     <p>Namibia vs Zimbabwe</p>
-                    <img src="../images/Swimming images/nam s4.jpg" alt="Namibia vs Zimbabwe">
+                    <img src="../images/Swimming images/VS 2.jpg" alt="Namibia vs Zimbabwe">
                     <p>Namibia vs Kenya</p>
-                    <img src="../images/Swimming images/nam s5.jpg" alt="Namibia vs Kenya">
+                    <img src="../images/Swimming images/VS 3.jpg" alt="Namibia vs Kenya">
                 </article>
                 <article>
                     <h3>Upcoming Competitions</h3>
@@ -273,11 +341,34 @@
 
     <!-- Swimmer of the Match Card -->
     <div class="swimmer-of-the-match-card">
-        <img src="../images/swimmer_of_the_match.jpg" alt="Swimmer of the Match">
+        <img src="../images/Swimming images/Phillip-Seidler_Olympic-Journey_Tokyo-2020_NASFED-Swimming-Namibia_4.jpg" alt="Swimmer of the Match">
         <div class="swimmer-of-the-match-content">
-            <h4>Swimmer of the Match</h4>
+            <h4> Swimmer of the Match </h4>
             <p>John Doe</p>
         </div>
     </div>
+    <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("carousel-slide");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+
+    function changeSlide(n) {
+        slideIndex += n - 1;
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+        showSlides();
+    }
+</script>
+
+
 </body>
 </html>
