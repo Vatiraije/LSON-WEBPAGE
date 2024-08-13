@@ -51,14 +51,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     cell.textContent = date;
 
                     if (eventsData[activeCategory] && eventsData[activeCategory][date]) {
+                        cell.classList.add('has-event', getEventClass(activeCategory));
+                        
                         const eventList = document.createElement('ul');
+                        eventList.classList.add('event-details');
                         eventsData[activeCategory][date].forEach(event => {
                             const eventItem = document.createElement('li');
                             eventItem.textContent = event;
-                            eventItem.classList.add(getEventClass(activeCategory)); // Apply the corresponding class
                             eventList.appendChild(eventItem);
                         });
                         cell.appendChild(eventList);
+
+                        // Add hover functionality
+                        cell.addEventListener('mouseenter', function() {
+                            eventList.style.display = 'block';
+                        });
+                        cell.addEventListener('mouseleave', function() {
+                            eventList.style.display = 'none';
+                        });
                     }
 
                     if (date === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
@@ -96,7 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCalendar();
     });
 
-    // Set the initial active tab and render the calendar
+    // Set the initial active tab
     document.getElementById('tab-nagu').classList.add('active');
+    
+    // Render the calendar immediately after setting up everything
     renderCalendar();
 });
