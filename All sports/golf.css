@@ -345,6 +345,33 @@ form input[type="text"]::placeholder {
 
     /* Subtle shadow for depth */
 }
+.calendar td.has-event {
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar td.has-event .event-details {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: black;
+    border: 1px solid #ddd;
+    padding: 5px;
+    z-index: 10;
+    width: 150px;
+}
+
+.calendar td.has-event:hover .event-details {
+    display: block;
+}
+
+/* Event category colors */
+.calendar td.nagu-event { background-color: rgba(255, 0, 0, 0.2); }
+.calendar td.nalgu-event { background-color: rgba(0, 255, 0, 0.2); }
+.calendar td.njgf-event { background-color: rgba(0, 0, 255, 0.2); }
+.calendar td.sages-event { background-color: rgba(255, 255, 0, 0.2); }
+.calendar td.seniors-event { background-color: rgba(255, 0, 255, 0.2); }
 
 .footer {
     background: #004d00;
