@@ -8,6 +8,8 @@ body {
     /* Keeps the background fixed in place during scroll */
     background-position: center center;
     /* Centers the background image */
+
+    font-weight: 700;
 }
  body,
  html {
@@ -21,13 +23,14 @@ body {
 .header {
     background: #004d00;
     /* Dark Green */
-    padding: 20px;
+    
     color: white;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     opacity: 0.9;
+    height: 106px;
 }
 
 .header h1 {
@@ -41,13 +44,14 @@ body {
 }
 
 .navigation {
-    background-color: rgba(0, 77, 0, 0.7);
-    padding: 10px 0;
+    background-color: rgba(7, 137, 7, 0.7);
     text-align: center;
-    position: fixed;
+    position: absolute;
     margin-right: 0;
     right: 0;
     width: 100%;
+    padding-top: -30px;
+    height: 30px;
 
 
 
@@ -288,6 +292,7 @@ form input[type="text"]::placeholder {
 .calendar-nav h2 {
     margin: 0;
     font-size: 24px;
+
 }
 
 .calendar-menu {
@@ -327,6 +332,8 @@ form input[type="text"]::placeholder {
     border: 1px solid #ddd;
     height: 100px;
     vertical-align: top;
+    width: 40px;
+    font-weight: 800;
 }
 
 .calendar td.active {
@@ -590,7 +597,7 @@ form input[type="text"]::placeholder {
     /* Adjust as needed */
     width: 300px;
     /* Set a fixed width for the standings section */
-    height: 80vh;
+    height: 75vh;
     /* Set a fixed height for the standings section */
     overflow-y: auto;
     /* Enables vertical scrolling if content overflows */
@@ -601,5 +608,6 @@ form input[type="text"]::placeholder {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 80px;
+    color: #c9c5c5;
 }
