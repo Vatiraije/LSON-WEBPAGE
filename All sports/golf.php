@@ -1,3 +1,7 @@
+<?php
+// Include the PHP script to handle form submission and connection
+include 'golf_registration.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +13,19 @@
     <link rel="stylesheet" href="golf.css">
 </head>
 <body>
+<!--code to add a row at the top of the page-->
+    <table class="my-table">
+        <tr>
+            <td class="cell cell-1">NAGU/OTHER</td>
+            <td class="cell cell-2">NALGU(Ladies)</td>
+            <td class="cell cell-3">NJGF(juniors)</td>
+            <td class="cell cell-4">SAGES</td>
+            <td class="cell cell-5">SENIORS</td>
+        </tr>
+    </table>
+
     <div class="header">
-        <h1>LSON - Golf</h1>
+        <h1><a href="../index.php">LSON</a> - Golf</h1>
         <p>Your source for all things Namibian Golf</p>
         
         <br>
@@ -24,6 +39,7 @@
         <a href="swimming.php">Training and Development</a>
         <a href="boxing.php">Supporters Club</a>
         <a href="golf.php">Events</a>
+        <a href="History.php">History</a>
     </div>
     </div>
 
@@ -64,8 +80,8 @@
 
         <i class="fa-solid fa-bars" style="color: #fff;
              position: fixed;
-             top: 5%;
-             left: 5%;
+             top: 7%;
+             left: 0%;
              transform: translateY(-50%);
              font-size: 25px; " onclick="openmenu()"></i>
     </div>
@@ -107,7 +123,7 @@
                 
             </div>
             <article>
-                <video src="../videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
+                <video src="../videos/golf2.mp4" controls></video>
                 </article>
         </section>
 
@@ -123,18 +139,18 @@
                 <!-- Example content -->
                 <article>
                     <h3>PGA Tour</h3>
-                    <p>Latest updates and standings from the Namibian Premier League.</p>
-                    <img src="../images/golf.jpg" alt="GOLF PREMIER LEAGUE">
+                    <p>Latest updates and standings from the Namibian League.</p>
+                    <img src="../images/pga.jpg" alt="GOLF PREMIER LEAGUE">
                 </article>
                 <article>
                     <h3>Namibian Tour</h3>
                     <p>Latest updates and standings from the Namibian First Division.</p>
-                    <img src="../images/golf2547.jpg" alt="GOLF FIRST DIVISION">
+                    <img src="../images/golfCup.jpg" alt="GOLF FIRST DIVISION">
                 </article>
 <article>
                 <h3>SAGES</h3>
                 <p>Latest Events from the SAGES</p>
-                <img src="../images/golf3.jpg" alt="GOLF1">
+                <img src="../images/sages.jpg" alt="GOLF1">
                 </article>
                 <br>
                 <br>
@@ -148,7 +164,7 @@
 
             </div>
             <video 
-        src="../videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" 
+        src="../videos/golf1.mp4" 
         controls 
         >
     </video>
@@ -164,7 +180,7 @@
             <div class="content">
                 <!-- Example standings content -->
                 <article>
-                    <h3>Premier League</h3>
+                    <h3>Namibian Tour</h3>
                     <p>1. Golfer A - 45 points</p>
                     <p>2. Golfer B - 42 points</p>
                     <p>3. Golfer C - 39 points</p>
@@ -224,7 +240,96 @@
             </tbody>
         </table>
     </div>
-</section>
+
+    <section id="contact" class="section">
+    <div class="section-header">
+        <h2 class="center-text">Register Now</h2>
+        <p class="center-text">Fill out the form below to register for the upcoming events.</p>
+    </div>
+    <div class="registration-container">
+        <!-- Display success or error message -->
+        <?php if ($successMessage): ?>
+            <div class="success-message"><?php echo htmlspecialchars($successMessage); ?></div>
+        <?php endif; ?>
+
+        <form action="golf_registration.php" method="POST">
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="membership">Membership Type:</label>
+                <select id="membership" name="membership">
+                    <option value="none">None</option>
+                    <option value="standard">Standard</option>
+                    <option value="premium">Premium</option>
+                    <option value="vip">VIP</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="handicap">Handicap:</label>
+                <input type="number" id="handicap" name="handicap" required>
+            </div>
+
+            <!-- Additional fields -->
+            <div class="form-group">
+                <label for="golf_club">Golf Club:</label>
+                <input type="text" id="golf_club" name="golf_club" placeholder="Your Golf Club">
+            </div>
+
+            <div class="form-group">
+                <label for="tshirt_size">T-Shirt Size:</label>
+                <select id="tshirt_size" name="tshirt_size" required>
+                    <option value="S">Small</option>
+                    <option value="M">Medium</option>
+                    <option value="L">Large</option>
+                    <option value="XL">Extra Large</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </div>
+            <!-- End of additional fields -->
+
+            <div class="form-group full-width">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+  </section>
+  </section>
 
 
 
@@ -236,6 +341,21 @@
 
 
     </div>
+
+   
+
+
+
+   
+
+
+    </div>
+
+
+
+   
+
+
 
     
 <img src="golfer-removebg-preview.png" alt="Golf Animation" class="side-image">

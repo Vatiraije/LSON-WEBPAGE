@@ -2,32 +2,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const date = new Date();
     let currentYear = date.getFullYear();
     let currentMonth = date.getMonth();
-    let activeCategory = 'NAGU';
 
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     const monthYearElement = document.getElementById('month-year');
     const calendarBody = document.getElementById('calendar-body');
-    const tabs = document.querySelectorAll('.calendar-menu li');
 
+    // Sample events data with categories
     const eventsData = {
-        'NAGU': { '12': ['NAGU Event 1'], '14': ['NAGU Event 2'] },
-        'NALGU': { '5': ['NALGU Event 1'], '20': ['NALGU Event 2'] },
-        'NJGF': { '7': ['NJGF Event 1'], '21': ['NJGF Event 2'] },
-        'SAGES': { '2': ['SAGES Event 1'], '18': ['SAGES Event 2'] },
-        'SENIORS': { '9': ['SENIORS Event 1'], '25': ['SENIORS Event 2'] },
+        '12': { category: 'nagu-event', details: ['NAGU '] }, // December 12
+        '14': { category: 'nalgu-event', details: ['NALGU '] }, // December 14
+        '5': { category: 'njgf-event', details: ['NJGF '] },  // May 5
+        '20': { category: 'sages-event', details: ['SAGES '] }, // May 20
+        '7': { category: 'seniors-event', details: ['SENIORS '] }  // July 7
     };
-
-    function getEventClass(category) {
-        switch (category) {
-            case 'NAGU': return 'nagu-event';
-            case 'NALGU': return 'nalgu-event';
-            case 'NJGF': return 'njgf-event';
-            case 'SAGES': return 'sages-event';
-            case 'SENIORS': return 'seniors-event';
-            default: return '';
-        }
-    }
 
     function renderCalendar() {
         monthYearElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
@@ -37,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
         let date = 1;
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 6; i++) { // 6 weeks max
             const row = document.createElement('tr');
 
-            for (let j = 1; j <= 7; j++) {
+            for (let j = 0; j < 7; j++) { // 7 days a week
                 const cell = document.createElement('td');
                 
                 if (i === 0 && j < firstDayOfMonth) {
@@ -50,25 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     cell.textContent = date;
 
-                    if (eventsData[activeCategory] && eventsData[activeCategory][date]) {
-                        cell.classList.add('has-event', getEventClass(activeCategory));
+                    const eventDate = date.toString();
+                    if (eventsData[eventDate]) {
+                        cell.classList.add('has-event', eventsData[eventDate].category);
                         
                         const eventList = document.createElement('ul');
                         eventList.classList.add('event-details');
-                        eventsData[activeCategory][date].forEach(event => {
+                        eventsData[eventDate].details.forEach(event => {
                             const eventItem = document.createElement('li');
                             eventItem.textContent = event;
                             eventList.appendChild(eventItem);
                         });
                         cell.appendChild(eventList);
-
-                        // Add hover functionality
-                        cell.addEventListener('mouseenter', function() {
-                            eventList.style.display = 'block';
-                        });
-                        cell.addEventListener('mouseleave', function() {
-                            eventList.style.display = 'none';
-                        });
                     }
 
                     if (date === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
@@ -85,15 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            tabs.forEach(tab => tab.classList.remove('active'));
-            this.classList.add('active');
-            activeCategory = this.getAttribute('data-category');
-            renderCalendar();
-        });
-    });
-
     document.querySelector('.prev-month').addEventListener('click', function() {
         currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
         if (currentMonth === 11) currentYear--;
@@ -106,9 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCalendar();
     });
 
-    // Set the initial active tab
-    document.getElementById('tab-nagu').classList.add('active');
-    
     // Render the calendar immediately after setting up everything
     renderCalendar();
 });

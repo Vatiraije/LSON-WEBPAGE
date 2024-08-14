@@ -27,10 +27,19 @@ body {
     color: white;
     text-align: center;
     position: sticky;
-    top: 0;
+    top: 4%;
     z-index: 1000;
     opacity: 0.9;
     height: 106px;
+}
+.header a{
+    text-decoration: none;
+    color: white;
+    
+}
+.header h1 a:hover{
+    color: #04a904;
+    text-decoration: underline;
 }
 
 .header h1 {
@@ -98,6 +107,8 @@ body {
     margin: 5px 10px;
 }
 
+
+
 .fa-solid.fa-xmark {
     top: 2%;
     left: 5%;
@@ -132,17 +143,20 @@ body {
     padding: 20px;
     max-width: 1200px;
 }
-
 .section {
-    background: linear-gradient (135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
-
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
     margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-left: -16%;
+    /* Move to the left */
+    max-width: 100%;
+    /* Ensure it does not exceed the screen width */
 }
 
 .section-header {
@@ -263,6 +277,7 @@ form input[type="text"]::placeholder {
 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-weight: 600;
+    margin-left: -15%;
 }
 
 .next-month,
@@ -332,16 +347,16 @@ form input[type="text"]::placeholder {
     border: 1px solid #ddd;
     height: 100px;
     vertical-align: top;
-    width: 40px;
+    max-width: 40px;
     font-weight: 800;
 }
 
 .calendar td.active {
-    background: linear-gradient(to bottom, #17b705, rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, #024e0494, rgba(0, 82, 7, 0.937));
     /* Gradient for depth */
-    border: 2px solid #17b705;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
+    border: 2px solid ;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.703);
+    backdrop-filter: blur(1spx);
 
     /* Subtle shadow for depth */
 }
@@ -367,12 +382,13 @@ form input[type="text"]::placeholder {
 }
 
 /* Event category colors */
-.calendar td.nagu-event { background-color: rgba(255, 0, 0, 0.2); }
-.calendar td.nalgu-event { background-color: rgba(0, 255, 0, 0.2); }
-.calendar td.njgf-event { background-color: rgba(0, 0, 255, 0.2); }
-.calendar td.sages-event { background-color: rgba(255, 255, 0, 0.2); }
-.calendar td.seniors-event { background-color: rgba(255, 0, 255, 0.2); }
+.calendar td.nagu-event { background-color: rgba(0, 234, 255, 0.423); }
+.calendar td.nalgu-event { background-color: rgba(255, 0, 170, 0.477); }
+.calendar td.njgf-event { background-color: rgba(229, 255, 0, 0.492); }
+.calendar td.sages-event { background-color: rgba(255, 140, 0, 0.441); }
+.calendar td.seniors-event { background-color:rgba(64, 255, 0, 0.396); ; }
 
+/*  */
 .footer {
     background: #004d00;
     /* Dark Green */
@@ -637,4 +653,121 @@ form input[type="text"]::placeholder {
     margin-bottom: 20px;
     margin-top: 80px;
     color: #c9c5c5;
+    margin-right: -20px;
+}
+
+
+
+/*code for the row above the page*/
+.my-table {
+    width: 100%;
+    border-collapse: collapse;
+    position: fixed;
+    z-index: 1002;
+    
+}
+
+.cell {
+    padding: 5px;
+    text-align: center;
+    color: white;
+    border: 1px solid #ddd;
+}
+
+.cell-1 {
+    background-color: #64acf5;
+}
+
+.cell-2 {
+    background-color: #f71ba3;
+}
+
+.cell-3 {
+    background-color: #f3e817;
+}
+
+.cell-4 {
+    background-color: #f78b1f;
+}
+
+.cell-5 {
+    background-color: #04bf30;
+}
+.registration-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    max-width: 700px;
+    /* Wider form */
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.registration-container form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 0 0 48%;
+    /* Adjust width for even distribution */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    flex: 0 0 100%;
+    /* Full width for the message box */
+}
+
+.registration-container label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.registration-container input,
+.registration-container select,
+.registration-container textarea {
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+    box-sizing: border-box;
+}
+
+.registration-container input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+}
+
+.registration-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.center-text{
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
