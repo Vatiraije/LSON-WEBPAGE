@@ -21,7 +21,24 @@
     }
 
     @media (max-width: 768px) {
-      
+        #header nav ul li {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #header nav i {
+            display: block;
+        }
+
+        #sidemenu {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: #fff;
+            transition: right 0.3s;
+        }
 
         .news-card {
             width: 100%;
@@ -55,6 +72,52 @@
             font-size: 24px;
         }
     }
+
+    .description-box {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 600px;
+        padding: 30px;
+        /*border: 3px solid #000000;*/
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        /* background: rgba(255, 255, 255, 0.2);*/
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9px);
+        -webkit-backdrop-filter: blur(9px);
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        z-index: 10;
+        top: 41%;
+        text-align: justify;
+    }
+
+    /* Hover effect */
+    .description-box:hover {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.3));
+        transform: translateX(-50%) scale(1.05);
+    }
+
+    .description-box p {
+        font-size: 30px;
+        color: whitesmoke;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+
+    .background-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        padding-top: 60px;
+        /* Adjust if needed to ensure the description box doesn't overlap with other content */
+    }
     </style>
 </head>
 
@@ -79,8 +142,6 @@
         </nav>
     </div>
     </header>
-
-
 
     <div class="logo-area">
         <div class="white-overlay">
@@ -148,46 +209,12 @@
         </div>
     </div>
 
-    <div class="full-white-overlay"></div>
-
-    <div class="news-section" id="newsSection">
-        <div class="news-card">
-            <img src="path_to_image1.jpg" alt="News Image" class="news-image">
-            <div class="news-content">
-                <p class="news-category">Football</p>
-                <h3 class="news-title">Yoro to miss three months as Man Utd dealt Hojlund blow</h3>
-                <a href="#" class="news-link">Read more ></a>
-            </div>
-        </div>
-        <div class="news-card">
-            <img src="path_to_image2.jpg" alt="News Image" class="news-image">
-            <div class="news-content">
-                <p class="news-category">Olympics</p>
-                <h3 class="news-title">Olympics 2024 LIVE! Team GB take silver and two bronze in rowing</h3>
-                <a href="#" class="news-link">Read more ></a>
-            </div>
-        </div>
-        <div class="news-card">
-            <img src="path_to_image3.jpg" alt="News Image" class="news-image">
-            <div class="news-content">
-                <p class="news-category">Football</p>
-                <h3 class="news-title">Transfer Centre LIVE! Gallagher latest as Forest sign 'Portuguese Grealish'
-                </h3>
-                <a href="#" class="news-link">Read more ></a>
-            </div>
-        </div>
-        <div class="news-card">
-            <img src="path_to_image4.jpg" alt="News Image" class="news-image">
-            <div class="news-content">
-                <p class="news-category">Cricket</p>
-                <h3 class="news-title">The Hundred 2024: Free live stream of London Spirit vs Welsh Fire</h3>
-                <a href="#" class="news-link">Read more ></a>
-            </div>
-        </div>
-    </div>
-
-
     <div class="background-container">
+        <div class="description-box">
+            <p>Welcome to Level Sports of Namibia.
+                We cover all sports news, updates, and events happening in Namibia.
+                Stay tuned for the latest updates!</p>
+        </div>
         <div class="column" style="background-image: url('images/tennis.jpg');"></div>
         <div class="column" style="background-image: url('images/rugby3.jpg');"></div>
         <div class="column" style="background-image: url('images/soccer.jpg');"></div>
@@ -204,58 +231,14 @@
         </div>
     </div>
 
-
-
-    <div class="footer">
-        © 2024 by GMIT CC
-    </div>
-
-    <script src="script.js"></script>
     <script>
-    var sidemenu = document.getElementById("sidemenu");
-
     function openmenu() {
         document.getElementById("sidemenu").style.right = "0";
     }
 
     function closemenu() {
-        document.getElementById("sidemenu").style.right = "-300px";
+        document.getElementById("sidemenu").style.right = "-200px";
     }
-    // Smooth scrolling function
-    function smoothScrollTo(element, target, duration) {
-        var start = element.scrollTop;
-        var change = target - start;
-        var currentTime = 0;
-        var increment = 20;
-
-        function animateScroll() {
-            currentTime += increment;
-            var val = Math.easeInOutQuad(currentTime, start, change, duration);
-            element.scrollTop = val;
-            if (currentTime < duration) {
-                requestAnimationFrame(animateScroll);
-            }
-        }
-        animateScroll();
-    }
-
-    Math.easeInOutQuad = function(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    };
-
-    // Use the function for scrolling, e.g., for button click events
-    document.getElementById('up-button').addEventListener('click', function() {
-        smoothScrollTo(document.documentElement, document.documentElement.scrollTop - window.innerHeight,
-        500); // Adjust duration as needed
-    });
-
-    document.getElementById('down-button').addEventListener('click', function() {
-        smoothScrollTo(document.documentElement, document.documentElement.scrollTop + window.innerHeight,
-        500); // Adjust duration as needed
-    });
     </script>
 </body>
 
