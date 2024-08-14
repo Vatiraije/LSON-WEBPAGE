@@ -134,6 +134,138 @@ function displayAllProfiles($conn) {
             cursor: pointer;
             font-size: 24px;
         }
+        /*NavBar CSS*/
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(7, 137, 7, 0.7);
+  color: #fff;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0.8rem;
+}
+
+.navbar-links {
+    flex: 1; /* Take up available space */
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+  }
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li:hover {
+  background-color: rgba(7, 137, 7, 0.7);
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-container input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+  }
+
+  .search-container button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    background: #555;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .search-container button:hover {
+    background: rgba(7, 137, 7, 0.7);
+  }
+
+.toggle-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+@media (max-width: 400px) {
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+  
+      .search-container {
+      margin-left: auto; /* Align search bar to the right on small screens */
+    }
+}
+ 
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -188,6 +320,31 @@ function displayAllProfiles($conn) {
     </script>
 </head>
 <body>
+    <nav class="navbar">
+  <div class="brand-title">LSON</div>
+  <a href="#" class="toggle-button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <div class="navbar-links">
+    <ul>
+      <li><a href="golf.php">Home</a></li>
+      <li><a href="clubs.php">Clubs</a></li>
+      <li><a href="#">Leagues</a></li>
+       <li><a href="#">Training and development</a></li>
+       <li><a href="#">Supporter's club</a></li>
+       <li><a href="#">Events</a></li>
+       <li><a href="#">History</a></li>
+    </ul>
+    
+     <div class="search-container">
+    <input type="text" placeholder="Search...">
+    <button type="submit">Search</button>
+  </div>
+    
+  </div>
+</nav>
     <div class="section">
         <?php
         displayAllProfiles($conn);
