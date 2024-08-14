@@ -771,3 +771,15 @@ form input[type="text"]::placeholder {
     display: flex;
     justify-content: center;
 }
+
+.profile-container {
+    display: flex;
+    
+   
+}
+
+.profile {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: cover;
+}

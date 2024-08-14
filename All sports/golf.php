@@ -35,7 +35,7 @@ include 'golf_registration.php';
         <a href="football.php">All</a>
          <a href="clubs.php">Clubs</a>
         <a href="football.php">Leagues</a>
-        <a href="tennis.php">Player Profiles</a>
+        <a href="../All sports/golfProfile.php">Player Profiles</a>
         <a href="swimming.php">Training and Development</a>
         <a href="boxing.php">Supporters Club</a>
         <a href="golf.php">Events</a>
@@ -202,15 +202,14 @@ include 'golf_registration.php';
 
             <div class="content">
                 <!-- Example player profiles -->
-                <article>
+                <article class="profile-container">
                     <h3>Golfer A</h3>
-                    <p>Position: Pro Golfer</p>
-                    <p>Matches Played: 20</p>
+                    <img class="profile" src="../images/golfProfile.jpg" alt="">
+                    
                 </article>
                 <article>
                     <h3>Golfer B</h3>
-                    <p>Position: Pro Golfer</p>
-                    <p>Matches Played: 18</p>
+                    <img class="profile" src="../images/golfProfile.jpg" alt="">
                 </article>
             </div>
         </section>
