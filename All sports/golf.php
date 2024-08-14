@@ -365,6 +365,24 @@ include 'golf_registration.php';
     
 <img src="golfer-removebg-preview.png" alt="Golf Animation" class="side-image">
 
+<div class="main-content">
+        <!-- Main content here -->
+
+        <!-- Floating button -->
+        <button class="floating-button" onclick="toggleFloatingContent()">
+            <i class="fas fa-phone"></i>
+        </button>
+
+        <!-- Dummy data pop-up -->
+        <div class="floating-content" id="floatingContent">
+            <p>Dummy Content</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button onclick="toggleFloatingContent()">Close</button>
+        </div>
+
+    </div>
+
     <div class="footer">
         <p>&copy; 2024 LSON - Level Sports of Namibia. All rights reserved.</p>
     </div>
@@ -380,6 +398,15 @@ function openmenu() {
 function closemenu() {
     document.getElementById("sidemenu").style.left = "-300px";
 }
+
+function toggleFloatingContent() {
+            var content = document.getElementById("floatingContent");
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
     </script>
 
   
