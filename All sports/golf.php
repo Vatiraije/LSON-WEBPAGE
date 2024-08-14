@@ -202,14 +202,20 @@ include 'golf_registration.php';
 
             <div class="content">
                 <!-- Example player profiles -->
-                <article class="profile-container">
-                    <h3>Golfer A</h3>
-                    <img class="profile" src="../images/golfProfile.jpg" alt="">
+                <article >
+                <h3>Golfer A</h3>
+                <a href="golfProfile.php?id=1">
+                
+                <img class="profile" src="../images/golfProfile.jpg" alt="">
+            </a>
                     
                 </article>
                 <article>
                     <h3>Golfer B</h3>
-                    <img class="profile" src="../images/golfProfile.jpg" alt="">
+                    <a href="golfProfile.php?id=2">
+                
+                <img class="profile" src="../images/golfProfile.jpg" alt="">
+            </a>
                 </article>
             </div>
         </section>
