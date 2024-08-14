@@ -388,7 +388,7 @@ form input[type="text"]::placeholder {
 .calendar td.sages-event { background-color: rgba(255, 140, 0, 0.441); }
 .calendar td.seniors-event { background-color:rgba(64, 255, 0, 0.396); ; }
 
-/*  */
+/*footer css  */
 .footer {
     background: #004d00;
     /* Dark Green */

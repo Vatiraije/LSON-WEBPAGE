@@ -66,8 +66,15 @@ function displayAllProfiles($conn) {
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Poppins:wght@300&display=swap');
         body {
-            background: #004d00;
+             background-image: url('golf/pexels-kindelmedia-6572964.jpg');
             font-family: "Inter", sans-serif;
+             background-repeat: no-repeat;
+    /* Prevents the image from repeating */
+    background-size: cover;
+    /* Ensures the image covers the entire viewport */
+    background-attachment: fixed;
+    /* Keeps the background fixed in place during scroll */
+    background-position: center center;
         }
         .section {
             display: flex;
@@ -76,14 +83,17 @@ function displayAllProfiles($conn) {
             padding: 30px;
         }
         .fcard {
-            display: flex;
-            flex-direction: column;
-            width: 290px;
-            height: 490px;
-            background: #ffff;
-            border-radius: 10px;
-            margin: 10px;
-            cursor: pointer;
+              display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 490px;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    backdrop-filter: blur(10px); /* Creates the glassy effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
         }
         img {
             height: 290px;
@@ -101,39 +111,68 @@ function displayAllProfiles($conn) {
             flex-direction: column;
             height: 100%;
         }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .popup-content {
-            background: #fff;
-            color: #000;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-        }
-        .popup-content img {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-        }
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            font-size: 24px;
-        }
+       .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    backdrop-filter: blur(10px); /* Blurry background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for better depth */
+    text-align: left;
+    position: relative;
+    overflow: auto; /* Handle overflow content */
+}
+
+.popup-content img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker background for close button */
+    padding: 5px;
+    border-radius: 50%;
+    z-index: 1001; /* Ensure it is above other elements */
+}
+
+.popup-content h2 {
+    margin-top: 0; /* Remove top margin for headings */
+}
+
+.popup-content ul {
+    padding: 0;
+    list-style: none; /* Remove list bullets */
+    margin: 0;
+}
+
+.popup-content li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
         /*NavBar CSS*/
         * {
   box-sizing: border-box;
@@ -229,6 +268,20 @@ body {
   border-radius: 10px;
 }
 
+/*footer css  */
+.footer {
+    background: #004d00;
+    /* Dark Green */
+    color: white;
+    /* White text */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.9;
+}
+
 @media (max-width: 400px) {
   .toggle-button {
     display: flex;
@@ -268,55 +321,88 @@ body {
  
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var cards = document.querySelectorAll('.fcard');
-            var popup = document.querySelector('.popup');
-            var popupContent = document.querySelector('.popup-content');
-            var popupClose = document.querySelector('.popup-close');
+    document.addEventListener('DOMContentLoaded', function() {
+    var cards = document.querySelectorAll('.fcard');
+    var popup = document.querySelector('.popup');
+    var popupContent = document.querySelector('.popup-content');
 
-            cards.forEach(function(card) {
-                card.addEventListener('click', function() {
-                    var profileId = this.getAttribute('data-profile-id');
-                    console.log('Profile ID clicked:', profileId);
-
-                    fetch('golfprofile.php?action=getProfileData&id=' + profileId)
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log('Data:', data);
-                            popupContent.innerHTML = `
-                                <span class="popup-close">&times;</span>
-                                <div class="fcard">
-                                    <img src="../images/golfProfile.jpg">
-                                    <div class="article">
-                                        <h2>Player name: ${data.name}</h2>
-                                        <ul>
-                                            <li>Age: ${data.age}</li>
-                                            <li>Year Wins: ${data.yearWins}</li>
-                                            <li>Career Wins: ${data.careerWins}</li>
-                                            <li>Total Top Five: ${data.topFive}</li>
-                                            <li>Home-Place: ${data.homePlace}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            `;
-                            popup.style.display = 'flex';
-                        })
-                        .catch(error => {
-                            console.error('Error fetching profile data:', error);
-                        });
-                });
-            });
-
-            popupClose.addEventListener('click', function() {
-                popup.style.display = 'none';
-            });
-
-            window.addEventListener('click', function(event) {
-                if (event.target === popup) {
+    // Function to handle opening of popup
+    function openPopup(profileId) {
+        fetch('golfprofile.php?action=getProfileData&id=' + profileId)
+            .then(response => response.json())
+            .then(data => {
+                popupContent.innerHTML = `
+                    <span class="popup-close">&times;</span>
+                    <div class="fcard">
+                        <img src="../images/golfProfile.jpg">
+                        <div class="article">
+                            <h2>Player name: ${data.name}</h2>
+                            <ul>
+                                <li>Age: ${data.age}</li>
+                                <li>Year Wins: ${data.yearWins}</li>
+                                <li>Career Wins: ${data.careerWins}</li>
+                                <li>Total Top Five: ${data.topFive}</li>
+                                <li>Home-Place: ${data.homePlace}</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                popup.style.display = 'flex';
+                // Add close button event listener
+                document.querySelector('.popup-close').addEventListener('click', function() {
                     popup.style.display = 'none';
-                }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching profile data:', error);
             });
+    }
+
+   
+    var cards = document.querySelectorAll('.fcard');
+    var searchInput = document.getElementById('search-input');
+    var searchButton = document.getElementById('search-button');
+
+    // Function to filter cards based on search input
+    function filterCards() {
+        var searchText = searchInput.value.toLowerCase();
+
+        cards.forEach(function(card) {
+            var playerName = card.querySelector('h2').textContent.toLowerCase();
+            if (playerName.includes(searchText)) {
+                card.style.display = 'flex'; // Show matching cards
+            } else {
+                card.style.display = 'none'; // Hide non-matching cards
+            }
         });
+    }
+
+    // Event listener for typing in the search box
+    searchInput.addEventListener('input', filterCards);
+
+    // Event listener for clicking the search button
+    searchButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        filterCards();
+    });
+
+    // Attach event listeners to profile cards
+    cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            var profileId = this.getAttribute('data-profile-id');
+            openPopup(profileId);
+        });
+    });
+
+    // Close popup when clicking outside of the popup content
+    window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
+
+
     </script>
 </head>
 <body>
@@ -339,8 +425,8 @@ body {
     </ul>
     
      <div class="search-container">
-    <input type="text" placeholder="Search...">
-    <button type="submit">Search</button>
+    <input type="text" id="search-input" placeholder="Search...">
+    <button type="submit" id="search-button">Search</button>
   </div>
     
   </div>
@@ -350,12 +436,17 @@ body {
         displayAllProfiles($conn);
         ?>
     </div>
-    <div class="popup">
-        <div class="popup-content">
-            <span class="popup-close">&times;</span>
-            <!-- Profile data will be inserted here by JavaScript -->
-        </div>
+  <div class="popup">
+    <div class="popup-content">
+        <!-- Dynamic content will be inserted here by JavaScript -->
     </div>
+</div>
+
+
+  <div class="footer">
+        <p>&copy; 2024 LSON - Level Sports of Namibia. All rights reserved.</p>
+    </div>
+
 </body>
 </html>
 
