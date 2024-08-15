@@ -13,11 +13,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get the profile ID from the URL parameter
-$profileId = isset($_GET['id']) ? intval($_GET['id']) : 0;
-
-// Function to fetch and display a single profile
-function displaySingleProfile($conn, $profileId) {
+// Function to fetch a single profile as JSON
+function getProfileData($conn, $profileId) {
     $sql = "SELECT name, age, yearWins, careerWins, topFive, homePlace FROM golfprofile WHERE playerId = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $profileId);
@@ -410,7 +407,7 @@ body {
 </head>
 <body>
     <nav class="navbar">
-  <div class="brand-title"><a href="../index.php">LSON</a></div>
+  <div class="brand-title">LSON</div>
   <a href="#" class="toggle-button">
     <span class="bar"></span>
     <span class="bar"></span>
@@ -428,7 +425,7 @@ body {
     </ul>
     
      <div class="search-container">
-    <input type="text" id="search-input" placeholder="Search for a player...">
+    <input type="text" id="search-input" placeholder="Search...">
     <button type="submit" id="search-button">Search</button>
   </div>
     
