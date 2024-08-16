@@ -38,7 +38,7 @@ include 'golf_registration.php';
         <a href="../All sports/golfProfile.php">Player Profiles</a>
         <a href="swimming.php">Training and Development</a>
         <a href="golfsupporters.php">Supporters Club</a>
-        <a href="golf.php">Events</a>
+        <a href="event.php">Events</a>
         <a href="History.php">History</a>
     </div>
     </div>
