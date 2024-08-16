@@ -42,7 +42,7 @@ function displayAllProfiles($conn) {
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo '<div class="fcard" data-profile-id="' . htmlspecialchars($row["playerId"]) . '">';
-            echo '<img src="../images/golfProfile.jpg">';
+            echo '<img src="../images/PLAYER.png">';
             echo '<div class="article">';
             echo '<h2>Player name: ' . htmlspecialchars($row["name"]) . '</h2>';
             echo '<ul>';
