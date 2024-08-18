@@ -111,37 +111,50 @@ function displayAllProfiles($conn) {
             flex-direction: column;
             height: 100%;
         }
-       .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: #fff;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
 
+        /*Modification of the pop up */
+/* Updated Popup Styles */4
+
+.popup{
+    display: none;
+}
 .popup-content {
-    background: rgba(255, 255, 255, 0.1); /* Glass effect */
-    color: #fff;
+    display: flex;
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+    color: #000; /* Change text color to black for readability */
     padding: 20px;
     border-radius: 15px;
     width: 80%;
-    max-width: 600px;
+    max-width: 1000px; /* Increased max-width */
+    height: 80%; /* Adjust height to fit the content */
+    max-height: 600px; /* Prevent too large popups */
     backdrop-filter: blur(10px); /* Blurry background */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for better depth */
     text-align: left;
     position: relative;
-    overflow: auto; /* Handle overflow content */
+    overflow: hidden; /* Hide overflow to keep clean design */
+    justify-content: center;
+    align-items: center;
+    left: 25%;
+    bottom: 60%;
 }
 
+/* Layout for Image and Text */
+.popup-content .popup-image {
+    flex: 1;
+    padding: 10px;
+}
+
+.popup-content .popup-info {
+    flex: 2;
+    padding: 10px;
+}
+
+/* Ensure image fits nicely */
 .popup-content img {
     width: 100%;
-    max-height: 300px;
+    height: auto;
+    max-height: 400px; /* Limit image height */
     object-fit: cover;
     border-radius: 10px; /* Rounded corners for the image */
 }
@@ -152,26 +165,13 @@ function displayAllProfiles($conn) {
     right: 10px;
     cursor: pointer;
     font-size: 24px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5); /* Slightly darker background for close button */
+    color: #000;
+    background: rgba(255, 255, 255, 0.7); /* Light background for close button */
     padding: 5px;
     border-radius: 50%;
     z-index: 1001; /* Ensure it is above other elements */
 }
 
-.popup-content h2 {
-    margin-top: 0; /* Remove top margin for headings */
-}
-
-.popup-content ul {
-    padding: 0;
-    list-style: none; /* Remove list bullets */
-    margin: 0;
-}
-
-.popup-content li {
-    margin-bottom: 10px; /* Space between list items */
-}
 
         /*NavBar CSS*/
         * {
@@ -321,7 +321,7 @@ body {
  
     </style>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
     var cards = document.querySelectorAll('.fcard');
     var popup = document.querySelector('.popup');
     var popupContent = document.querySelector('.popup-content');
@@ -333,18 +333,18 @@ body {
             .then(data => {
                 popupContent.innerHTML = `
                     <span class="popup-close">&times;</span>
-                    <div class="fcard">
-                        <img src="../images/golfProfile.jpg">
-                        <div class="article">
-                            <h2>Player name: ${data.name}</h2>
-                            <ul>
-                                <li>Age: ${data.age}</li>
-                                <li>Year Wins: ${data.yearWins}</li>
-                                <li>Career Wins: ${data.careerWins}</li>
-                                <li>Total Top Five: ${data.topFive}</li>
-                                <li>Home-Place: ${data.homePlace}</li>
-                            </ul>
-                        </div>
+                    <div class="popup-image">
+                        <img src="../images/golfProfile.jpg" alt="${data.name}">
+                    </div>
+                    <div class="popup-info">
+                        <h2>Player name: ${data.name}</h2>
+                        <ul>
+                            <li>Age: ${data.age}</li>
+                            <li>Year Wins: ${data.yearWins}</li>
+                            <li>Career Wins: ${data.careerWins}</li>
+                            <li>Total Top Five: ${data.topFive}</li>
+                            <li>Home-Place: ${data.homePlace}</li>
+                        </ul>
                     </div>
                 `;
                 popup.style.display = 'flex';
@@ -357,6 +357,23 @@ body {
                 console.error('Error fetching profile data:', error);
             });
     }
+
+    // Attach event listeners to profile cards
+    cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+            var profileId = this.getAttribute('data-profile-id');
+            openPopup(profileId);
+        });
+    });
+
+    // Close popup when clicking outside of the popup content
+    window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
+
 
    
     var cards = document.querySelectorAll('.fcard');
@@ -400,7 +417,7 @@ body {
             popup.style.display = 'none';
         }
     });
-});
+
 
 
     </script>
@@ -436,6 +453,8 @@ body {
         displayAllProfiles($conn);
         ?>
     </div>
+
+<!--This pop up must be-->
   <div class="popup">
     <div class="popup-content">
         <!-- Dynamic content will be inserted here by JavaScript -->

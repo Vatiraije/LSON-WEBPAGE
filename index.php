@@ -7,6 +7,7 @@
     <title>LEVEL SPORTS OF NAMIBIA</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/159bedbb65.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <style>
     @media (max-width: 1200px) {
         .news-card {
