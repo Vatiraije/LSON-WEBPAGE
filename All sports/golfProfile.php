@@ -38,19 +38,33 @@ function displayAllProfiles($conn) {
     $sql = "SELECT playerId, name FROM golfprofile";
     $result = $conn->query($sql);
 
+    // Array of image paths
+    $images = [
+        "../images/EntranceMale.png",
+        "../images/EntranceFemale.png",
+        "../images/EntranceNeutral.png"
+    ];
+
     if ($result->num_rows > 0) {
+        $i = 0; // Initialize index for images
         while($row = $result->fetch_assoc()) {
+            // Select image based on the current index
+            $imgPath = $images[$i % count($images)];
+
             echo '<div class="fcard" data-profile-id="' . htmlspecialchars($row["playerId"]) . '">';
-            echo '<img src="../images/PLAYER.png">';
+            echo '<img src="' . htmlspecialchars($imgPath) . '">';
             echo '<div class="article">';
             echo '<h2>Player name: ' . htmlspecialchars($row["name"]) . '</h2>';
             echo '</div>';
             echo '</div>';
+
+            $i++; // Increment index
         }
     } else {
         echo "No profiles found";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -256,7 +270,7 @@ function displayAllProfiles($conn) {
         <div class="brand-title">Golf Player Profiles</div>
         <div class="navbar-links">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="golf.php">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
