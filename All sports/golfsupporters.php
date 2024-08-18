@@ -91,27 +91,29 @@ include 'golf_registration.php';
     <!--Golf events-->
         <section id="events" class="section">
             <div class="section-header">
-                <h2>Golf Events</h2>
-                <p>Check out the Golf events. You don't want to miss it!.</p>
+                <h2 class="center-text">Supporters Club</h2>
+                <h3 class="center-text">Welcome to the Namibian Golf Supporters Club</h3>
+                <p>Join us in celebrating and supporting the beautiful game of golf in Namibia. Our club is dedicated to fostering a vibrant golf community, sharing news, and organizing events that bring together fans from across the country.</p>
+
             </div>
 
             <div class="content">
                 <!-- Example content -->
                 <article>
-                    <h3>NAGU/OTHER</h3>
-                    <p>Latest Events from the NAGU/OTHER</p>
-                    <img src="../images/golf.jpg" alt="GOLF PREMIER LEAGUE">
+                    <h3> Windhoek Golf Championship Club</h3>
+                    
+                    <img src="../images/sages.jpg" alt="GOLF PREMIER LEAGUE">
                 </article>
                 <article>
-                    <h3>NALGU (ladies)</h3>
-                    <p>Latest Events from the NALGU ladies.</p>
-                    <img src="../images/golf2547.jpg" alt="GOLF FIRST DIVISION">
+                    <h3>Swakopmund Golf Clinic</h3>
+                   
+                    <img src="../images/aweh1.png" alt="GOLF FIRST DIVISION">
                 </article>
 
                 <article>
-                <h3>SAGES</h3>
-                <p>Latest Events from the SAGES</p>
-                <img src="../images/golf3.jpg" alt="GOLF1">
+                <h3>Annual Golf Gala</h3>
+                
+                <img src="../images/gs11.png" alt="GOLF FIRST DIVISION">
                 </article>
                 <br>
                 <br>
@@ -122,134 +124,42 @@ include 'golf_registration.php';
                
                 
             </div>
-            <article>
-                <video src="../videos/golf2.mp4" controls></video>
-                </article>
+           
         </section>
 
 
-<!--Golf news-->
-        <section id="news" class="section">
-         <div class="section-header">
-                <h2>Golf News</h2>
-                <p>Explore the latest updates, news, and standings from Namibian Golf.</p>
-            </div>
 
-            <div class="content">
-                <!-- Example content -->
-                <article>
-                    <h3>PGA Tour</h3>
-                    <p>Latest updates and standings from the Namibian League.</p>
-                    <img src="../images/pga.jpg" alt="GOLF PREMIER LEAGUE">
-                </article>
-                <article>
-                    <h3>Namibian Tour</h3>
-                    <p>Latest updates and standings from the Namibian First Division.</p>
-                    <img src="../images/golfCup.jpg" alt="GOLF FIRST DIVISION">
-                </article>
-<article>
-                <h3>SAGES</h3>
-                <p>Latest Events from the SAGES</p>
-                <img src="../images/sages.jpg" alt="GOLF1">
-                </article>
-                <br>
-                <br>
-                <br><br>
-                <p></p>
-                <p></p>
-                <p></p>
-                
+        
+
+        <section class="section member-benefits">
+            <h2 class="center-text">Member Benefits</h2>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Exclusive access to special golf events and tournaments.</li>
+                <li><i class="fa-solid fa-check"></i> Discounts on golf equipment and apparel at partnered stores.</li>
+                <li><i class="fa-solid fa-check"></i> Invitations to member-only golf clinics and workshops.</li>
+                <li><i class="fa-solid fa-check"></i> Monthly newsletter with golf news, tips, and updates.</li>
+                <li><i class="fa-solid fa-check"></i> Access to a network of fellow golf enthusiasts and professionals.</li>
+            </ul>
+        </section>
+
+
     
+        
 
-
-            </div>
-            <video 
-        src="../videos/golf1.mp4" 
-        controls 
-        >
-    </video>
-                </section>
-
-
-        <section id="standings" class="section">
-            <div class="section-header">
-                <h2>Standings</h2>
-                <p>Check out the current standings of your favorite golfers.</p>
-            </div>
-
-            <div class="content">
-                <!-- Example standings content -->
-                <article>
-                    <h3>Namibian Tour</h3>
-                    <p>1. Golfer A - 45 points</p>
-                    <p>2. Golfer B - 42 points</p>
-                    <p>3. Golfer C - 39 points</p>
-                </article>
-                <article>
-                    <h3>First Division</h3>
-                    <p>1. Golfer X - 40 points</p>
-                    <p>2. Golfer Y - 38 points</p>
-                    <p>3. Golfer Z - 35 points</p>
-                </article>
+        <section class="section fan-interaction">
+            <h2 class="center-text">Join the Conversation</h2>
+            <p>Connect with fellow golf enthusiasts and stay updated through our social media channels and forum. Share your thoughts, post photos, and engage with the golf community!</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/NamibianGolf" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="https://twitter.com/NamibianGolf" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="https://www.instagram.com/NamibianGolf" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
             </div>
         </section>
 
-        <section id="players" class="section">
-            <div class="section-header">
-                <h2>Player Profiles</h2>
-                <p>Get to know the top players in Namibian Golf.</p>
-            </div>
-
-            <div class="content">
-                <!-- Example player profiles -->
-                <article >
-                <h3>Golfer A</h3>
-                <a href="golfProfile.php?id=1">
-                
-                <img class="profile" src="../images/golfProfile.jpg" alt="">
-            </a>
-                    
-                </article>
-                <article>
-                    <h3>Golfer B</h3>
-                    <a href="golfProfile.php?id=2">
-                
-                <img class="profile" src="../images/golfProfile.jpg" alt="">
-            </a>
-                </article>
-            </div>
-        </section>
-<section id="calendar">
-    <div class="calendar-container">
-        <div class="calendar-header">
-            <div class="calendar-nav">
-                <button class="prev-month">&lt;</button>
-                <h2 id="month-year">August 2024</h2>
-                <button class="next-month">&gt;</button>
-            </div>
-        </div>
-        <table class="calendar">
-            <thead>
-                <tr>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                    <th>Sunday</th>
-                </tr>
-            </thead>
-            <tbody id="calendar-body">
-                <!-- Calendar dates will be injected here by JavaScript -->
-            </tbody>
-        </table>
-    </div>
-
-    <section id="contact" class="section">
+        <section id="contact" class="section">
     <div class="section-header">
-        <h2 class="center-text">Register Now</h2>
-        <p class="center-text">Fill out the form below to register for the upcoming events.</p>
+        <h2 class="center-text">Become A Member Now</h2>
+        <p class="center-text">Fill out the form below to register for golf club memebership.</p>
     </div>
     <div class="registration-container">
         <!-- Display success or error message -->
@@ -337,58 +247,14 @@ include 'golf_registration.php';
   </section>
 
 
-
-        <!-- <div class="form-container">
-            <form action="" method="GET">
-                <input type="text" name="search" placeholder="Search players, teams, leagues...">
-            </form>
-        </div> -->
-
-
-    </div>
-
-   
-
-
-
-   
-
-
-    </div>
-
-
-
-   
-
-
-
-    
-<img src="golfer-removebg-preview.png" alt="Golf Animation" class="side-image">
-
-<div class="main-content">
-        <!-- Main content here -->
-
-        <!-- Floating button -->
-        <button class="floating-button" onclick="toggleFloatingContent()">
-            <i class="fas fa-phone"></i>
-        </button>
-
-        <!-- Dummy data pop-up -->
-        <div class="floating-content" id="floatingContent">
-            <p>Dummy Content</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button onclick="toggleFloatingContent()">Close</button>
-        </div>
-
-    </div>
+    </main>
 
     <div class="footer">
         <p>&copy; 2024 LSON - Level Sports of Namibia. All rights reserved.</p>
     </div>
   <!------------ Calendar Script------------------ -->
   <script src="golf.js"></script>
-    <script>
+     <script>
         var sidemenu = document.getElementById("sidemenu");
 
 function openmenu() {

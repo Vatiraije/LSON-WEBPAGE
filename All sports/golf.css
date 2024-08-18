@@ -268,74 +268,62 @@ form input[type="text"]::placeholder {
 }
 
 /* -----------Calendar------------------------ */
+/* Updated Calendar Container */
+/* -----------Calendar------------------------ */
+/* Updated Calendar Container */
 .calendar-container {
-    max-width: 700px;
+    max-width: 775px; /* 50% of the original 950px */
     margin: 0 auto;
-    background: linear-gradient (135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
-
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-weight: 600;
-    margin-left: -15%;
-    max-height: 600px;
 }
 
-.next-month,
-.prev-month {
-    color: #ffffff;
-}
-
+/* Resize Calendar Header */
 .calendar-header {
-    padding: 10px 20px;
-    background-color: #004d00;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center content horizontally */
+    padding: 5px 10px; /* Reduced padding */
+    background-color: #004d00; /* Header background color */
     border-bottom: 1px solid #ddd;
+    position: relative;
 }
 
-.calendar-nav {
+/* Container for header text */
+.calendar-header .header-text {
+    flex: 1;
+    text-align: center;
+    font-size: 12px; /* Font size for header text */
+}
+
+/* Container for navigation buttons */
+.calendar-header .calendar-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
 }
 
 .calendar-nav button {
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+    background: none; /* Remove default background */
+    border: none; /* Remove default border */
+    color: white; /* Text color for icons */
+    font-size: 16px; /* Font size for icons */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 5px; /* Add padding around buttons */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition */
 }
 
-.calendar-nav h2 {
-    margin: 0;
-    font-size: 24px;
-
+.calendar-nav button:hover,
+.calendar-nav button:focus {
+    color: #e0e0e0; /* Lighten the icon color on hover/focus */
+    background-color: rgba(255, 255, 255, 0.2); /* Slight fade-in effect */
+    border-radius: 4px; /* Rounded corners */
 }
 
-.calendar-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-around;
-    background-color: #15750f;
-    border-bottom: 1px solid #ddd;
-}
-
-.calendar-menu li {
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.calendar-menu li.active {
-    background-color: #17b705;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.calendar-menu li:hover {
-    background-color: #17b705;
-}
-
+/* Resize Calendar Table */
 .calendar {
     width: 80%;
     border-collapse: collapse;
@@ -343,24 +331,22 @@ form input[type="text"]::placeholder {
 
 .calendar th,
 .calendar td {
-    padding: 10px;
+    padding: 5px; /* Reduced padding */
     text-align: center;
     border: 1px solid #ddd;
-    height: 100px;
+    height: 50px; /* Reduced height */
     vertical-align: top;
-    max-width: 40px;
+    max-width: 20px; /* Adjusted for smaller size */
     font-weight: 800;
 }
 
 .calendar td.active {
     background: linear-gradient(to bottom, #024e0494, rgba(0, 82, 7, 0.937));
-    /* Gradient for depth */
-    border: 2px solid ;
+    border: 1px solid;
     box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.703);
-    backdrop-filter: blur(1spx);
-
-    /* Subtle shadow for depth */
+    backdrop-filter: blur(1px);
 }
+
 .calendar td.has-event {
     cursor: pointer;
     position: relative;
@@ -375,19 +361,25 @@ form input[type="text"]::placeholder {
     border: 1px solid #ddd;
     padding: 5px;
     z-index: 10;
-    width: 150px;
+    width: 75px; /* Adjusted width */
 }
 
 .calendar td.has-event:hover .event-details {
     display: block;
 }
 
-/* Event category colors */
+/* Adjust Event Category Colors */
 .calendar td.nagu-event { background-color: rgba(0, 234, 255, 0.423); }
 .calendar td.nalgu-event { background-color: rgba(255, 0, 170, 0.477); }
 .calendar td.njgf-event { background-color: rgba(229, 255, 0, 0.492); }
 .calendar td.sages-event { background-color: rgba(255, 140, 0, 0.441); }
-.calendar td.seniors-event { background-color:rgba(64, 255, 0, 0.396); ; }
+.calendar td.seniors-event { background-color: rgba(64, 255, 0, 0.396); }
+
+/* Adjusted Media Query (if needed) */
+@media (max-width: 768px) {
+    /* Adjust calendar layout for responsiveness if needed */
+}
+
 
 /*footer css  */
 .footer {
@@ -705,6 +697,7 @@ form input[type="text"]::placeholder {
     /* Wider form */
     margin: 0 auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
 }
 
 .registration-container form {
