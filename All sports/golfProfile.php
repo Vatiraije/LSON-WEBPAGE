@@ -33,10 +33,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'getProfileData') {
     echo json_encode($profileData);
     exit;
 }
-
 // Function to fetch and display all profiles
 function displayAllProfiles($conn) {
-    $sql = "SELECT playerId, name, age, yearWins, careerWins, topFive, homePlace FROM golfprofile";
+    $sql = "SELECT playerId, name FROM golfprofile";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -45,13 +44,6 @@ function displayAllProfiles($conn) {
             echo '<img src="../images/PLAYER.png">';
             echo '<div class="article">';
             echo '<h2>Player name: ' . htmlspecialchars($row["name"]) . '</h2>';
-            echo '<ul>';
-            echo '<li>Age: ' . htmlspecialchars($row["age"]) . '</li>';
-            echo '<li>Year Wins: ' . htmlspecialchars($row["yearWins"]) . '</li>';
-            echo '<li>Career Wins: ' . htmlspecialchars($row["careerWins"]) . '</li>';
-            echo '<li>Total Top Five: ' . htmlspecialchars($row["topFive"]) . '</li>';
-            echo '<li>Home-Place: '. htmlspecialchars($row["homePlace"]) . '</li>';
-            echo '</ul>';
             echo '</div>';
             echo '</div>';
         }
@@ -97,7 +89,7 @@ function displayAllProfiles($conn) {
             animation: walkout 1s ease-out forwards; 
         }
         img {
-            height: 290px;
+            height: 390px;
             width: 100%;
             overflow: hidden;
             object-fit: cover;
@@ -105,13 +97,7 @@ function displayAllProfiles($conn) {
             border-top-right-radius: 10px;
             filter: drop-shadow(0px 4px 2px #aaaa);
         }
-        .article {
-            padding: 22px;
-            text-align: justify;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
+        
         .popup {
             display: none;
             position: fixed;
