@@ -97,7 +97,7 @@ function displayAllProfiles($conn) {
             border-top-right-radius: 10px;
             filter: drop-shadow(0px 4px 2px #aaaa);
         }
-        
+       
         .popup {
             display: none;
             position: fixed;
