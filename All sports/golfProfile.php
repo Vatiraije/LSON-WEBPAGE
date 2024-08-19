@@ -383,10 +383,10 @@ function displayAllProfiles($conn) {
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
-        <div class="search-container">
-            <input type="text" placeholder="Search..">
-            <button type="submit">Submit</button>
-        </div>
+         <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button type="submit" id="search-button">Search</button>
+  </div>
     </nav>
 
     <!-- Profile Section -->
@@ -457,6 +457,33 @@ function displayAllProfiles($conn) {
             popupClose.onclick = function() {
                 popup.style.display = 'none'; // Hide popup
             };
+
+               var cards = document.querySelectorAll('.fcard');
+    var searchInput = document.getElementById('search-input');
+    var searchButton = document.getElementById('search-button');
+
+    // Function to filter cards based on search input
+    function filterCards() {
+        var searchText = searchInput.value.toLowerCase();
+
+        cards.forEach(function(card) {
+            var playerName = card.querySelector('h2').textContent.toLowerCase();
+            if (playerName.includes(searchText)) {
+                card.style.display = 'flex'; // Show matching cards
+            } else {
+                card.style.display = 'none'; // Hide non-matching cards
+            }
+        });
+    }
+
+    // Event listener for typing in the search box
+    searchInput.addEventListener('input', filterCards);
+
+    // Event listener for clicking the search button
+    searchButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        filterCards();
+    });
         });
     </script>
 </body>
