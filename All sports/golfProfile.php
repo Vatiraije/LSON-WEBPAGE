@@ -101,6 +101,13 @@ function displayAllProfiles($conn) {
             border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
             animation: walkout 1s ease-out forwards; 
+            transition: transform 0.3s ease, background 0.3s ease; /* Smooth transitions */
+        }
+
+        .fcard:hover {
+           transform: scale(1.05); /* Slight expansion */
+          background: rgba(255, 255, 255, 0.6); /* Slightly darker background */
+           box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
         }
         img {
             height: 390px;
@@ -145,6 +152,7 @@ function displayAllProfiles($conn) {
             align-items: center;
             border-radius: 20px; /* Optional: Add slight rounding to the corners */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+            
         }
 
         /* Info Section */
@@ -179,12 +187,14 @@ function displayAllProfiles($conn) {
             padding: 20px;
             display: flex;
             justify-content: center;
+            height: 600px;
         }
 
         .video-container video {
             width: 100%;
-            height: auto;
+            /* height: auto; */
             border-radius: 10px;
+            object-fit:cover;
         }
 
         /* Close Button */
@@ -192,9 +202,10 @@ function displayAllProfiles($conn) {
             position: absolute;
             top: 10px;
             right: 10px;
-            font-size: 24px;
+            font-size: 36px;
             color: black;
             cursor: pointer;
+           
         }
 
         /*NavBar CSS*/
