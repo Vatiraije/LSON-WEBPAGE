@@ -33,6 +33,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'getProfileData') {
     echo json_encode($profileData);
     exit;
 }
+
 // Function to fetch and display all profiles
 function displayAllProfiles($conn) {
     $sql = "SELECT playerId, name FROM golfprofile";
@@ -64,7 +65,6 @@ function displayAllProfiles($conn) {
         echo "No profiles found";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -119,214 +119,7 @@ function displayAllProfiles($conn) {
             height: 100%;
         }
 
-        /*Modification of the pop up */
-/* Updated Popup Styles */4
-
-.popup{
-    display: none;
-}
-.popup-content {
-    display: flex;
-    background: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
-    color: #000; /* Change text color to black for readability */
-    padding: 20px;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 1000px; /* Increased max-width */
-    height: 80%; /* Adjust height to fit the content */
-    max-height: 600px; /* Prevent too large popups */
-    backdrop-filter: blur(10px); /* Blurry background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for better depth */
-    text-align: left;
-    position: relative;
-    overflow: hidden; /* Hide overflow to keep clean design */
-    justify-content: center;
-    align-items: center;
-    left: 25%;
-    bottom: 60%;
-}
-
-/* Layout for Image and Text */
-.popup-content .popup-image {
-    flex: 1;
-    padding: 10px;
-}
-
-.popup-content .popup-info {
-    flex: 2;
-    padding: 10px;
-}
-
-/* Ensure image fits nicely */
-.popup-content img {
-    width: 100%;
-    height: auto;
-    max-height: 400px; /* Limit image height */
-    object-fit: cover;
-    border-radius: 10px; /* Rounded corners for the image */
-}
-
-.popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #000;
-    background: rgba(255, 255, 255, 0.7); /* Light background for close button */
-    padding: 5px;
-    border-radius: 50%;
-    z-index: 1001; /* Ensure it is above other elements */
-}
-
-
-        /*NavBar CSS*/
-        * {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(7, 137, 7, 0.7);
-  color: #fff;
-}
-
-.brand-title {
-  font-size: 1.5rem;
-  margin: 0.8rem;
-}
-
-.navbar-links {
-    flex: 1; /* Take up available space */
-    display: flex;
-    justify-content: center; /* Center the links horizontally */
-  }
-
-.navbar-links ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.navbar-links li {
-  list-style: none;
-}
-
-.navbar-links li:hover {
-  background-color: rgba(7, 137, 7, 0.7);
-}
-
-.navbar-links li a {
-  text-decoration: none;
-  color: white;
-  padding: 1rem;
-  display: block;
-}
-
-
-  .search-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .search-container input {
-    padding: 5px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
-  }
-
-  .search-container button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    background: #555;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  .search-container button:hover {
-    background: rgba(7, 137, 7, 0.7);
-  }
-
-.toggle-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 21px;
-}
-
-.toggle-button .bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
-}
-
-/*footer css  */
-.footer {
-    background: #004d00;
-    /* Dark Green */
-    color: white;
-    /* White text */
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    opacity: 0.9;
-}
-
-@media (max-width: 400px) {
-  .toggle-button {
-    display: flex;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar-links {
-    display: none;
-    width: 100%;
-  }
-
-  .navbar-links ul {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .navbar-links li {
-    text-align: center;
-  }
-
-  .navbar-links li a {
-    padding: 0.5rem 1rem;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-  
-      .search-container {
-      margin-left: auto; /* Align search bar to the right on small screens */
-    }
-}
- 
-       
+        /* Popup Container */
         .popup {
             display: none;
             position: fixed;
@@ -335,79 +128,85 @@ body {
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            color: #fff;
-            align-items: center;
-            justify-content: center;
             z-index: 1000;
-            animation: popupFadeIn 0.5s ease-out forwards;
+            justify-content: center;
+            align-items: center;
         }
-        @keyframes walkout {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            50% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        @keyframes popupFadeIn {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
+
+        /* Full-Screen Popup Content with Glassy Effect */
         .popup-content {
-            background: rgba(255, 255, 255, 0.1); /* Glass effect */
-            color: #fff;
-            padding: 20px;
-            border-radius: 15px;
-            width: 80%;
-            max-width: 800px;
-            backdrop-filter: blur(10px); /* Blurry background */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for better depth */
-            display: flex; /* Flex layout */
-            flex-direction: row; /* Side by side */
-            justify-content: space-between; /* Space between video and info */
-        }
-        .popup-content img {
+            display: flex;
             width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 10px; /* Rounded corners for the image */
+            height: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.3); /* Semi-transparent background for glassy effect */
+            backdrop-filter: blur(10px); /* Apply blur for the glassy effect */
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 20px; /* Optional: Add slight rounding to the corners */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
         }
+
+        /* Info Section */
+        .profile-info {
+            flex: 3; /* 3/4 width */
+            padding: 20px;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1.5em; /* Increase the font size */
+        }
+
+        .profile-info h2 {
+            margin-top: 0;
+            font-size: 2.5em; /* Larger title font size */
+        }
+
+        .profile-info ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .profile-info li {
+            margin-bottom: 15px; /* Increase spacing between list items */
+        }
+
+        /* Video Section */
+        .video-container {
+            flex: 1; /* 1/4 width */
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Close Button */
         .popup-close {
             position: absolute;
             top: 10px;
             right: 10px;
-            cursor: pointer;
             font-size: 24px;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5); /* Slightly darker background for close button */
-            padding: 5px;
-            border-radius: 50%;
-            z-index: 1001; /* Ensure it is above other elements */
+            color: black;
+            cursor: pointer;
         }
-        .popup-content h2 {
-            margin-top: 0; /* Remove top margin for headings */
+
+        /*NavBar CSS*/
+        * {
+            box-sizing: border-box;
         }
-        .popup-content ul {
-            padding: 0;
-            list-style: none; /* Remove list bullets */
+
+        body {
             margin: 0;
+            padding: 0;
         }
-        .popup-content li {
-            margin-bottom: 10px; /* Space between list items */
-        }
-        /* NavBar CSS */
+
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -415,42 +214,51 @@ body {
             background-color: rgba(7, 137, 7, 0.7);
             color: #fff;
         }
+
         .brand-title {
             font-size: 1.5rem;
             margin: 0.8rem;
         }
+
         .navbar-links {
             flex: 1; /* Take up available space */
             display: flex;
             justify-content: center; /* Center the links horizontally */
         }
+
         .navbar-links ul {
             margin: 0;
             padding: 0;
             display: flex;
         }
+
         .navbar-links li {
             list-style: none;
         }
+
         .navbar-links li:hover {
             background-color: rgba(7, 137, 7, 0.7);
         }
+
         .navbar-links li a {
             text-decoration: none;
             color: white;
             padding: 1rem;
             display: block;
         }
+
         .search-container {
             display: flex;
             align-items: center;
         }
+
         .search-container input {
             padding: 5px;
             border: none;
             border-radius: 4px 0 0 4px;
             font-size: 16px;
         }
+
         .search-container button {
             padding: 5px 10px;
             border: none;
@@ -460,22 +268,53 @@ body {
             font-size: 16px;
             cursor: pointer;
         }
+
         .search-container button:hover {
             background: rgba(7, 137, 7, 0.7);
         }
-        /* Video Container CSS */
-        .video-container {
-            width: 48%; /* Adjust width to allow side-by-side */
-        }
-        .profile-info {
-            width: 48%; /* Adjust width to allow side-by-side */
-            padding: 0 20px; /* Add some padding for spacing */
-        }
-        .Player-gif {
+
+        .footer {
+            background: #004d00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            height: auto;
-            max-width: 100%;
-            border-radius: 10px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 400px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                display: none;
+                width: 100%;
+            }
+
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .navbar-links ul {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .navbar-links li {
+                text-align: center;
+            }
+
+            .navbar-links li a {
+                padding: 0.5rem 1rem;
+            }
+
+            .search-container {
+                margin-left: auto;
+            }
         }
     </style>
 </head>
@@ -504,10 +343,13 @@ body {
     <!-- Popup Container -->
     <div class="popup">
         <div class="popup-content">
+            <div class="profile-info">
+                <!-- Player Info will be dynamically populated here -->
+            </div>
             <div class="video-container">
                 <video src="../images/PlayerAppearance.mp4" class="Player-gif" autoplay loop muted></video>
             </div>
-            <div class="profile-info"></div>
+            <span class="popup-close">&times;</span>
         </div>
     </div>
 
@@ -515,14 +357,17 @@ body {
         document.addEventListener('DOMContentLoaded', function() {
             var cards = document.querySelectorAll('.fcard');
             var popup = document.querySelector('.popup');
-            var popupContent = document.querySelector('.profile-info');
+            var popupInfo = document.querySelector('.profile-info');
+            var popupClose = document.querySelector('.popup-close');
+
+            // Ensure the popup stays hidden initially
+            popup.style.display = 'none';
 
             function openPopup(profileId) {
                 fetch('golfprofile.php?action=getProfileData&id=' + profileId)
                     .then(response => response.json())
                     .then(data => {
-                        popupContent.innerHTML = `
-                            <span class="popup-close">&times;</span>
+                        popupInfo.innerHTML = `
                             <h2>Player name: ${data.name}</h2>
                             <ul>
                                 <li>Age: ${data.age}</li>
@@ -532,7 +377,7 @@ body {
                                 <li>Home-Place: ${data.homePlace}</li>
                             </ul>
                         `;
-                        popup.style.display = 'flex';
+                        popup.style.display = 'flex'; // Show popup when profile is clicked
                     })
                     .catch(error => {
                         console.error('Error fetching profile data:', error);
@@ -550,16 +395,14 @@ body {
             // Close popup when clicking outside of the popup content
             window.addEventListener('click', function(event) {
                 if (event.target === popup) {
-                    popup.style.display = 'none';
+                    popup.style.display = 'none'; // Hide popup
                 }
             });
 
             // Close popup when clicking the close button
-            document.addEventListener('click', function(event) {
-                if (event.target.classList.contains('popup-close')) {
-                    popup.style.display = 'none';
-                }
-            });
+            popupClose.onclick = function() {
+                popup.style.display = 'none'; // Hide popup
+            };
         });
     </script>
 </body>
