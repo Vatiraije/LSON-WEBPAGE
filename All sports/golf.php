@@ -55,6 +55,7 @@ include 'golf_registration.php';
 
    
 
+    
     <div class="vertical-nav" id="sidemenu">
     <i class="fa-solid fa-xmark" onclick="closemenu()" style="color: #fff;
              position: relative;
@@ -91,6 +92,7 @@ include 'golf_registration.php';
              font-size: 25px; " onclick="openmenu()"></i>
     </div>
 
+ 
     <div class="main-content">
 
     <!--Golf events-->
@@ -394,15 +396,22 @@ include 'golf_registration.php';
   <!------------ Calendar Script------------------ -->
   <script src="golf.js"></script>
     <script>
-        var sidemenu = document.getElementById("sidemenu");
+     var sidemenu = document.getElementById("sidemenu");
+    var hamburgerIcon = document.getElementById("hamburgerIcon");
 
-function openmenu() {
-    document.getElementById("sidemenu").style.left = "0";
-}
+    function openmenu() {
+        sidemenu.style.left = "0";  // Open the menu
+        sidemenu.style.overflowY = 'auto';  // Enable scrolling
+        hamburgerIcon.style.display = "none";  // Hide the hamburger icon when menu is open
+        document.body.style.overflowY = 'hidden';  // Disable body scroll when menu is open
+    }
 
-function closemenu() {
-    document.getElementById("sidemenu").style.left = "-300px";
-}
+    function closemenu() {
+        sidemenu.style.left = "-300px";  // Close the menu
+        sidemenu.style.overflowY = 'hidden';  // Disable scrolling when the menu is closed
+        hamburgerIcon.style.display = "block";  // Show the hamburger icon
+        document.body.style.overflowY = 'auto';  // Re-enable body scroll
+    }
 
 function toggleFloatingContent() {
             var content = document.getElementById("floatingContent");
