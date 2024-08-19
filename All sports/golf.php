@@ -56,7 +56,12 @@ include 'golf_registration.php';
    
 
     <div class="vertical-nav" id="sidemenu">
-    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+    <i class="fa-solid fa-xmark" onclick="closemenu()" style="color: #fff;
+             position: relative;
+             top: 4%;
+             left: 90%;
+             transform: translateY(-50%);
+             font-size: 25px; "></i>
         <a href="basketball.php">Basketball</a>
         <a href="bowling.php">Bowling</a>
         <a href="boxing.php">Boxing</a>
