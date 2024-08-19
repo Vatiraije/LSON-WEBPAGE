@@ -49,15 +49,15 @@ include 'golf_registration.php';
 
 
     <div class="vertical-nav" id="sidemenu">
-        <<<<<<< HEAD <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-            =======
+         <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+           
             <i class="fa-solid fa-xmark" onclick="closemenu()" style="color: #fff;
              position: relative;
              top: 4%;
              left: 90%;
              transform: translateY(-50%);
              font-size: 25px; "></i>
-            >>>>>>> 7af5b62edc093bfef717b5ed07be089559a6269c
+          
             <a href="basketball.php">Basketball</a>
             <a href="bowling.php">Bowling</a>
             <a href="boxing.php">Boxing</a>
