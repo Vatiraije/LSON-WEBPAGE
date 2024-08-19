@@ -34,12 +34,12 @@ include 'golf_registration.php';
         <h1><a href="../index.php">LSON</a> - Golf</h1>
         <p>Your source for all things Namibian Golf</p>
         <div class="navigation">
-            <a href="football.php">All</a>
+           <a href="">All</a>
             <a href="clubs.php">Clubs</a>
             <a href="leagues.php">Leagues</a>
             <a href="../All sports/golfProfile.php">Player Profiles</a>
-            <a href="swimming.php">Training and Development</a>
-            <a href="boxing.php">Supporters Club</a>
+            <a href="trainingAndDevelopment.php">Training and Development</a>
+            <a href="golfsupporters.php">Supporters Club</a>
             <a href="golf.php">Events</a>
             <a href="History.php">History</a>
         </div>
