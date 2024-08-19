@@ -140,7 +140,7 @@ body {
 .main-content {
     margin-left: 240px;
     /* Same width as the vertical navbar + some margin */
-    padding: 20px;
+    padding: 40px;
     max-width: 1200px;
 }
 .section {
@@ -151,7 +151,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 40px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin-left: -16%;
     /* Move to the left */
