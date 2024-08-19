@@ -47,36 +47,46 @@ include 'golf_registration.php';
 
 
 
-    <div class="vertical-nav" id="sidemenu">
-        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-        <a href="basketball.php">Basketball</a>
-        <a href="bowling.php">Bowling</a>
-        <a href="boxing.php">Boxing</a>
-        <a href="chess.php">Chess</a>
-        <a href="cricket.php">Cricket</a>
-        <a href="cycling.php">Cycling</a>
-        <a href="esports.php">E-Sports</a>
-        <a href="football.php">Football</a>
-        <a href="futsal.php">Futsal</a>
-        <a href="golf.php" class="active">Golf</a>
-        <a href="hockey.php">Hockey</a>
-        <a href="horseriding.php">Horse Riding</a>
-        <a href="mma.php">MMA</a>
-        <a href="netball.php">Netball</a>
-        <a href="polo.php">Polo</a>
-        <a href="racing.php">Racing</a>
-        <a href="rugby.php">Rugby</a>
-        <a href="swimming.php">Swimming</a>
-        <a href="tennis.php">Tennis</a>
-        <a href="volleyball.php">Volleyball</a>
 
-        <i class="fa-solid fa-bars" style="color: #fff;
+    <div class="vertical-nav" id="sidemenu">
+        <<<<<<< HEAD <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            =======
+            <i class="fa-solid fa-xmark" onclick="closemenu()" style="color: #fff;
+             position: relative;
+             top: 4%;
+             left: 90%;
+             transform: translateY(-50%);
+             font-size: 25px; "></i>
+            >>>>>>> 7af5b62edc093bfef717b5ed07be089559a6269c
+            <a href="basketball.php">Basketball</a>
+            <a href="bowling.php">Bowling</a>
+            <a href="boxing.php">Boxing</a>
+            <a href="chess.php">Chess</a>
+            <a href="cricket.php">Cricket</a>
+            <a href="cycling.php">Cycling</a>
+            <a href="esports.php">E-Sports</a>
+            <a href="football.php">Football</a>
+            <a href="futsal.php">Futsal</a>
+            <a href="golf.php" class="active">Golf</a>
+            <a href="hockey.php">Hockey</a>
+            <a href="horseriding.php">Horse Riding</a>
+            <a href="mma.php">MMA</a>
+            <a href="netball.php">Netball</a>
+            <a href="polo.php">Polo</a>
+            <a href="racing.php">Racing</a>
+            <a href="rugby.php">Rugby</a>
+            <a href="swimming.php">Swimming</a>
+            <a href="tennis.php">Tennis</a>
+            <a href="volleyball.php">Volleyball</a>
+
+            <i class="fa-solid fa-bars" style="color: #fff;
              position: fixed;
              top: 7%;
              left: 0%;
              transform: translateY(-50%);
              font-size: 25px; " onclick="openmenu()"></i>
     </div>
+
 
     <div class="main-content">
 
@@ -386,6 +396,24 @@ include 'golf_registration.php';
 
     function closemenu() {
         document.getElementById("sidemenu").style.left = "-300px";
+        var sidemenu = document.getElementById("sidemenu");
+
+        var hamburgerIcon = document.getElementById("hamburgerIcon");
+    }
+
+    function openmenu() {
+        sidemenu.style.left = "0"; // Open the menu
+        sidemenu.style.overflowY = 'auto'; // Enable scrolling
+        hamburgerIcon.style.display = "none"; // Hide the hamburger icon when menu is open
+        document.body.style.overflowY = 'hidden'; // Disable body scroll when menu is open
+    }
+
+    function closemenu() {
+        sidemenu.style.left = "-300px"; // Close the menu
+        sidemenu.style.overflowY = 'hidden'; // Disable scrolling when the menu is closed
+        hamburgerIcon.style.display = "block"; // Show the hamburger icon
+        document.body.style.overflowY = 'auto'; // Re-enable body scroll
+        af5b62edc093bfef717b5ed07be089559a6269c
     }
 
     function toggleFloatingContent() {
