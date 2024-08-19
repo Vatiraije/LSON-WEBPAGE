@@ -70,6 +70,7 @@ function displayAllProfiles($conn) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://kit.fontawesome.com/159bedbb65.js" crossorigin="anonymous"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Poppins:wght@300&display=swap');
         body {
@@ -156,30 +157,72 @@ function displayAllProfiles($conn) {
         }
 
         /* Info Section */
-        .profile-info {
-            flex: 3; /* 3/4 width */
-            padding: 20px;
-            color: black;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-size: 1.5em; /* Increase the font size */
-        }
+      /* Styling the popup */
+.profile-info {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 800px;
+    width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    height: 400px;
+}
 
-        .profile-info h2 {
-            margin-top: 0;
-            font-size: 2.5em; /* Larger title font size */
-        }
+.profile-info h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-        .profile-info ul {
-            padding: 0;
-            list-style: none;
-            margin: 0;
-        }
+.profile-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        .profile-info li {
-            margin-bottom: 15px; /* Increase spacing between list items */
-        }
+.profile-info li {
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Adding FontAwesome Icons with CSS pseudo-elements */
+.profile-info li:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 24px;
+    margin-right: 10px;
+    color: #4CAF50; /* Customize this color */
+}
+
+/* Match icons with respective content */
+.profile-info li:nth-child(1):before {
+    content: "\f1fd"; /* birthday-cake icon for Age */
+}
+
+.profile-info li:nth-child(2):before {
+    content: "\f091"; /* trophy icon for Year Wins */
+}
+
+.profile-info li:nth-child(3):before {
+    content: "\f091"; /* trophy icon for Career Wins */
+}
+
+.profile-info li:nth-child(4):before {
+    content: "\f005"; /* star icon for Total Top Five */
+}
+
+.profile-info li:nth-child(5):before {
+    content: "\f3c5"; /* map-marker-alt icon for Home-Place */
+}
+
+
+        
 
         /* Video Section */
         .video-container {
@@ -191,7 +234,7 @@ function displayAllProfiles($conn) {
         }
 
         .video-container video {
-            width: 100%;
+            width: 80%;
             /* height: auto; */
             border-radius: 10px;
             object-fit:cover;
