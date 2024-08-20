@@ -22,24 +22,6 @@
     }
 
     @media (max-width: 768px) {
-        #header nav ul li {
-            display: block;
-            margin: 10px 0;
-        }
-
-        #header nav i {
-            display: block;
-        }
-
-        #sidemenu {
-            position: fixed;
-            right: -300px;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            background: #fff;
-            transition: right 0.3s;
-        }
 
         .news-card {
             width: 100%;
@@ -238,7 +220,7 @@
     }
 
     function closemenu() {
-        document.getElementById("sidemenu").style.right = "-200px";
+        document.getElementById("sidemenu").style.right = "-300px";
     }
     </script>
 </body>
