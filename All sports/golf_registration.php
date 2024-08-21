@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "Shagina03!!";
 $dbname = "lson";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {

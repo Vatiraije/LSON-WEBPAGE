@@ -143,6 +143,7 @@ function displayAllProfiles($conn)
             height: 100%;
         }
 
+
         /* Popup Container */
         .popup {
             display: none;
@@ -289,6 +290,347 @@ function displayAllProfiles($conn)
             padding: 0;
         }
 
+        /*Modification of the pop up */
+        /* Updated Popup Styles */
+
+        .popup {
+            display: none;
+        }
+
+        .popup-content {
+            display: flex;
+            background: rgba(255, 255, 255, 0.9);
+            /* Slightly opaque background */
+            color: #000;
+            /* Change text color to black for readability */
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 1000px;
+            /* Increased max-width */
+            height: 80%;
+            /* Adjust height to fit the content */
+            max-height: 600px;
+            /* Prevent too large popups */
+            backdrop-filter: blur(10px);
+            /* Blurry background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            /* Shadow for better depth */
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            /* Hide overflow to keep clean design */
+            justify-content: center;
+            align-items: center;
+            left: 25%;
+            bottom: 60%;
+        }
+
+        /* Layout for Image and Text */
+        .popup-content .popup-image {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .popup-content .popup-info {
+            flex: 2;
+            padding: 10px;
+        }
+
+        /* Ensure image fits nicely */
+        .popup-content img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            /* Limit image height */
+            object-fit: cover;
+            border-radius: 10px;
+            /* Rounded corners for the image */
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.7);
+            /* Light background for close button */
+            padding: 5px;
+            border-radius: 50%;
+            z-index: 1001;
+            /* Ensure it is above other elements */
+        }
+
+
+        /*NavBar CSS*/
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(7, 137, 7, 0.7);
+            color: #fff;
+        }
+
+        .brand-title {
+            font-size: 1.5rem;
+            margin: 0.8rem;
+        }
+
+        .navbar-links {
+            flex: 1;
+            /* Take up available space */
+            display: flex;
+            justify-content: center;
+            /* Center the links horizontally */
+        }
+
+        .navbar-links ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar-links li {
+            list-style: none;
+        }
+
+        .navbar-links li:hover {
+            background-color: rgba(7, 137, 7, 0.7);
+        }
+
+        .navbar-links li a {
+            text-decoration: none;
+            color: white;
+            padding: 1rem;
+            display: block;
+        }
+
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            padding: 5px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+
+        .search-container button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            background: #555;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background: rgba(7, 137, 7, 0.7);
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 21px;
+        }
+
+        .toggle-button .bar {
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        /*footer css  */
+        .footer {
+            background: #004d00;
+            /* Dark Green */
+            color: white;
+            /* White text */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 400px) {
+            .toggle-button {
+                display: flex;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                display: none;
+                width: 100%;
+            }
+
+            .navbar-links ul {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .navbar-links li {
+                text-align: center;
+            }
+
+            .navbar-links li a {
+                padding: 0.5rem 1rem;
+            }
+
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .search-container {
+                margin-left: auto;
+                /* Align search bar to the right on small screens */
+            }
+        }
+
+        .popup {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent background */
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* Ensure no overflow outside the screen */
+        }
+
+        @keyframes walkout {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes popupFadeIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .popup-content {
+            background: rgba(255, 255, 255, 0.9);
+            /* Slightly opaque background */
+            color: #000;
+            /* Text color */
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 1000px;
+            height: auto;
+            max-height: 80%;
+            /* Limit the height to avoid overflow */
+            overflow-y: auto;
+            /* Allow scrolling for overflow content */
+            display: block;
+            backdrop-filter: blur(10px);
+            /* Blurry background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            /* Shadow for better depth */
+            position: relative;
+            /* Ensure proper layering of content */
+            text-align: center;
+            /* Centers the text inside the popup content */
+        }
+
+        .popup-content .popup-image {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .popup-content .popup-info {
+            flex: 2;
+            padding: 10px;
+            text-align: left;
+            /* Align the text to the left within the popup info */
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.7);
+            /* Light background for close button */
+            padding: 5px;
+            border-radius: 50%;
+            z-index: 1001;
+            /* Ensure it is above other elements */
+        }
+
+        .popup-content h2 {
+            margin-top: 0;
+            /* Remove top margin for headings */
+        }
+
+        .popup-content ul {
+            padding: 0;
+            list-style: none;
+            /* Remove list bullets */
+            margin: 0;
+        }
+
+        .popup-content li {
+            margin-bottom: 10px;
+            /* Space between list items */
+        }
+
+
+        /* NavBar CSS */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -426,7 +768,7 @@ function displayAllProfiles($conn)
     </div>
 
     <!-- Popup Container -->
-    <div class="popup">
+    <<<<<<< Updated upstream <div class="popup">
         <div class="popup-content">
             <div class="profile-info">
                 <!-- Player Info will be dynamically populated here -->
@@ -435,24 +777,33 @@ function displayAllProfiles($conn)
                 <video src="../images/PlayerAppearance.mp4" class="Player-gif" autoplay loop muted></video>
             </div>
             <span class="popup-close">&times;</span>
-        </div>
-    </div>
+            =======
+            <div class="popup">
+                <div class="popup-content">
+                    <div class="video-container">
+                        <video src="../images/PlayerAppearance.mp4" class="Player-gif" autoplay loop muted></video>
+                        >>>>>>> Stashed changes
+                    </div>
+                    <div class="profile-info"></div>
+                    <span class="popup-close">&times;</span>
+                </div>
+            </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var cards = document.querySelectorAll('.fcard');
-            var popup = document.querySelector('.popup');
-            var popupInfo = document.querySelector('.profile-info');
-            var popupClose = document.querySelector('.popup-close');
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var cards = document.querySelectorAll('.fcard');
+                    var popup = document.querySelector('.popup');
+                    var popupInfo = document.querySelector('.profile-info');
+                    var popupClose = document.querySelector('.popup-close');
 
-            // Ensure the popup stays hidden initially
-            popup.style.display = 'none';
+                    // Ensure the popup stays hidden initially
+                    popup.style.display = 'none';
 
-            function openPopup(profileId) {
-                fetch('golfprofile.php?action=getProfileData&id=' + profileId)
-                    .then(response => response.json())
-                    .then(data => {
-                        popupInfo.innerHTML = `
+                    function openPopup(profileId) {
+                        fetch('golfprofile.php?action=getProfileData&id=' + profileId)
+                            .then(response => response.json())
+                            .then(data => {
+                                popupInfo.innerHTML = `
                             <h2>Player name: ${data.name}</h2>
                             <ul>
                                 <li>Age: ${data.age}</li>
@@ -462,61 +813,220 @@ function displayAllProfiles($conn)
                                 <li>Home-Place: ${data.homePlace}</li>
                             </ul>
                         `;
-                        popup.style.display = 'flex'; // Show popup when profile is clicked
-                    })
-                    .catch(error => {
-                        console.error('Error fetching profile data:', error);
-                    });
-            }
-
-            // Attach event listeners to profile cards
-            cards.forEach(function(card) {
-                card.addEventListener('click', function() {
-                    var profileId = this.getAttribute('data-profile-id');
-                    openPopup(profileId);
-                });
-            });
-
-            // Close popup when clicking outside of the popup content
-            window.addEventListener('click', function(event) {
-                if (event.target === popup) {
-                    popup.style.display = 'none'; // Hide popup
-                }
-            });
-
-            // Close popup when clicking the close button
-            popupClose.onclick = function() {
-                popup.style.display = 'none'; // Hide popup
-            };
-
-            var cards = document.querySelectorAll('.fcard');
-            var searchInput = document.getElementById('search-input');
-            var searchButton = document.getElementById('search-button');
-
-            // Function to filter cards based on search input
-            function filterCards() {
-                var searchText = searchInput.value.toLowerCase();
-
-                cards.forEach(function(card) {
-                    var playerName = card.querySelector('h2').textContent.toLowerCase();
-                    if (playerName.includes(searchText)) {
-                        card.style.display = 'flex'; // Show matching cards
-                    } else {
-                        card.style.display = 'none'; // Hide non-matching cards
+                                popup.style.display = 'flex'; // Show popup when profile is clicked
+                            })
+                            .catch(error => {
+                                console.error('Error fetching profile data:', error);
+                            });
                     }
+                    document.addEventListener('DOMContentLoaded', function() {
+
+                        document.addEventListener('DOMContentLoaded', function() {
+
+                            var cards = document.querySelectorAll('.fcard');
+                            var popup = document.querySelector('.popup');
+                            var popupContent = document.querySelector('.profile-info');
+
+                            // Ensure the popup stays hidden initially
+                            popup.style.display = 'none';
+
+                            function openPopup(profileId) {
+                                fetch('golfprofile.php?action=getProfileData&id=' + profileId)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        popupContent.innerHTML = `
+                    <span class="popup-close">&times;</span>
+                                       
+                    <h2>Player name: ${data.name}</h2>
+                    <ul>
+                        <li>Age: ${data.age}</li>
+                        <li>Year Wins: ${data.yearWins}</li>
+                        <li>Career Wins: ${data.careerWins}</li>
+                        <li>Total Top Five: ${data.topFive}</li>
+                        <li>Home-Place: ${data.homePlace}</li>
+                    </ul>
+                    <div class="popup-image">
+                        <img src="../images/golfProfile.jpg" alt="${data.name}">
+                    </div>
+                    <div class="popup-info">
+                        <h2>Player name: ${data.name}</h2>
+                        <ul>
+                            <li>Age: ${data.age}</li>
+                            <li>Year Wins: ${data.yearWins}</li>
+                            <li>Career Wins: ${data.careerWins}</li>
+                            <li>Total Top Five: ${data.topFive}</li>
+                            <li>Home-Place: ${data.homePlace}</li>
+                        </ul>
+                    </div>
+                `;
+                                        popup.style.display =
+                                            'flex'; // Show popup only when profile is clicked
+                                    })
+                                    .catch(error => {
+                                        console.error('Error fetching profile data:', error);
+                                    });
+                            }
+
+
+                            // Close popup when clicking outside of the popup content
+                            window.addEventListener('click', function(event) {
+                                if (event.target === popup) {
+                                    popup.style.display = 'none'; // Hide popup
+                                }
+                            });
+
+                            // Close popup when clicking the close button
+                            popupClose.onclick = function() {
+                                popup.style.display = 'none'; // Hide popup
+                            };
+
+                            var cards = document.querySelectorAll('.fcard');
+                            var searchInput = document.getElementById('search-input');
+                            var searchButton = document.getElementById('search-button');
+
+                            // Function to filter cards based on search input
+                            function filterCards() {
+                                var searchText = searchInput.value.toLowerCase();
+
+                                cards.forEach(function(card) {
+                                    var playerName = card.querySelector('h2').textContent
+                                        .toLowerCase();
+                                    if (playerName.includes(searchText)) {
+                                        card.style.display = 'flex'; // Show matching cards
+                                    } else {
+                                        card.style.display =
+                                            'none'; // Hide non-matching cards
+                                    }
+                                });
+                            }
+
+                            // Event listener for typing in the search box
+                            searchInput.addEventListener('input', filterCards);
+
+                            // Event listener for clicking the search button
+                            searchButton.addEventListener('click', function(event) {
+                                event.preventDefault();
+                                filterCards();
+                            });
+                            // Attach event listeners to profile cards
+                            cards.forEach(function(card) {
+                                card.addEventListener('click', function() {
+                                    var profileId = this.getAttribute(
+                                        'data-profile-id');
+                                    openPopup(profileId);
+                                });
+                            });
+
+                            // Close popup when clicking outside of the popup content
+                            window.addEventListener('click', function(event) {
+                                if (event.target === popup) {
+                                    popup.style.display = 'none';
+                                }
+                            });
+                        });
+
+
+
+                        var cards = document.querySelectorAll('.fcard');
+                        var searchInput = document.getElementById('search-input');
+                        var searchButton = document.getElementById('search-button');
+
+                        // Function to filter cards based on search input
+                        function filterCards() {
+                            var searchText = searchInput.value.toLowerCase();
+
+                            cards.forEach(function(card) {
+                                var playerName = card.querySelector('h2').textContent.toLowerCase();
+                                if (playerName.includes(searchText)) {
+                                    card.style.display = 'flex'; // Show matching cards
+                                } else {
+                                    card.style.display = 'none'; // Hide non-matching cards
+                                }
+                            });
+                        }
+
+                        // Event listener for typing in the search box
+                        searchInput.addEventListener('input', filterCards);
+
+                        // Event listener for clicking the search button
+                        searchButton.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            filterCards();
+                        });
+
+
+                        // Attach event listeners to profile cards
+                        cards.forEach(function(card) {
+                            card.addEventListener('click', function() {
+                                var profileId = this.getAttribute('data-profile-id');
+                                openPopup(profileId);
+                            });
+                        });
+
+                        // Close popup when clicking outside of the popup content
+                        window.addEventListener('click', function(event) {
+                            if (event.target === popup) {
+                                popup.style.display = 'none'; // Hide popup
+                            }
+                        });
+
+                        // Close popup when clicking the close button
+                        document.addEventListener('click', function(event) {
+                            if (event.target.classList.contains('popup-close')) {
+                                popup.style.display = 'none'; // Hide popup
+                            }
+                        });
+                    });
                 });
-            }
+            </script>
+            <<<<<<< Updated upstream=======</head>
 
-            // Event listener for typing in the search box
-            searchInput.addEventListener('input', filterCards);
+                <body>
+                    <nav class="navbar">
+                        <div class="brand-title">LSON</div>
+                        <a href="#" class="toggle-button">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </a>
+                        <div class="avbar-links">
+                            <ul>
+                                <li><a href="golf.php">Home</a></li>
+                                <li><a href="clubs.php">Clubs</a></li>
+                                <li><a href="#">Leagues</a></li>
+                                <li><a href="#">Training and development</a></li>
+                                <li><a href="#">Supporter's club</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">History</a></li>
+                            </ul>
 
-            // Event listener for clicking the search button
-            searchButton.addEventListener('click', function(event) {
-                event.preventDefault();
-                filterCards();
-            });
-        });
-    </script>
-</body>
+                            <div class="search-container">
+                                <input type="text" id="search-input" placeholder="Search...">
+                                <button type="submit" id="search-button">Search</button>
+                            </div>
+
+                        </div>
+                    </nav>
+                    <div class="section">
+                        <?php
+                        displayAllProfiles($conn);
+                        ?>
+                    </div>
+
+                    <!--This pop up must be-->
+                    <div class="popup">
+                        <div class="popup-content">
+                            <!-- Dynamic content will be inserted here by JavaScript -->
+                        </div>
+                    </div>
+
+
+                    <div class="footer">
+                        <p>&copy; 2024 LSON - Level Sports of Namibia. All rights reserved.</p>
+                    </div>
+
+
+                </body>
+
 
 </html>
