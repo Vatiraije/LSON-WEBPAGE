@@ -2,7 +2,7 @@
 // Database connection
 $servername = "localhost";
 $username = "root";
-$password = "Shagina03!!";
+$password = "";
 $dbname = "lson";
 
 // Create connection
