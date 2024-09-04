@@ -13,12 +13,24 @@
             background: url('./images/Soccer images/soccer-bg.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: -1;
         }
 
         .header {
-            background: #ffd700; /* Yellow */
+            background: #ffd700;
             padding: 20px;
-            color: black; /* Black text */
+            color: black;
             text-align: center;
             position: sticky;
             top: 0;
@@ -35,11 +47,13 @@
         .header h1 {
             margin: 0;
             font-size: 2.5em;
+            font-weight: 600;
         }
 
         .header p {
             margin: 0;
             font-size: 1.2em;
+            font-weight: 300;
         }
 
         .navigation {
@@ -59,54 +73,65 @@
             padding: 10px 20px;
             text-decoration: none;
             display: inline-block;
+            font-weight: 500;
             transition: background 0.3s, transform 0.3s;
         }
 
         .navigation a:hover {
-            background-color: #ffd700; /* Yellow */
+            background-color: #333;
             transform: scale(1.1);
         }
 
-        .vertical-nav {
-            width: 220px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background: black; /* Black background */
-            padding-top: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            animation: slideIn 0.8s ease-in-out;
+        .story-section {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin-bottom: 20px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-in-out;
         }
 
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .vertical-nav a {
-            padding: 15px 25px;
-            text-decoration: none;
-            font-size: 18px;
+        .story-section h2, 
+        .story-section p {
+            position: absolute;
             color: #fff;
-            display: block;
-            transition: all 0.3s;
-            border-radius: 4px;
-            margin: 5px 10px;
+            margin: 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            animation: textGlow 1.5s ease-in-out infinite alternate;
         }
 
-        .vertical-nav a:hover {
-            background: #ffd700; /* Yellow */
-            transform: translateX(10px);
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700; }
+            to { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
         }
 
-        .vertical-nav a.active {
-            background: #ffd700; /* Yellow */
+        .story-section h2 {
+            bottom: 60px;
+            left: 20px;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .story-section p {
+            bottom: 20px;
+            left: 20px;
+            font-size: 1.2em;
+            font-weight: 300;
         }
 
         .main-content {
-            margin-left: 240px; /* Same width as the vertical navbar + some margin */
+            margin: 20px auto;
             padding: 20px;
             max-width: 1200px;
         }
@@ -120,21 +145,12 @@
             animation: fadeInUp 1s ease-in-out;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .section-header h2 {
             font-size: 2.5em;
-            color: #ffd700; /* Yellow */
+            color: #ffd700;
             margin-bottom: 10px;
+            font-weight: 600;
             animation: textGlow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes textGlow {
-            from { text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700; }
-            to { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
         }
 
         .content {
@@ -160,6 +176,7 @@
         .content img:hover,
         .content video:hover {
             transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .form-container {
@@ -185,7 +202,7 @@
         }
 
         form input[type="text"]:focus {
-            border-color: #ffd700; /* Yellow */
+            border-color: #ffd700;
             outline: none;
             box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
         }
@@ -196,14 +213,12 @@
         }
 
         .footer {
-            background: black; /* Black background */
-            color: #ffd700; /* Yellow text */
+            background: linear-gradient(180deg, #333, #000); /* Gradient background */
+            color: #ffd700;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            opacity: 0.9;
+            padding: 20px;
+            position: relative;
+            margin-top: 40px;
         }
 
         /* Responsive Design */
@@ -219,15 +234,12 @@
                 max-width: 90%;
             }
 
-            .vertical-nav {
-                width: 100%;
-                height: auto;
-                position: relative;
+            .story-section h2 {
+                font-size: 1.8em;
             }
 
-            .vertical-nav a {
-                float: left;
-                padding: 10px;
+            .story-section p {
+                font-size: 1em;
             }
 
             .main-content {
