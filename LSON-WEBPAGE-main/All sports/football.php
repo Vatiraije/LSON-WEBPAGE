@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LSON - Namibian Football</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Oswald', sans-serif;
             background: url('./images/Soccer images/soccer-bg.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
@@ -23,6 +24,12 @@
             top: 0;
             z-index: 1000;
             opacity: 0.9;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
 
         .header h1 {
@@ -39,6 +46,12 @@
             background-color: rgba(0, 0, 0, 0.7);
             padding: 10px 0;
             text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .navigation a {
@@ -46,11 +59,12 @@
             padding: 10px 20px;
             text-decoration: none;
             display: inline-block;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s;
         }
 
         .navigation a:hover {
             background-color: #ffd700; /* Yellow */
+            transform: scale(1.1);
         }
 
         .vertical-nav {
@@ -63,6 +77,12 @@
             padding-top: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            animation: slideIn 0.8s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
         }
 
         .vertical-nav a {
@@ -97,21 +117,24 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-bottom: 20px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
-        .section-header {
-            margin-bottom: 10px;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section-header h2 {
             font-size: 2.5em;
             color: #ffd700; /* Yellow */
             margin-bottom: 10px;
+            animation: textGlow 1.5s ease-in-out infinite alternate;
         }
 
-        .section-header p {
-            font-size: 1.2em;
-            color: #fff; /* Light text */
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700; }
+            to { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
         }
 
         .content {
@@ -221,35 +244,12 @@
 
     <div class="navigation">
         <a href="football.php">All</a>
-        <a href="rugby.php">Teams</a>
-        <a href="football.php">Leagues</a>
-        <a href="tennis.php">Player Profiles</a>
-        <a href="swimming.php">Training and Development</a>
-        <a href="boxing.php">Supporters Club</a>
-        <a href="golf.php">Events</a>
-    </div>
-
-    <div class="vertical-nav">
-        <a href="basketball.php">Basketball</a>
-        <a href="bowling.php">Bowling</a>
-        <a href="boxing.php">Boxing</a>
-        <a href="chess.php">Chess</a>
-        <a href="cricket.php">Cricket</a>
-        <a href="cycling.php">Cycling</a>
-        <a href="esports.php">E-Sports</a>
-        <a href="football.php" class="active">Football</a>
-        <a href="futsal.php">Futsal</a>
-        <a href="golf.php">Golf</a>
-        <a href="hockey.php">Hockey</a>
-        <a href="horseriding.php">Horse Riding</a>
-        <a href="mma.php">MMA</a>
-        <a href="netball.php">Netball</a>
-        <a href="polo.php">Polo</a>
-        <a href="racing.php">Racing</a>
-        <a href="rugby.php">Rugby</a>
-        <a href="swimming.php">Swimming</a>
-        <a href="tennis.php">Tennis</a>
-        <a href="volleyball.php">Volleyball</a>
+        <a href="teams.php">Teams</a>
+        <a href="leagues.php">Leagues</a>
+        <a href="PlayerProfiles.php">Player Profiles</a>
+        <a href="Training_development.php">Training and Development</a>
+        <a href="SupportersClub.php">Supporters Club</a>
+        <a href="Events.php">Events</a>
     </div>
 
     <div class="main-content">
@@ -321,14 +321,14 @@
         </section>
 
         <div class="form-container">
-            <form action="" method="GET">
-                <input type="text" name="search" placeholder="Search players, teams, leagues...">
+            <form action="#">
+                <input type="text" placeholder="Search for a match or team...">
             </form>
         </div>
     </div>
 
     <div class="footer">
-        <p>&copy; 2024 LSON - Level Sports of Namibia. All rights reserved.</p>
+        <p>&copy; 2024 LSON. All Rights Reserved.</p>
     </div>
 </body>
 </html>
