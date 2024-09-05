@@ -8,16 +8,21 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Font: "Playfair Display" -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+  <meta name="description" content="LSON Horse Riding - Discover the thrill of horse racing.">
+  <meta property="og:title" content="LSON Horse Riding">
+  <meta property="og:description" content="Join the excitement of horse riding events, training, and development at LSON.">
   <style>
     body, html {
       height: 100%;
       font-family: 'Playfair Display', serif;
+      scroll-behavior: smooth;
     }
     .hero-bg {
       background-image: url(https://static.vecteezy.com/system/resources/previews/042/336/662/non_2x/illustration-of-race-horse-with-jockey-black-isolated-silhouette-on-white-background-vector.jpg);
       background-size: cover;
-      background-size: auto ;
+      background-size: auto;
       background-position: center center;
+      background-attachment: fixed; /* Parallax Effect */
     }
     #loader {
       position: fixed;
@@ -77,6 +82,22 @@
       background-color: rgba(255, 255, 255, 0.2);
       color: #FFD700;
     }
+    /* Dynamic Background Color Animation */
+    @keyframes backgroundShift {
+      0% { background-color: #FFD700; }
+      50% { background-color: #FF8C00; }
+      100% { background-color: #FFD700; }
+    }
+    body {
+      animation: backgroundShift 10s infinite;
+    }
+    .hover:scale-up {
+      transition: transform 0.3s;
+    }
+    .hover:scale-up:hover {
+      transform: scale(1.05);
+    }
+    
   </style>
 </head>
 <body class="bg-gray-100">
@@ -101,8 +122,8 @@
   <!-- Hero Section -->
   <section class="hero-bg h-screen flex items-center justify-center fade-in">
     <div class="text-center bg-yellow-600 p-8 rounded-lg">
-      <h1 class="text-6xl font-bold slide-up text-white">LSON Horse Racing</h1>
-      <p class="mt-4 text-xl slide-up text-white">Discover the thrill of horse racing</p>
+      <h1 class="text-3xl sm:text-6xl font-bold slide-up text-white">LSON Horse Racing</h1>
+      <p class="mt-4 text-lg sm:text-xl slide-up text-white">Discover the thrill of horse racing</p>
       <a href="#services" class="mt-8 inline-block bg-white text-yellow-600 px-6 py-3 rounded-full text-lg font-medium hover:bg-yellow-500 transition duration-300 slide-up">Explore Services</a>
     </div>
   </section>
@@ -134,13 +155,13 @@
       <h2 class="text-4xl font-bold mb-12">Gallery</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
-          <img src="https://wallpapers.com/images/hd/horse-racing-on-a-long-field-xs8xozu7xycdbnp6.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover">
+          <img src="https://wallpapers.com/images/hd/horse-racing-on-a-long-field-xs8xozu7xycdbnp6.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover" loading="lazy">
         </div>
         <div class="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
-          <img src="https://media.gettyimages.com/id/869032286/photo/young-girl-cuddling-her-pony-horse.jpg?s=612x612&w=0&k=20&c=DGEDZ0G-Nl89k0rhrR2V3pALA2idUNzHozEFY6MVkno=" alt="Gallery Image 2" class="w-full h-64 object-cover">
+          <img src="https://media.gettyimages.com/id/869032286/photo/young-girl-cuddling-her-pony-horse.jpg?s=612x612&w=0&k=20&c=DGEDZ0G-Nl89k0rhrR2V3pALA2idUNzHozEFY6MVkno=" alt="Gallery Image 2" class="w-full h-64 object-cover" loading="lazy">
         </div>
         <div class="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
-          <img src="https://media.gettyimages.com/id/1574593433/photo/girls-training-riding-horses.jpg?s=612x612&w=0&k=20&c=nxSoV6gEu5RAbqZgnpm0VUkmbQc-ySc_Wl2JLI13BA4=" alt="Gallery Image 3" class="w-full h-64 object-cover">
+          <img src="https://media.gettyimages.com/id/1574593433/photo/girls-training-riding-horses.jpg?s=612x612&w=0&k=20&c=nxSoV6gEu5RAbqZgnpm0VUkmbQc-ySc_Wl2JLI13BA4=" alt="Gallery Image 3" class="w-full h-64 object-cover" loading="lazy">
         </div>
       </div>
     </div>
@@ -151,53 +172,61 @@
     <div class="container mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-12">Latest News</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- News Image -->
         <div class="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
-          <img src="https://scontent.fers3-1.fna.fbcdn.net/v/t39.30808-6/452558157_800023222116597_3671284521056795143_n.jpg?stp=dst-jpg_s720x720&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=wS9nTeje_TAQ7kNvgHFnBQc&_nc_ht=scontent.fers3-1.fna&oh=00_AYDKT0BxYNNx3suQoW42ZvN9VxZgjd4cyVrHR8SR7iDDbQ&oe=66DF5BA8" alt="Horse Racing News" class="w-full h-64 object-cover"> <!-- Replace with actual image -->
+          <img src="https://e0.pxfuel.com/wallpapers/61/695/desktop-wallpaper-50-horse-riding-for-your-mobile-tablet-explore-horseback-horseback.jpg" alt="News Update 1" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold">Upcoming Horse Racing Event</h3>
+            <p>Join us for an exciting racing event at LSON!</p>
+          </div>
         </div>
-        <!-- News Image -->
         <div class="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
-          <img src="https://scontent.fers3-1.fna.fbcdn.net/v/t39.30808-6/449444277_981723733958149_73396353450952383_n.jpg?stp=dst-jpg_p526x395&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=S_33-F1ZoQ0Q7kNvgExyBmq&_nc_ht=scontent.fers3-1.fna&oh=00_AYDdfuaHQ3p9_yA7hp1LcWGTNnoWzaAYMePVa6Yyd3X4dA&oe=66DF4A08" alt="Horse Racing News" class="w-full h-64 object-cover"> <!-- Replace with actual image -->
+          <img src="https://c4.wallpaperflare.com/wallpaper/961/623/806/horse-sport-horse-rider-wallpaper-preview.jpg" alt="News Update 2" class="w-full h-64 object-cover">
+          <div class="p-8">
+            <h3 class="text-2xl font-semibold">Summer Racing Competitions Open!</h3>
+            <p>Sign up for our summer racing competitions to compete against the best!</p>
+          </div>
         </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-16 bg-white fade-in">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
-      <div class="max-w-lg mx-auto">
-        <form class="bg-gray-100 p-8 rounded-lg shadow-lg">
-          <div class="mb-6">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-300">
-          </div>
-          <div class="mb-6">
-            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-300">
-          </div>
-          <div class="mb-6">
-            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-300"></textarea>
-          </div>
-          <div>
-            <button type="submit" class="w-full bg-yellow-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-yellow-700 transition duration-300">Send Message</button>
-          </div>
-        </form>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="py-8 bg-yellow-600 text-white text-center">
-    <p>&copy; 2024 LSON Horse Riding. All rights reserved.</p>
-  </footer>
-
+  <!-- Contact Form Section -->
+  <section id="contact" class="py-16 bg-gray-100 fade-in">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
+      <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-bold mb-2">Name</label>
+          <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-bold mb-2">Email</label>
+          <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg" required>
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-bold mb-2">Message</label>
+          <textarea id="message" class="w-full px-4 py-2 border border-gray-300 rounded-lg" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-yellow-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-yellow-500 transition duration-300">Send Message</button>
+      </form>
+    </div>
+  </section>
   <script>
-    window.onload = function() {
-      const loader = document.getElementById("loader");
-      loader.style.display = "none";
-    },6000;
+  // Hide loader after 6 seconds
+  window.onload = function() {
+    setTimeout(function() {
+      document.getElementById('loader').style.display = 'none';
+    }, 6000); // 6000 milliseconds = 6 seconds
+  };
+    // Simple email validation example
+    document.getElementById('email').addEventListener('input', function() {
+      if (!this.value.includes('@')) {
+        this.style.borderColor = 'red';
+      } else {
+        this.style.borderColor = 'green';
+      }
+    });
   </script>
+
 </body>
 </html>
