@@ -10,8 +10,11 @@
             margin: 0;
             padding: 0;
             font-family: 'Oswald', sans-serif;
-            background: url('./images/Soccer images/soccer-bg.jpg') no-repeat center center fixed;
+            background-image: url(Screenshot\ 2024-09-04\ 153223.png);
             background-size: cover;
+            background-size: contain;
+          /*  background-size: auto;
+            background-position: center center;  Centers the image */
             color: #fff;
             position: relative;
         }
@@ -276,14 +279,14 @@
                 <article>
                     <h3>Premier League</h3>
                     <p>Latest updates and standings from the Namibian Premier League.</p>
-                    <img src="images/football.jpg" alt="FOOTBALL PREMIER LEAGUE">
+                    <img src="AF.png" alt="FOOTBALL PREMIER LEAGUE">
                 </article>
                 <article>
                     <h3>First to new updates</h3>
                     <p>Latest updates and standings from the Namibian Football.</p>
-                    <img src="images/football2.jpeg" alt="FOOTBALL PREMIER LEAGUE">
+                    <img src="CV.png" alt="FOOTBALL PREMIER LEAGUE">
                 </article>
-                <img src="images/football3.jpeg" alt="FOOTBALL PREMIER LEAGUE">
+                <img src="Screenshot 2024-09-04 162110.png" alt="FOOTBALL PREMIER LEAGUE">
                 <video src="videos/ANGOLA VS NAMIBIA (5-0) COSFA CUP FINAL FULL HIGHLIGHTS & GOALS 2024.mp4" controls></video>
             </div>
         </section>
